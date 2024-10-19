@@ -8,9 +8,9 @@
 <body style="font-family: sans-serif; text-align: center;">
     <h1>AGE CALCULATOR</h1> <br><br>
     <form style="display: flex; justify-content: center; "> 
-        <input type="text" name="month" id="month" placeholder="ENTER MONTH"><br><br>
-        <input type="number" name="year" id="year" placeholder="ENTER YEAR"><br><br>
-        <input type="number" name="days" id="days" placeholder="ENTER DAY"><br><br>
+        <input type="number" name="month" id="month" placeholder="ENTER MONTH" minlength="1" maxlength="12"><br><br>
+        <input type="number" name="year" id="year" placeholder="ENTER YEAR" minlength="1900" maxlength="2024"><br><br>
+        <input type="number" name="days" id="days" placeholder="ENTER DAY" minlength="1" maxlength="31"><br><br>
         <button type="submit">SUMBIT</button>
     </form>
 
