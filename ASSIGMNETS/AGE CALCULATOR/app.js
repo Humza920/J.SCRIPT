@@ -34,9 +34,12 @@ form.addEventListener("submit", (e) => {
   let ageSec = latestDate.getSeconds();
   console.log(ageSec);
 
-  if (month.value <= ageMonth) {
-    ageMonth = ageMonth - month.value;
+  if (month.value < ageMonth) {
+    ageMonth = ageMonth - month.value - 1;
     ageYear = ageYear + 1;
+  } else if (month.value == ageMonth) {
+    ageMonth = 0;
+    ageDays = day.value - ageDays;
   } else {
     ageMonth;
   }
