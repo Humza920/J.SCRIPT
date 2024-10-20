@@ -16,7 +16,7 @@ form.addEventListener("submit", (e) => {
 
   const latestDate = new Date();
 
-  let ageYear = latestDate.getFullYear() - year.value - 1;
+  let ageYear = latestDate.getFullYear() - year.value;
   console.log(ageYear);
 
   let ageMonth = latestDate.getMonth() + 1;
@@ -35,13 +35,11 @@ form.addEventListener("submit", (e) => {
   console.log(ageSec);
 
   if (month.value < ageMonth) {
-    ageMonth = ageMonth - month.value - 1;
-    ageYear = ageYear + 1;
-  } else if (month.value == ageMonth) {
-    ageMonth = 0;
-    ageDays = day.value - ageDays;
-  } else {
-    ageMonth;
+    ageYear + 1;
+  }
+
+  if (month.value > ageMonth) {
+    ageYear = ageYear - 1;
   }
 
   div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
