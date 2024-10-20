@@ -16,14 +16,30 @@ form.addEventListener("submit", (e) => {
 
   const latestDate = new Date();
 
-  const ageYear = latestDate.getFullYear() - year.value - 1;
+  let ageYear = latestDate.getFullYear() - year.value - 1;
   console.log(ageYear);
 
-  const ageMonth = latestDate.getMonth() + 1;
+  let ageMonth = latestDate.getMonth() + 1;
   console.log(ageMonth);
 
-  const ageDays = latestDate.getDate();
+  let ageDays = latestDate.getDate();
   console.log(ageDays);
+
+  let ageHours = latestDate.getHours();
+  console.log(ageHours);
+
+  let ageMins = latestDate.getMinutes();
+  console.log(ageMins);
+
+  let ageSec = latestDate.getSeconds();
+  console.log(ageSec);
+
+  if (month.value <= ageMonth) {
+    ageMonth = ageMonth - month.value;
+    ageYear = ageYear + 1;
+  } else {
+    ageMonth;
+  }
 
   div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
 
@@ -38,6 +54,7 @@ form.addEventListener("submit", (e) => {
   const minutesBtn = document.querySelector("#Btn-4");
   const headFour = document.querySelector("#head-4");
   const secondsBtn = document.querySelector("#Btn-5");
+  const headFive = document.querySelector("#head-5");
 
   monthBtn.addEventListener("click", (e) => {
     e.preventDefault();
@@ -71,6 +88,15 @@ YOU LIVE ${testTwo} DAYS ON EARTH SINCE YOUR BIRTH.
     testThree = testThree * 12 + latestDate.getMonth();
     testThree = testThree * 30;
     testThree = testThree * 24;
+    if (ageHours >= 12 && ageHours <= 24) {
+      testThree = testThree + (24 - ageHours);
+    }
+
+    if (ageHours >= 1 && ageHours <= 11) {
+      testThree = testThree + (12 - ageHours);
+    } else {
+      testThree;
+    }
     console.log(testThree);
     headThree.innerHTML += `
 YOU LIVE ${testThree} HOURS ON EARTH SINCE YOUR BIRTH.
@@ -85,10 +111,26 @@ YOU LIVE ${testThree} HOURS ON EARTH SINCE YOUR BIRTH.
     testFour = testFour * 12 + latestDate.getMonth();
     testFour = testFour * 30;
     testFour = testFour * 24;
-    testFour = testFour * 60;
+    testFour = testFour * 60 + ageMins;
     console.log(testFour);
-    headThree.innerHTML += `
+    headFour.innerHTML += `
 YOU LIVE ${testFour} MINUTES ON EARTH SINCE YOUR BIRTH.
+`;
+  });
+
+  secondsBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let testFive = latestDate.getFullYear() - year.value - 1;
+
+    testFive = testFive * 12 + latestDate.getMonth();
+    testFive = testFive * 30;
+    testFive = testFive * 24;
+    testFive = testFive * 60;
+    testFive = testFive * 60 + ageSec;
+    console.log(testFive);
+    headFive.innerHTML += `
+YOU LIVE ${testFive} SECONDS ON EARTH SINCE YOUR BIRTH.
 `;
   });
 });
