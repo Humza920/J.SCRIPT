@@ -36,6 +36,7 @@ form.addEventListener("submit", (e) => {
   const hoursBtn = document.querySelector("#Btn-3");
   const headThree = document.querySelector("#head-3");
   const minutesBtn = document.querySelector("#Btn-4");
+  const headFour = document.querySelector("#head-4");
   const secondsBtn = document.querySelector("#Btn-5");
 
   monthBtn.addEventListener("click", (e) => {
@@ -71,8 +72,23 @@ YOU LIVE ${testTwo} DAYS ON EARTH SINCE YOUR BIRTH.
     testThree = testThree * 30;
     testThree = testThree * 24;
     console.log(testThree);
-    headTwo.innerHTML += `
+    headThree.innerHTML += `
 YOU LIVE ${testThree} HOURS ON EARTH SINCE YOUR BIRTH.
+`;
+  });
+
+  minutesBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    let testFour = latestDate.getFullYear() - year.value - 1;
+
+    testFour = testFour * 12 + latestDate.getMonth();
+    testFour = testFour * 30;
+    testFour = testFour * 24;
+    testFour = testFour * 60;
+    console.log(testFour);
+    headThree.innerHTML += `
+YOU LIVE ${testFour} MINUTES ON EARTH SINCE YOUR BIRTH.
 `;
   });
 });
