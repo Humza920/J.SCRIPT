@@ -38,3 +38,30 @@
 // console.log(date.toDateString());
 // console.log(date.toISOString());
 // console.log(date.toTimeString());
+
+// PRACTICE
+
+const form = document.querySelector("form");
+const month = document.querySelector("#month");
+const day = document.querySelector("#day");
+const year = document.querySelector("#year");
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const date = new Date();
+  date.setFullYear(year.value);
+  date.setMonth(month.value.length);
+  date.setDate(day.value);
+  console.log(date);
+  const latestDate = new Date();
+  console.log(latestDate.getFullYear() - year.value - 1 + ">> YEARS");
+  console.log(latestDate.getMonth() + "MONTHS");
+  // console.log( (latestDate.getFullYear() - year.value - 1 )* 12 );
+  let num = (latestDate.getFullYear() - year.value - 1) * 12;
+  console.log(num + latestDate.getMonth() + ">> TOTAL-MONTHS");
+
+  console.log(latestDate.getDate() + ">> DAYS");
+
+  let num2 = num * 30;
+  console.log(num2);
+});
