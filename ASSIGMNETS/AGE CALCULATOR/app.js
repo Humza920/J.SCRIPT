@@ -25,6 +25,10 @@ form.addEventListener("submit", (e) => {
     console.log(ageMonth);
     let ageDays = ageMonth * 30;
     console.log(ageDays);
+
+    div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
+
+    console.log(div.innerHTML);
   }
 
   if (month.value > monTh) {
@@ -34,83 +38,29 @@ form.addEventListener("submit", (e) => {
     console.log(ageMonth);
     let ageDays = ageMonth * 30;
     console.log(ageDays);
+
+    div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
+
+    const hoursBtn = document.querySelector("#Btn-3");
+    const headThree = document.querySelector("#head-3");
+    console.log(div.innerHTML);
+
+    hoursBtn.addEventListener("click", (e) => {
+      e.preventDefault()
+      ageHours = ageDays * 24
+      console.log(ageHours);
+      headThree.innerHTML += `
+      YOU LIVE ${ageHours} HOURS ON EARTH SINCE YOUR BIRTH.
+      `
+    });
   }
 
-  testTwo = testTwo * 12 + latestDate.getMonth();
-  agedays = testTwo * 30;
-  console.log(agedays);
-
-  let hours = latestDate.getHours();
-  console.log(hours);
-
-  let mins = latestDate.getMinutes();
-  console.log(mins);
-
-  let sec = latestDate.getSeconds();
-  console.log(sec);
-
-  div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
-
-  console.log(div.innerHTML);
-
-  const monthBtn = document.querySelector("#Btn-1");
-  const headOne = document.querySelector("#head-1");
-  const daysBtn = document.querySelector("#Btn-2");
-  const headTwo = document.querySelector("#head-2");
-  const hoursBtn = document.querySelector("#Btn-3");
-  const headThree = document.querySelector("#head-3");
   const minutesBtn = document.querySelector("#Btn-4");
   const headFour = document.querySelector("#head-4");
   const secondsBtn = document.querySelector("#Btn-5");
   const headFive = document.querySelector("#head-5");
 
-  //   monthBtn.addEventListener("click", (e) => {
-  //     e.preventDefault();
-
-  //     let testOne = latestDate.getFullYear() - year.value - 1;
-
-  //     testOne = testOne * 12 + latestDate.getMonth();
-  //     console.log(testOne);
-  //     headOne.innerHTML += `
-  // YOU LIVE ${testOne} MONTHS ON EARTH SINCE YOUR BIRTH.`;
-  //   });
-
-  daysBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let testTwo = latestDate.getFullYear() - year.value - 1;
-
-    testTwo = testTwo * 12 + latestDate.getMonth();
-    testTwo = testTwo * 30;
-    console.log(testTwo);
-    headTwo.innerHTML += `
-YOU LIVE ${testTwo} DAYS ON EARTH SINCE YOUR BIRTH.
-`;
-  });
-
-  hoursBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let testThree = latestDate.getFullYear() - year.value - 1;
-
-    testThree = testThree * 12 + latestDate.getMonth();
-    testThree = testThree * 30;
-    testThree = testThree * 24;
-    if (ageHours >= 12 && ageHours <= 24) {
-      testThree = testThree + (24 - ageHours);
-    }
-
-    if (ageHours >= 1 && ageHours <= 11) {
-      testThree = testThree + (12 - ageHours);
-    } else {
-      testThree;
-    }
-    console.log(testThree);
-    headThree.innerHTML += `
-YOU LIVE ${testThree} HOURS ON EARTH SINCE YOUR BIRTH.
-`;
-  });
-
+ 
   minutesBtn.addEventListener("click", (e) => {
     e.preventDefault();
 
