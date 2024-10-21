@@ -11,6 +11,7 @@ form.addEventListener("submit", (e) => {
   date.setMonth(month.value - 1);
   date.setDate(day.value);
   date.setFullYear(year.value);
+  // console.log(userMonth / (1000 * 60 * 60 * 24 * 30));
 
   console.log(date);
 
@@ -19,22 +20,23 @@ form.addEventListener("submit", (e) => {
   let ageYear = latestDate.getFullYear() - year.value;
   console.log(ageYear);
 
-  let ageMonth = latestDate.getMonth() + 1;
+  let Month = latestDate.getMonth() + 1;
+
+  let ageMonth = ageYear * 12;
   console.log(ageMonth);
 
-  let ageDays = latestDate.getDate();
-  console.log(ageDays);
+  let days = latestDate.getDate();
+  console.log(days);
 
-  let ageHours = latestDate.getHours();
-  console.log(ageHours);
+  let hours = latestDate.getHours();
+  console.log(hours);
 
-  let ageMins = latestDate.getMinutes();
-  console.log(ageMins);
+  let mins = latestDate.getMinutes();
+  console.log(mins);
 
-  let ageSec = latestDate.getSeconds();
-  console.log(ageSec);
+  let sec = latestDate.getSeconds();
+  console.log(sec);
 
-  
   // if (month.value < ageMonth) {
   //   ageYear + 1;
   // }
@@ -58,16 +60,16 @@ form.addEventListener("submit", (e) => {
   const secondsBtn = document.querySelector("#Btn-5");
   const headFive = document.querySelector("#head-5");
 
-  monthBtn.addEventListener("click", (e) => {
-    e.preventDefault();
+  //   monthBtn.addEventListener("click", (e) => {
+  //     e.preventDefault();
 
-    let testOne = latestDate.getFullYear() - year.value - 1;
+  //     let testOne = latestDate.getFullYear() - year.value - 1;
 
-    testOne = testOne * 12 + latestDate.getMonth();
-    console.log(testOne);
-    headOne.innerHTML += `
-YOU LIVE ${testOne} MONTHS ON EARTH SINCE YOUR BIRTH.`;
-  });
+  //     testOne = testOne * 12 + latestDate.getMonth();
+  //     console.log(testOne);
+  //     headOne.innerHTML += `
+  // YOU LIVE ${testOne} MONTHS ON EARTH SINCE YOUR BIRTH.`;
+  //   });
 
   daysBtn.addEventListener("click", (e) => {
     e.preventDefault();
