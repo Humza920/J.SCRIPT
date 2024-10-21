@@ -34,13 +34,14 @@ form.addEventListener("submit", (e) => {
   let ageSec = latestDate.getSeconds();
   console.log(ageSec);
 
-  if (month.value < ageMonth) {
-    ageYear + 1;
-  }
+  
+  // if (month.value < ageMonth) {
+  //   ageYear + 1;
+  // }
 
-  if (month.value > ageMonth) {
-    ageYear = ageYear - 1;
-  }
+  // if (month.value > ageMonth) {
+  //   ageYear = ageYear - 1;
+  // }
 
   div.innerHTML += `<h2>YOUR AGE IS ${ageYear} YEARS , ${ageMonth} MONTHS AND ${ageDays} DAYS.</h2>`;
 
