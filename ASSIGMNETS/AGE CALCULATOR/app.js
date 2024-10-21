@@ -42,6 +42,33 @@ form.addEventListener("submit", (e) => {
       YOU LIVE ${ageHours} HOURS ON EARTH SINCE YOUR BIRTH.
       `;
     });
+
+    const minutesBtn = document.querySelector("#Btn-4");
+    const headFour = document.querySelector("#head-4");
+
+    minutesBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      ageMins = ageDays * 24;
+      ageMins = ageMins * 60;
+      console.log(ageMins);
+      headFour.innerHTML += `
+      YOU LIVE ${ageMins} MINUTES ON EARTH SINCE YOUR BIRTH.
+      `;
+    });
+
+    const secondsBtn = document.querySelector("#Btn-5");
+    const headFive = document.querySelector("#head-5");
+
+    secondsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      ageMins = ageDays * 24;
+      ageMins = ageMins * 60;
+      ageSec = ageMins * 60;
+      console.log(ageSec);
+      headFive.innerHTML += `
+      YOU LIVE ${ageSec} SECONDS ON EARTH SINCE YOUR BIRTH.
+      `;
+    });
   }
 
   if (month.value > monTh) {
@@ -70,37 +97,28 @@ form.addEventListener("submit", (e) => {
     const minutesBtn = document.querySelector("#Btn-4");
     const headFour = document.querySelector("#head-4");
 
-    minutesBtn.addEventListener("click" , (e) =>{
+    minutesBtn.addEventListener("click", (e) => {
       e.preventDefault();
       ageMins = ageDays * 24;
-      ageMins = ageMins * 60
+      ageMins = ageMins * 60;
       console.log(ageMins);
       headFour.innerHTML += `
       YOU LIVE ${ageMins} MINUTES ON EARTH SINCE YOUR BIRTH.
       `;
-      
-    })
+    });
+
+    const secondsBtn = document.querySelector("#Btn-5");
+    const headFive = document.querySelector("#head-5");
+
+    secondsBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      ageMins = ageDays * 24;
+      ageMins = ageMins * 60;
+      ageSec = ageMins * 60;
+      console.log(ageSec);
+      headFive.innerHTML += `
+      YOU LIVE ${ageSec} SECONDS ON EARTH SINCE YOUR BIRTH.
+      `;
+    });
   }
-
-
-  const secondsBtn = document.querySelector("#Btn-5");
-  const headFive = document.querySelector("#head-5");
-
-  
-
-  secondsBtn.addEventListener("click", (e) => {
-    e.preventDefault();
-
-    let testFive = latestDate.getFullYear() - year.value - 1;
-
-    testFive = testFive * 12 + latestDate.getMonth();
-    testFive = testFive * 30;
-    testFive = testFive * 24;
-    testFive = testFive * 60;
-    testFive = testFive * 60 + ageSec;
-    console.log(testFive);
-    headFive.innerHTML += `
-YOU LIVE ${testFive} SECONDS ON EARTH SINCE YOUR BIRTH.
-`;
-  });
 });
