@@ -9,9 +9,6 @@ const div = document.querySelector("#div1");
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // month.value = ""
-  // day.value = ""
-  // year.value = ""
   div.innerHTML = ""
 
   const date = new Date();
@@ -43,6 +40,7 @@ form.addEventListener("submit", (e) => {
 
     hoursBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headThree.innerHTML = "";
       ageHours = ageDays * 24;
       console.log(ageHours);
       headThree.innerHTML += `
@@ -55,6 +53,7 @@ form.addEventListener("submit", (e) => {
 
     minutesBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFour.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       console.log(ageMins);
@@ -68,6 +67,7 @@ form.addEventListener("submit", (e) => {
 
     secondsBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFive.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       ageSec = ageMins * 60;
@@ -96,6 +96,7 @@ form.addEventListener("submit", (e) => {
 
     hoursBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headThree.innerHTML = ""
       ageHours = ageDays * 24;
       console.log(ageHours);
       headThree.innerHTML += `
@@ -108,6 +109,7 @@ form.addEventListener("submit", (e) => {
 
     minutesBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFour.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       console.log(ageMins);
@@ -121,6 +123,7 @@ form.addEventListener("submit", (e) => {
 
     secondsBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFive.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       ageSec = ageMins * 60;
@@ -151,6 +154,7 @@ form.addEventListener("submit", (e) => {
   
       hoursBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        headThree.innerHTML = ""
         ageHours = ageDays * 24;
         console.log(ageHours);
         headThree.innerHTML += `
@@ -163,6 +167,7 @@ form.addEventListener("submit", (e) => {
   
       minutesBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        headFour.innerHTML = ""
         ageMins = ageDays * 24;
         ageMins = ageMins * 60;
         console.log(ageMins);
@@ -176,6 +181,7 @@ form.addEventListener("submit", (e) => {
   
       secondsBtn.addEventListener("click", (e) => {
         e.preventDefault();
+        headFive.innerHTML = ""
         ageMins = ageDays * 24;
         ageMins = ageMins * 60;
         ageSec = ageMins * 60;
@@ -204,6 +210,7 @@ form.addEventListener("submit", (e) => {
 
     hoursBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headThree.innerHTML = ""
       ageHours = ageDays * 24;
       console.log(ageHours);
       headThree.innerHTML += `
@@ -216,6 +223,7 @@ form.addEventListener("submit", (e) => {
 
     minutesBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFour.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       console.log(ageMins);
@@ -229,6 +237,7 @@ form.addEventListener("submit", (e) => {
 
     secondsBtn.addEventListener("click", (e) => {
       e.preventDefault();
+      headFive.innerHTML = ""
       ageMins = ageDays * 24;
       ageMins = ageMins * 60;
       ageSec = ageMins * 60;
@@ -238,4 +247,8 @@ form.addEventListener("submit", (e) => {
       `;
     });
   }
+
+  month.value = ""
+  day.value = ""
+  year.value = ""
 });
