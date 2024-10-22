@@ -1,92 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <style>
-      body {
-        font-family: sans-serif;
-      }
-      button {
-        cursor: pointer;
-      }
-    </style>
-    <title>Document</title>
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="style.css" />
   </head>
-  <body style="font-family: sans-serif; text-align: center">
-    <h1>AGE CALCULATOR</h1>
-    <br /><br />
-    <form style="display: flex; justify-content: center; gap: 20px">
-      <input
-        type="number"
-        name="month"
-        id="month"
-        placeholder="ENTER MONTH"
-        minlength="1"
-        maxlength="12"
-      /><br /><br />
-      <input
-        type="number"
-        name="days"
-        id="days"
-        placeholder="ENTER DAY"
-        minlength="1"
-        maxlength="31"
-      /><br /><br />
-      <input
-        type="number"
-        name="year"
-        id="year"
-        placeholder="ENTER YEAR"
-        minlength="1900"
-        maxlength="2024"
-      /><br /><br />
-      <button type="submit">SUMBIT</button>
-    </form>
+  <body>
+    <div class="container">
+      <h1>AGE CALCULATOR</h1>
+      <form>
+        <input
+          type="number"
+          name="month"
+          id="month"
+          placeholder="ENTER MONTH"
+          minlength="1"
+          maxlength="12"
+        />
+        <input
+          type="number"
+          name="days"
+          id="days"
+          placeholder="ENTER DATE"
+          minlength="1"
+          maxlength="31"
+        />
+        <input
+          type="number"
+          name="year"
+          id="year"
+          placeholder="ENTER YEAR"
+          minlength="1900"
+          maxlength="2024"
+        />
+        <button type="submit">SUBMIT</button>
+      </form>
 
-    <div
-      style="display: flex; justify-content: center; margin-top: 30px"
-      id="div1"
-    ></div>
+      <div id="div1"></div>
 
-    <div
-      style="display: flex; justify-content: space-between; margin-top: 30px"
-    >
-      <button
-        type="button"
-        style="margin-top: 50px; padding: 20px; border-radius: 8px"
-        id="Btn-3"
-      >
-        YOUR TOTAL HOURS ON EARTH
-      </button>
-      <!-- <h3 id="head-3"> </h3> -->
+      <div>
+        <button type="button" id="Btn-3">YOUR TOTAL HOURS ON EARTH</button>
+        <button type="button" id="Btn-4">YOUR TOTAL MINUTES ON EARTH</button>
+        <button type="button" id="Btn-5">YOUR TOTAL SECONDS ON EARTH</button>
+      </div>
 
-      <button
-        type="button"
-        style="margin-top: 50px; padding: 20px; border-radius: 8px"
-        id="Btn-4"
-      >
-        YOUR TOTAL MINUTES ON EARTH
-      </button>
-      <!-- <h3 id="head-4"> </h3> -->
-
-      <button
-        type="button"
-        style="margin-top: 50px; padding: 20px; border-radius: 8px"
-        id="Btn-5"
-      >
-        YOUR TOTAL SECONDS ON EARTH
-      </button>
-      <!-- <h3 id="head-5"> </h3> -->
+      <h3 id="head-3"></h3>
+      <h3 id="head-4"></h3>
+      <h3 id="head-5"></h3>
     </div>
 
-    <h3 id="head-3" style="text-align: center"></h3>
-    <br /><br />
-    <h3 id="head-4" style="text-align: center"></h3>
-    <br /><br />
-    <h3 id="head-5" style="text-align: center"></h3>
-    <br /><br />
-
-    <script src="app.js">
-      app
-    </script>
+    <script src="app.js"></script>
   </body>
 </html>
