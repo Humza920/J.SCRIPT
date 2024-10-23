@@ -76,6 +76,7 @@ form.addEventListener("submit", (e) => {
       YOU LIVE ${ageSec} SECONDS ON EARTH SINCE YOUR BIRTH.
       `;
     });
+
   }
 
   // CONDITION NO 2
