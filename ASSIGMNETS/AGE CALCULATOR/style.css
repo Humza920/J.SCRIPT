@@ -36,6 +36,10 @@ h1 {
   text-transform: uppercase;
 }
 
+h2 {
+  font-size: x-large;
+}
+
 /* Form styling */
 form {
   display: flex;
@@ -69,7 +73,7 @@ button[type="submit"] {
 }
 
 button[type="submit"]:hover {
-  background-color: #45a049;
+  background-color: #407a43;
 }
 
 /* Button styles for calculating time on earth */
@@ -87,14 +91,14 @@ div > button {
 }
 
 div > button:hover {
-  background-color: #e68900;
+  background-color: #be7c17;
 }
 
 /* Result Display */
 h3 {
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 20px;
+  font-size: 1rem;
+  color: #4b4949;
+  /* margin-top: 0px; */
 }
 
 /* Responsive Design */
