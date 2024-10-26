@@ -9,10 +9,6 @@ button.addEventListener("click", (e) => {
   arr.push(todo.value);
   console.log(arr);
 
-  localStorage.setItem("todo", JSON.stringify(arr));
-  const get = localStorage.getItem("todo");
-  console.log(get);
-
   list.innerHTML = "";
   for (let i = 0; i < arr.length; i++) {
     list.innerHTML += `
@@ -22,20 +18,11 @@ button.addEventListener("click", (e) => {
 
   todo.value = "";
 
-const btnOne = document.querySelector("#btn-1")
-const btnTwo = document.querySelector("#btn-2")
+  const btnOne = document.querySelector("#btn-1");
+  const btnTwo = document.querySelector("#btn-2");
 
-btnOne.addEventListener("click" , (e) =>{
-  e.preventDefault()
-  arr.splice( e , 1 , prompt("ENTER UPDATED TODO"))
-})
-
+  btnOne.addEventListener("click", (e) => {
+    e.preventDefault();
+    arr.splice(e, 1, prompt("ENTER UPDATED TODO"));
+  });
 });
-
-
-
-
-
-
-
-
