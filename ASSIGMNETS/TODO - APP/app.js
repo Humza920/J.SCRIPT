@@ -7,22 +7,57 @@ button.addEventListener("click", (e) => {
   e.preventDefault();
 
   arr.push(todo.value);
+
   console.log(arr);
 
-  list.innerHTML = "";
-  for (let i = 0; i < arr.length; i++) {
-    list.innerHTML += `
-    <li>${arr[i]} <button id = "btn-1">Edit</button> <button id = "btn-2">Delete</button></li>    
-    `;
-  }
+  render();
 
   todo.value = "";
-
-  const btnOne = document.querySelector("#btn-1");
-  const btnTwo = document.querySelector("#btn-2");
-
-  btnOne.addEventListener("click", (e) => {
-    e.preventDefault();
-    arr.splice(e, 1, prompt("ENTER UPDATED TODO"));
-  });
 });
+
+function render() {
+  list.innerHTML = "";
+  arr.forEach((item, index) => {
+    list.innerHTML += `<li>
+  ${item}
+  <button class="edit" data-index="${index}">Edit</button>
+  <button class="delete" data-index="${index}">Delete</button>
+  </li>`;
+  });
+
+  const edit = document.querySelectorAll(".edit");
+
+  edit.forEach((button) => {
+    button.addEventListener("click", (e) => {
+      // e.preventDefault();
+      const index = e.target.dataset.index;
+      const upDate = prompt("ENTer", arr[index]);
+      console.log(upDate);
+
+      if (upDate) {
+        arr[index] = upDate;
+        render();
+      }
+    });
+  });
+
+  const deleted = document.querySelectorAll(".delete");
+
+  deleted.forEach((deleteIt) => {
+    deleteIt.addEventListener("click", (e) => {
+      const index = e.target.dataset.index;
+      arr.splice(index, 1);
+      render();
+    });
+  });
+}
+
+//  BY USING FOR LOOP
+
+// function render() {
+//     list.innerHTML = "";
+//     for (let index = 0; index < arr.length; index++) {
+//       list.innerHTML += `
+//       <li>${arr[index]} <button class = "edit" data-index="${index}">Edit</button> <button id = "btn-2">Delete</button></li>
+//       `;
+//     }
