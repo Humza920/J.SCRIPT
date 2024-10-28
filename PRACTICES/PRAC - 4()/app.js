@@ -33,8 +33,11 @@ newElement.innerHTML = `
 HUMZA REHMAN
 `;
 // newElement.style.cssText = "color : white ; background-color : black;"
-newElement.className = "class-1 , class-2 , class-3"
-// newElement.classList.remove("class-3") classlist.remove
-// newElement.classList.add("class-4") classlist.add
-newElement.classList.replace("class-3" , "class-4")
+newElement.className = "class-1  class-2  class-3"
+newElement.classList.remove("class-3") 
+newElement.classList.add("class-4") 
+newElement.classList.toggle("class-4" , true) 
+newElement.classList.toggle("class-4" , false) 
+// newElement.classList.replace("class-3" , "class-4")
 div.appendChild(newElement)
+
