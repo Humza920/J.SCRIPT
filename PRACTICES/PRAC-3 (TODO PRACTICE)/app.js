@@ -28,3 +28,9 @@ function edit(id) {
     todoItem.innerHTML = ` <li>${prompt("ENTER")}</li> <button onclick = "edit(${id})">Edit</button> <button onclick = "remove(${id})">Delete</button>
     `
 }
+
+function remove(id) {
+    const todoItem = document.getElementById(id)
+    const parent = todoItem.parentNode
+    parent.removeChild(todoItem)
+}
