@@ -17,6 +17,10 @@
   }
 }
 
+h1 {
+  font-size: 60px;
+}
+
 h1,
 h2 {
   color: #ffffff;
