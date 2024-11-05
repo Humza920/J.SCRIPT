@@ -1,0 +1,88 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes background-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+h1,
+h2 {
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0px 0px 15px rgba(255, 255, 255, 0.5);
+}
+
+.glow-text {
+  text-shadow: 0px 0px 10px rgba(0, 198, 255, 0.7);
+}
+
+.button-change {
+  padding: 15px 40px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #fff;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #00c6ff);
+  border: none;
+  border-radius: 50px;
+  box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.3), 0 0 15px rgba(0, 198, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  position: relative;
+  overflow: hidden;
+  outline: none;
+  background-size: 200% 200%;
+  animation: gradient-animation 5s ease infinite;
+}
+
+@keyframes gradient-animation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.button-change:hover {
+  transform: translateY(-5px) scale(1.1);
+  box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 198, 255, 0.8);
+}
+
+.button-change::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.15);
+  transform: rotate(45deg);
+  transition: all 0.7s ease;
+  border-radius: inherit;
+}
+
+.button-change:hover::before {
+  left: 150%;
+}
+
+.button-change:active {
+  transform: translateY(3px);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2), 0 0 15px rgba(0, 198, 255, 0.6);
+  background: linear-gradient(135deg, #2575fc, #6a11cb, #ff00e6);
+}
