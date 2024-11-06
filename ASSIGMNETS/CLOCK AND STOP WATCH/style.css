@@ -1,0 +1,85 @@
+/* Full height for the background */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+}
+
+.hite {
+    height: 100vh;
+}
+
+/* Background gradient with a soft radial glow */
+body.bg-dark {
+    background: radial-gradient(circle, rgba(34, 193, 195, 0.3), rgba(34, 34, 44, 1));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+/* Centered text with glowing effect */
+h1, h2 {
+    font-weight: bold;
+    text-align: center;
+    color: #ffffff;
+    text-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5), 0px 0px 20px rgba(255, 255, 255, 0.3);
+}
+
+h1 {
+    font-size: 5rem;
+}
+
+h2 {
+    font-size: 4rem;
+}
+
+/* Button styling */
+button {
+    background: transparent;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 600;
+    padding: 15px 40px;
+    border: 2px solid #fff;
+    border-radius: 30px;
+    cursor: pointer;
+    text-transform: uppercase;
+    outline: none;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.6);
+    margin-top: 30px;
+}
+
+#buttons-set{
+    gap: 10px;
+}
+
+/* Button hover effect */
+button:hover {
+    background: rgba(255, 255, 255, 0.2);
+    color: #34c1c3;
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.8), 0 0 40px rgba(34, 193, 195, 1);
+    transform: scale(1.1);
+}
+
+/* Button active effect */
+button:active {
+    transform: scale(0.98);
+}
+
+/* Smaller screens adjustments */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    button {
+        font-size: 1.2rem;
+        padding: 12px 30px;
+    }
+}
+
