@@ -1,48 +1,43 @@
+const btn = document.querySelector("#btn")
+const start = document.querySelector("#start")
+const pause = document.querySelector("#Pause")
 const h2 = document.querySelector("h2")
+let hour = 0 
+let minute  = 0
+let second = 0
+let interval = null 
 
-let me  ;
-let you ;
-let we ; 
-function start () {
-let sec = 0
-let mins = 0
-let hours = 0 
-const sixTy = 60
-const twoFour = 24
+start.addEventListener("click" , ()=>{
 
-me = setInterval(function () {
-sec += 1
+    if (interval === null) {
+        interval = setInterval(() => {
+            second++
+            if (second === 60) {
+                minute++
+                second = 0
+            } 
+            if (minute == 60) {
+                hour++
+                minute = 0
+                }
+            
+                h2.innerHTML = `${hour.toString().padStart(2 , "0")} : ${minute.toString().padStart(2 , "0")} : ${second.toString().padStart(2 , "0")}`
+        }, 1000); 
+    }
 
-if (sec === sixTy) {
-      sec = 0 } 
-} , 1000 )
-
-you = setInterval(function () {
-mins += 1
-
-if (mins === sixTy) {
-    mins = 0  } 
-} , 60000)
-
-we = setInterval(function () {
-hours += 1
-if (hours === twoFour) {
-    hours = 0 } 
-} , 6000000)
-
-h2.innerHTML = `${hours} : ${mins} : ${sec}`
-setInterval(start, 1000);
-}
+    pause.addEventListener("click" , (e)=>{
+        e.preventDefault()
+        if (interval) {
+            clearInterval(interval)
+            interval = null
+        }
+    })
+    })
 
 
 
 
-function reset () {
-    location.reload()
-}
-
-
-function pause () {
-    clearInterval(me,you,we)
-}
-
+btn.addEventListener("click" , (e)=>{
+    e.preventDefault()
+    window.location = "index.html"
+})
