@@ -1,8 +1,8 @@
 const h1 = document.querySelector("h1");
 const h2 = document.querySelector("h2");
-const btn = document.querySelector("button")
+const btn = document.querySelector("button");
 
- function clock() {
+function clock() {
   const currentdate = new Date();
 
   let hours = currentdate.getHours();
@@ -21,10 +21,10 @@ const btn = document.querySelector("button")
     h2.innerHTML = `${hours} : ${mins} : ${sec} ${pm}`;
   }
   setInterval(clock, 1000);
-};
-clock()
+}
+clock();
 
-btn.addEventListener("click" , (e)=>{
-  e.preventDefault()
-  window.location = "stopwatch.html"
-})
+btn.addEventListener("click", (e) => {
+  e.preventDefault();
+  window.location = "stopwatch.html";
+});
