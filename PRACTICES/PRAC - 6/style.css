@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background: radial-gradient(circle, #ece9e6, #ffffff);
+}
+
+.container {
+    background-color: #ffffff;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+#inp {
+    width: 85%;
+    padding: 12px;
+    margin-bottom: 1rem;
+    border: 2px solid #d1d1d1;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+#inp:focus {
+    border-color: #4a90e2;
+    outline: none;
+}
+
+#Btn {
+    width: 90%;
+    padding: 10px;
+    background-color: #4a90e2;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#Btn:hover {
+    background-color: #357abd;
+}
+
+#users {
+    margin-top: 2rem;
+}
+
+.user-card {
+    background-color: #f3f4f6;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #333;
+    transition: transform 0.2s;
+}
+
+.user-card:hover {
+    transform: scale(1.02);
+}
+
+button.update, button.remove {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+button.update {
+    background-color: #ffb74d;
+    color: #fff;
+    margin-right: 5px;
+}
+
+button.update:hover {
+    background-color: #ffa726;
+}
+
+button.remove {
+    background-color: #e57373;
+    color: #fff;
+}
+
+button.remove:hover {
+    background-color: #ef5350;
+}
