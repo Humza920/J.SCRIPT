@@ -19,29 +19,22 @@
 // fizzBuzz(+prompt("ENTER NUMBER"));
 
 const str = "javascript";
+let count = {};
 
 function check(str) {
   console.log(str);
-  let count = [];
 
-  // for (let i = 0; i < str.length; i++) {
-  //     console.log(str[i]);
-  //     console.log(count[i]);
-
-  //     // if (count[i]) {
-
-  //     // }
-  // }
-  for (const i of str) {
-    // console.log(i);
-    // console.log(str);
-    if (count[i]) {
-      count[i]++;
-    } else {
-    count[i] = 1;
-    }
+  for (let i = 0; i < str.length; i++) {
+      console.log(str[i]);
+      if (count[str[i]]) {
+        count[str[i]]++
+      } else {
+        count[str[i]] = 1
+      }
   }
+
   return count;
 }
 console.log(check(str));
 
+console.log(count[0]);
