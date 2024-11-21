@@ -22,10 +22,19 @@ function rendering() {
   for (let i = 0; i < usersArray.length; i++) {
     const ul = document.createElement("ul");
     const li = document.createElement("li");
-
+    const btnEdit = document.createElement("button");
+    btnEdit.setAttribute("class", "update");
+    btnEdit.setAttribute("onclick", `updateTodo(${i})`);
+    btnEdit.innerText = "Update";
+    const btnDel = document.createElement("button");
+    btnDel.setAttribute("onclick", `deleteTodo(${i})`);
+    btnEdit.setAttribute("class", "delete");
+    btnDel.innerText = "Delete";
     ul.appendChild(li);
-    li.innerHTML += `${usersArray[i].name} <button onclick = "updateTodo(${i})" class="update">Edit</button> <button 
-        onclick = "deleteTodo(${i})" class="remove">Delete</button>`;
+    ul.appendChild(btnEdit);
+    ul.appendChild(btnDel);
+
+    li.innerHTML += `${usersArray[i].name} `;
     div.appendChild(ul);
 
     if (usersArray[i].name === undefined) {
@@ -43,4 +52,9 @@ function deleteTodo(remove) {
   console.log(delete usersArray[remove].name);
 
   rendering();
+}
+
+{
+  /* <button onclick = "updateTodo(${i})" class="update">Edit</button> <button 
+        onclick = "deleteTodo(${i})" class="remove">Delete</button> */
 }

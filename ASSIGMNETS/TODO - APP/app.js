@@ -6,13 +6,17 @@ let arr = [];
 button.addEventListener("click", (e) => {
   e.preventDefault();
 
-  arr.push(todo.value);
+  if (todo.value === "") {
+    alert("PLZ ENTER TODO FIRST");
+  } else {
+    arr.push(todo.value);
 
-  console.log(arr);
+    console.log(arr);
 
-  render();
+    render();
 
-  todo.value = "";
+    todo.value = "";
+  }
 });
 
 function render() {
@@ -29,12 +33,14 @@ function render() {
 
   edit.forEach((button) => {
     button.addEventListener("click", (e) => {
-      // e.preventDefault();
       const index = e.target.dataset.index;
       const upDate = prompt("ENTer", arr[index]);
       console.log(upDate);
 
-      if (upDate) {
+      if (upDate === "") {
+       alert("Enter Updated Todo")
+      }
+      else{
         arr[index] = upDate;
         render();
       }

@@ -57,3 +57,29 @@
 // }
 
 // check(str);
+
+const arr = ["listen", "silent", "enlist", "hello", "ohlle"];
+let obj;
+let empty = [];
+function anagrams(arr) {
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = i + 1; j < arr.length; j++) {
+      if (
+        arr[i].split("").sort().join("") === arr[j].split("").sort().join("")
+      ) {
+        obj = {
+          anagram: [arr[i], arr[j]],
+        };
+        empty.push(obj);
+        console.log(empty);
+      }
+    }
+  }
+  return empty
+}
+
+console.log(anagrams(arr));
+
+// let arr = ["string" , "bolean" , "number"]
+
+// console.log(arr[1].split("").sort().join());

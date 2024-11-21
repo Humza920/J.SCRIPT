@@ -76,16 +76,20 @@ const surveyQuestions = [
 ];
 
 const ul = document.querySelector("ul");
+let inp;
 
-console.log(ul);
-function survey() {}
+function survey() {
+
+  render
+}
+
 
 function render() {
   for (let i = 0; i < surveyQuestions.length; i++) {
-    ul.innerHTML += `<li>${surveyQuestions[i].question}</li> <br>
-    <input type = "${surveyQuestions[i].type}">`;
-
+    ul.innerHTML += `<li>${surveyQuestions[i].question}</li> <br>${inp}`;
+    console.log("run");
+    }
   }
-}
-render();
+
+survey();
 //   Buttons.Conditions

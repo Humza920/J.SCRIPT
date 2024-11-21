@@ -1,35 +1,44 @@
 // Get HTML Elements
-const list = document.querySelector("ul")
-const inpVal = document.querySelector("#todo")
-let arr = []
+const list = document.querySelector("ul");
+const inpVal = document.querySelector("#todo");
+let arr = [];
 
 // Add Todo Function
-function addTodo () {
-    console.log(inpVal.value);
-    arr.push(inpVal.value)
+function addTodo() {
+  console.log(inpVal.value);
+  if (inpVal.value === "") {
+    alert("ENTER TODO FIRST");
+  } else {
+    arr.push(inpVal.value);
     console.log(arr);
-    rendering()
-    inpVal.value = ""
+    rendering();
+    inpVal.value = "";
+  }
 }
 
 // Render Screen Function
-function rendering () {
-    list.innerHTML = ""
-    for (let i = 0; i < arr.length; i++) {
-        list.innerHTML += `
+function rendering() {
+  list.innerHTML = "";
+  for (let i = 0; i < arr.length; i++) {
+    list.innerHTML += `
         <li>${arr[i]} <button onclick = "edit(${i})" >Edit</button>
-        <button onclick = "deleted(${i})" >Delete</button></li>`   
-    }
+        <button onclick = "deleted(${i})" >Delete</button></li>`;
+  }
 }
 
 // Edit Function
-function edit (replace) {
-    arr.splice(replace , 1 , prompt("Update to do"))
-    rendering()
+function edit(replace) {
+  let pom = prompt("Update to do");
+  if (pom === "") {
+    alert("ENTER UPDATED TODO");
+  } else {
+    arr.splice(replace, 1, pom);
+    rendering();
+  }
 }
 
 // Delete Function
-function deleted (remove) {
-    arr.splice(remove , 1)
-    rendering()
+function deleted(remove) {
+  arr.splice(remove, 1);
+  rendering();
 }
