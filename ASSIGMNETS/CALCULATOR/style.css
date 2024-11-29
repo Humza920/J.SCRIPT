@@ -20,11 +20,17 @@
             overflow: hidden;
         }
 
+        input[type="number"]::-webkit-inner-spin-button,
+        input[type="number"]::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            margin: 0
+            }
+            
         .display {
-            width: 100%;
+            width: 90%;
             background: #eef2f3;
             padding: 25px;
-            text-align: right;
+            text-align: left;
             font-size: 2rem;
             border: none;
             outline: none;
