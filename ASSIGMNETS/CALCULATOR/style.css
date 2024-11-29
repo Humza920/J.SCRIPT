@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+        }
+
+        .calculator {
+            width: 90%;
+            max-width: 380px;
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+            overflow: hidden;
+        }
+
+        .display {
+            width: 100%;
+            background: #eef2f3;
+            padding: 25px;
+            text-align: right;
+            font-size: 2rem;
+            border: none;
+            outline: none;
+            color: #333;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .buttons {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 12px;
+            padding: 20px;
+            background: #f7f8fc;
+        }
+
+        button {
+            background: #f1f3f6;
+            border: none;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #555;
+            padding: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        button:hover {
+            background: #e9ecf1;
+        }
+
+        button:active {
+            transform: scale(0.95);
+        }
+
+        button.operator {
+            background: #4c84ff;
+            color: #fff;
+        }
+
+        button.operator:hover {
+            background: #3a6fe8;
+        }
+
+        button.operator:active {
+            box-shadow: none;
+        }
+
+        button.span-2 {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 480px) {
+            .display {
+                font-size: 1.5rem;
+                padding: 20px;
+            }
+
+            button {
+                font-size: 1rem;
+                padding: 12px;
+            }
+        }
