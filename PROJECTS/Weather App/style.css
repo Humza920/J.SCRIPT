@@ -74,16 +74,21 @@ body {
 
 .details {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   margin-top: 70px;
+  flex-direction: row; /* Keeps row layout by default */
+  flex-wrap: wrap; /* Ensures items can wrap properly if necessary */
 }
 
 .colomn {
   display: flex;
   align-items: center;
   text-align: left;
+  margin-bottom: 20px; /* Adds spacing between columns */
+  flex-direction: row; /* Keeps column items in row by default */
 }
+
 .colomn img {
   width: 50px;
   margin-bottom: 5px;
@@ -99,5 +104,52 @@ body {
 
 .speed,
 .humity {
-  margin-bottom: 0px;
+  margin-bottom: 0;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  #card {
+    padding: 20px;
+  }
+
+  .searchbox {
+    flex-wrap: nowrap; /* Prevents stacking of input and button */
+    justify-content: space-between;
+  }
+
+  .details {
+    flex-direction: row; /* Keeps row layout for details */
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .colomn {
+    flex-direction: column; /* Switch to column layout on smaller screens */
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  #card {
+    padding: 15px;
+  }
+
+  .searchbox input {
+    font-size: 16px; /* Adjust font size for smaller screens */
+  }
+
+  .details {
+    margin-top: 50px; /* Adjust top margin for details */
+    flex-direction: row; /* Keep row layout for details */
+  }
+
+  .colomn img {
+    width: 40px; /* Adjust image size for smaller screens */
+  }
+
+  .humid,
+  .wind {
+    font-size: 20px; /* Adjust font size for smaller screens */
+  }
 }
