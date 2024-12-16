@@ -27,3 +27,46 @@ body {
   border-bottom: 1px solid #333;
   padding-bottom: 30px;
 }
+
+.quiz{
+    padding: 20px 0;
+}
+
+.quiz h2{
+    font-size: 18px;
+    color: #001e4d;
+    font-weight: 500;
+}
+
+.btn{
+    width: 100%;
+    color: #222;
+    background-color: #ffffff;
+    border: 1px solid #222;
+    border-radius: 4px;
+    text-align: left;
+    padding: 10px;
+    margin: 10px 0;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn:hover{
+    background-color: #222;
+    color: #ffffff;
+}
+
+
+#next{
+    width: 150px;
+    background-color: #001e4d;
+    color:#ffffff;
+    border: 0;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    padding: 10px;
+    margin: 20px auto 0;
+    display:block;
+}
