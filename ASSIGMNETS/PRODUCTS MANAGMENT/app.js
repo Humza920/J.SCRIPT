@@ -107,13 +107,36 @@ products.map((item) => {
               </span>
             </div>
             <h6 class="mt-3 text-success fw-bold">$${item.price}</h6>
-            <button class="btn btn-outline-primary mt-auto w-100">Delete</button>
+            <button id = "del" class = "btn btn-outline-primary mt-auto w-100" data-index = ${item.id}>Delete</button>
           </div>
         </div>
     `;
 });
 
-  products.filter( (item)=>{
-console.log(item);
+let delButton = document.querySelectorAll("#del")
 
-  } )
+delButton.forEach((butn)=>{
+  butn.addEventListener("click" , (e)=>{
+    console.log("click" );  
+    e.preventDefault()
+    let index = e.target.dataset.index
+    console.log(index);
+    
+    products.filter( (x)=>{
+      return index !== x.index
+      }).map((x)=>{
+        console.log(x.name);
+        
+            })
+      
+      
+    } )
+
+    
+  })
+
+
+console.log(delButton);
+
+
+
