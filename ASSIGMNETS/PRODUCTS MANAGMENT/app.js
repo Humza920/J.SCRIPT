@@ -95,7 +95,7 @@ let products = [
 
 function render() {
   divPro.innerHTML = ""
-  products.map((item) => {
+products.map((item) => {
     divPro.innerHTML += `
     <div class="card m-2 shadow-lg" style="width: 18rem; border-radius: 12px; overflow: hidden;">
       <img src="${item.image}" class="card-img-top" alt="${item.name}" style="height: 180px; object-fit: cover;">
@@ -105,40 +105,32 @@ function render() {
         <div class="d-flex justify-content-between align-items-center">
           <span class="badge bg-primary">${item.category}</span>
           <span class="text-warning">
-            ${'★'.repeat(Math.floor(item.rating))}${'☆'.repeat(5 - Math.floor(item.rating))}
+          ${'★'.repeat(Math.floor(item.rating))}${'☆'.repeat(5 - Math.floor(item.rating))}
           </span>
-        </div>
-        <h6 class="mt-3 text-success fw-bold">$${item.price}</h6>
-        <button id ="del" class = "btn btn-outline-primary mt-auto w-100" data-index = ${item.id}>Delete</button>
-      </div>
-    </div>
-  `;
-  });
-}
-
-render()
-
-let delButton = document.querySelectorAll("#del");
-
-delButton.forEach((btn) => {
-
-  btn.addEventListener("click", (e) => {
-    let index = e.target.dataset.index
-    console.log(index);
-
-    products = products.filter((x) => {
-      return x.id != index
+          </div>
+          <h6 class="mt-3 text-success fw-bold">$${item.price}</h6>
+          <button id ="del" class = "btn btn-outline-primary mt-auto w-100" data-index = ${item.id}>Delete</button>
+          </div>
+          </div>
+          `;
+          let delButton = document.querySelectorAll("#del");
+    delButton.forEach((btn) => {
+    
+      btn.addEventListener("click", (e) => {
+        let index = e.target.dataset.index
+        console.log(index);
+    
+        products = products.filter((x) => {
+          return x.id != index
+        })
+        render()
+    
+      })
+    
     })
-    console.log(products);
-    
-    
-  })
-  // render()
-})
-
-
-
-
+});
+}
+render()
 
 
 
