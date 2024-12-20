@@ -1,6 +1,6 @@
 const divPro = document.querySelector("#product");
 
-const products = [
+let products = [
   {
     id: 1,
     name: "Wireless Bluetooth Headphones",
@@ -93,50 +93,68 @@ const products = [
   },
 ];
 
-products.map((item) => {
-  divPro.innerHTML += `
-        <div class="card m-2 shadow-lg" style="width: 18rem; border-radius: 12px; overflow: hidden;">
-          <img src="${item.image}" class="card-img-top" alt="${item.name}" style="height: 180px; object-fit: cover;">
-          <div class="card-body d-flex flex-column">
-            <h5 class="card-title text-primary fw-bold">${item.name}</h5>
-            <p class="card-text text-muted">${item.description}</p>
-            <div class="d-flex justify-content-between align-items-center">
-              <span class="badge bg-primary">${item.category}</span>
-              <span class="text-warning">
-                ${'★'.repeat(Math.floor(item.rating))}${'☆'.repeat(5 - Math.floor(item.rating))}
-              </span>
-            </div>
-            <h6 class="mt-3 text-success fw-bold">$${item.price}</h6>
-            <button id = "del" class = "btn btn-outline-primary mt-auto w-100" data-index = ${item.id}>Delete</button>
-          </div>
+function render() {
+  divPro.innerHTML = ""
+  products.map((item) => {
+    divPro.innerHTML += `
+    <div class="card m-2 shadow-lg" style="width: 18rem; border-radius: 12px; overflow: hidden;">
+      <img src="${item.image}" class="card-img-top" alt="${item.name}" style="height: 180px; object-fit: cover;">
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title text-primary fw-bold">${item.name}</h5>
+        <p class="card-text text-muted">${item.description}</p>
+        <div class="d-flex justify-content-between align-items-center">
+          <span class="badge bg-primary">${item.category}</span>
+          <span class="text-warning">
+            ${'★'.repeat(Math.floor(item.rating))}${'☆'.repeat(5 - Math.floor(item.rating))}
+          </span>
         </div>
-    `;
-});
+        <h6 class="mt-3 text-success fw-bold">$${item.price}</h6>
+        <button id ="del" class = "btn btn-outline-primary mt-auto w-100" data-index = ${item.id}>Delete</button>
+      </div>
+    </div>
+  `;
+  });
+}
 
-let delButton = document.querySelectorAll("#del")
+render()
 
-delButton.forEach((butn)=>{
-  butn.addEventListener("click" , (e)=>{
-    console.log("click" );  
-    e.preventDefault()
+let delButton = document.querySelectorAll("#del");
+
+delButton.forEach((btn) => {
+
+  btn.addEventListener("click", (e) => {
     let index = e.target.dataset.index
     console.log(index);
-    
-    products.filter( (x)=>{
-      return index !== x.index
-      }).map((x)=>{
-        console.log(x.name);
-        
-            })
-      
-      
-    } )
 
+    products = products.filter((x) => {
+      return x.id != index
+    })
+    console.log(products);
+    
     
   })
+  // render()
+})
 
 
-console.log(delButton);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
