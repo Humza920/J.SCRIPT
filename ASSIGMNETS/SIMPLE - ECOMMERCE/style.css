@@ -1,0 +1,89 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+header{
+    background-color: black;
+}
+
+#main{
+    background-color: #ffc700 ;
+}
+
+
+.product-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.rating {
+  color: #ffc107; /* Gold color for stars */
+}
+
+.product-details {
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107; /* Bootstrap danger color for price */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05); /* Smooth zoom on hover */
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Enhance shadow on hover */
+}
+
+.card-img-top {
+  border-top-left-radius: 8px; /* Match card's border radius */
+  border-top-right-radius: 8px;
+}
+
+.text-truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Custom CSS for card images */
+.card-img-top {
+  width: 100%; 
+  max-width: 170px; 
+  /* height: 0px;  */
+  margin: 0 auto; /* Center the image horizontally within the card */
+  border-radius: 8px; /* Slightly round the corners */
+  object-fit: contain; /* Ensure the image fits without distortion */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for images */
+.card-img-top:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
