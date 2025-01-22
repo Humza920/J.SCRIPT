@@ -40,8 +40,77 @@ header{
 
 
 
+/* General Styling */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f8f9fa;
+}
 
+.navbar {
+  background-color: #333;
+}
 
+.navbar-brand {
+  font-size: 2rem;
+  font-weight: 600;
+  color: #fff;
+}
+
+.navbar-nav .nav-link {
+  color: #fff !important;
+  font-size: 1.2rem;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffc700 !important;
+}
+
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa;
+}
+
+.hero-container {
+  text-align: center;
+}
+
+.hero-text h1 {
+  font-size: 3.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.hero-text p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  color: #666;
+}
+
+.hero-text .btn-warning {
+  font-size: 1.2rem;
+  padding: 10px 20px;
+  background-color: #ffc700;
+  border: none;
+}
+
+.hero-text .btn-warning:hover {
+  background-color: #e0a800;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .hero-text h1 {
+    font-size: 2.5rem;
+  }
+
+  .hero-text p {
+    font-size: 1rem;
+  }
+}
 
 
 

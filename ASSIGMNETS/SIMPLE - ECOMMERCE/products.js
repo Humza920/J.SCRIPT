@@ -17,6 +17,7 @@ function render(show) {
    div.innerHTML = ""
    console.log(show);
    show.map((item) => {
+
       div.innerHTML += `<div class="card m-2 shadow-sm border-0" style="width: 16rem; border-radius: 8px;">
   <img src="${item.image}" class="card-img-top" alt="${item.title}" style="height: 200px; object-fit: cover;">
   <div class="card-body p-3 d-flex flex-column">
