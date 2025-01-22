@@ -89,16 +89,53 @@
       </nav>
     </header>
 
-    <div id="singlemain" class="container mt-5">
 
-
+  <div id="cart" class="container py-5 d-flex flex-column align-items-center ">
+    <h1 class="mb-4 text-center">Your Cart</h2>
     </div>
 
 
+
+
+    <!-- Total Amount and Checkout Button -->
     
+  <div id="checkout" class="container d-flex flex-column align-items-center ">
+    
+</div>
+
+
+  <!-- Modal for Payment Options -->
+  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="paymentModalLabel">Choose Payment Method</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body" id="paymentOptions">
+                <div class="list-group">
+                    <button class="list-group-item list-group-item-action" id="cashOnDelivery">Cash on Delivery</button>
+                    <button class="list-group-item list-group-item-action" id="paypal">PayPal</button>
+                    <button class="list-group-item list-group-item-action" id="creditCard">Credit Card</button>
+                </div>
+            </div>
+            <div class="modal-body d-none" id="paymentSuccessMessage">
+                <h5 style="color: #ffc700;">Payment Successful!</h5>
+                <p>Your payment has been processed. You can now continue shopping.</p>
+                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+
 
     <!-- External JS -->
-    <script src="singleproduct.js"></script>
+    <script src="cart.js"></script>
     <!-- Bootstrap JS and Popper.js -->
     <script
       src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"

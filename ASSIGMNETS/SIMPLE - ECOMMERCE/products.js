@@ -1,4 +1,3 @@
-let arr = []
 let div = document.querySelector("#product")
 async function check() {
    const data = await fetch('https://fakestoreapi.com/products')
