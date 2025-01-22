@@ -7,7 +7,8 @@
 }
 
 header{
-    background-color: black;
+  background-color: black;
+
 }
 
 #main{
@@ -47,7 +48,7 @@ body {
 }
 
 .navbar {
-  background-color: #333;
+  background-color: #000000;
 }
 
 .navbar-brand {
@@ -56,7 +57,9 @@ body {
   color: #fff;
 }
 
-.navbar-nav .nav-link {
+.nav-link{color: #ffffff;}
+
+.navbar-nav {
   color: #fff !important;
   font-size: 1.2rem;
 }
@@ -65,23 +68,47 @@ body {
   color: #ffc700 !important;
 }
 
-.hero-section {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-color: #f8f9fa;
+#nav-linked{
+  background-color: #ffc700;
+  border-radius: 12px;
+  padding: 10px;
+  text-decoration: none;
 }
 
-.hero-container {
-  text-align: center;
+#nav-linked:hover{
+  background-color: #e0a800 !important;
+  
+}
+
+.hero-section {
+  /* margin: 20px;
+  padding: 20px; */
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  height: 80vh;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+
+
+.hero-text{
+  text-align: left;
+}
+
+.hero-text #shop{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }
 
 .hero-text h1 {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 20px;
-  color: #333;
+  color: #ffffff;
 }
 
 .hero-text p {
@@ -154,5 +181,77 @@ body {
 .card-img-top:hover {
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
+}
+
+
+/* Carousel Styling */
+.carousel {
+  border: 5px solid #ffc700;
+  width: 30%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.carousel-inner {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.carousel-item img {
+  width: 100%;
+  max-height: 400px; /* Sets a maximum height */
+  height: auto; /* Maintains aspect ratio */
+  object-fit: contain; /* Ensures the entire image is visible within its container */
+  border-radius: 10px; /* Adds rounded corners */
+  
+}
+
+
+#middle-portion{
+  background-color: #fff;
+}
+
+#middle{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#middle h1 {
+  font-size: 35px;
+}
+
+#middle h2 {
+  font-size: 30px;
+}
+
+#middle p{
+  text-align: center;
+}
+
+/* Change color of the left and right arrows */
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffc700; /* Sets the background color to #ffc700 */
+  border-radius: 50%; /* Makes the arrow background circular */
+  width: 40px; /* Adjusts the size */
+  height: 40px;
+}
+
+/* Change color of the carousel indicators (dots below the slides) */
+.carousel-indicators [data-bs-target] {
+  background-color: #ffc700; /* Sets the dot color to #ffc700 */
+}
+
+.carousel-indicators .active {
+  background-color: #ffc700; /* Keeps active dot the same color */
+  opacity: 1; /* Ensures it stands out */
+}
+
+/* Add hover effect for arrows */
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #e6b000; /* Slightly darker shade for hover */
 }
 

@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SWIFT-MART</title>
-
     <!-- Google Fonts: Poppins -->
     <link
       href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap"
@@ -25,9 +24,11 @@
       rel="stylesheet"
     />
   </head>
+
   <body>
-    <header class="bg-dark">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+    <!-- NAVBAR -->
+    <header>
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid mt-2">
           <a
             class="navbar-brand"
@@ -71,19 +72,18 @@
                 </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="/index.html">HOME</a>
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >HOME</a
+                >
               </li>
               <li class="nav-item">
-                <a class="nav-link active"  href="/products.html">ALL PRODUCTS</a>
+                <a class="nav-link" href="/products.html">ALL PRODUCTS</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT</a>
+                <a class="nav-link" href="#/about.html">ABOUT</a>
               </li>
-              <li
-                class="nav-item"
-                style="background-color: #ffc700; cursor: pointer"
-              >
-                <a class="nav-link text-black" href="/cart.html"
+              <li class="nav-item mt-2">
+                <a class="text-black" id="nav-linked" href="/cart.html"
                   >CART <i class="fa-solid fa-cart-shopping"></i
                 ></a>
               </li>
@@ -91,19 +91,43 @@
           </div>
         </div>
       </nav>
-    </header>
-
-    <!-- Centered Text Section -->
-    <section class="hero-section">
-      <div class="hero-container">
+      <!-- Centered Text Section -->
+      <section class="hero-section text-center">
         <div class="hero-text">
           <h1>Welcome to Swift-Mart</h1>
-          <p>Discover amazing products and exclusive deals. Shop with us now!</p>
-          <a href="/products.html" class="btn btn-warning">Shop Now</a>
+          <p>
+            Discover amazing products and exclusive deals. Shop with us now!
+          </p>
+          <div id="shop">
+            <a href="/products.html" class="btn btn-warning">Shop Now</a>
+          </div>
         </div>
+
+        <div
+          id="carouselExampleIndicators"
+          class="carousel slide"
+          data-bs-ride="true"
+        ></div>
+      </section>
+    </header>
+
+    <section id="middle-portion">
+      <div id="middle">
+       
+          <h2>Your One-Stop Shop for All Your Needs!</h2>
+          <h1>Shop Now and Transform Your Lifestyle!</h1>
+          <br>
+          <p>
+            Welcome to Swift-Mart—your one-stop destination for all your <br>
+            shopping needs. Explore top-quality products across categories, from <br>
+            fashion to home essentials. Enjoy unbeatable discounts, exclusive <br>
+            deals, and fast delivery. Experience seamless browsing with a <br>
+            user-friendly interface designed for you. Shop smart, save more, and <br>
+            elevate your lifestyle with us today!
+          </p>
+   
       </div>
     </section>
-
     <!-- External JS -->
     <script src="app.js"></script>
     <!-- Bootstrap JS and Popper.js -->
