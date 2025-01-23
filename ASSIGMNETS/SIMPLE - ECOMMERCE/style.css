@@ -1,50 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+/* INITIAL STYLING */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  /* background-color: #f8f9fa; */
 }
+/* INITIAL STYLING END */
 
-header{
+/* HEADER NAV*/
+header {
   background-color: black;
-
-}
-
-#main{
-    background-color: #ffc700 ;
-}
-
-
-.product-image {
-  width: 100%;
-  max-height: 400px;
-  object-fit: contain;
-  border-radius: 12px;
-}
-
-.rating {
-  color: #ffc107; /* Gold color for stars */
-}
-
-.product-details {
-  line-height: 1.6;
-}
-
-.price {
-  font-size: 1.5rem;
-  font-weight: bold;
-  color: #ffc107; /* Bootstrap danger color for price */
-}
-
-
-
-
-
-/* General Styling */
-body {
-  font-family: 'Poppins', sans-serif;
-  background-color: #f8f9fa;
 }
 
 .navbar {
@@ -57,7 +25,9 @@ body {
   color: #fff;
 }
 
-.nav-link{color: #ffffff;}
+.nav-link {
+  color: #ffffff;
+}
 
 .navbar-nav {
   color: #fff !important;
@@ -68,21 +38,21 @@ body {
   color: #ffc700 !important;
 }
 
-#nav-linked{
+#nav-linked {
   background-color: #ffc700;
   border-radius: 12px;
   padding: 10px;
   text-decoration: none;
 }
 
-#nav-linked:hover{
+#nav-linked:hover {
   background-color: #e0a800 !important;
-  
 }
 
+/* NAV END */
+
+/* NAV HERO */
 .hero-section {
-  /* margin: 20px;
-  padding: 20px; */
   margin-top: 50px;
   display: flex;
   justify-content: space-evenly;
@@ -92,16 +62,14 @@ body {
   color: #ffffff;
 }
 
-
-
-.hero-text{
-  text-align: left;
-}
-
-.hero-text #shop{
+.hero-text #shop {
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+}
+
+.hero-text {
+  text-align: left;
 }
 
 .hero-text h1 {
@@ -128,6 +96,101 @@ body {
   background-color: #e0a800;
 }
 
+/* Carousel Styling IN NAV HERO*/
+.carousel {
+  border: 5px solid #ffc700;
+  width: 30%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.carousel-inner {
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+.carousel-item img {
+  width: 100%;
+  max-height: 400px;
+  height: auto;
+  object-fit: contain;
+  border-radius: 10px;
+}
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+  background-color: #ffc700;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.carousel-indicators [data-bs-target] {
+  background-color: #ffc700;
+}
+
+.carousel-indicators .active {
+  background-color: #ffc700;
+  opacity: 1;
+}
+
+.carousel-control-prev-icon:hover,
+.carousel-control-next-icon:hover {
+  background-color: #e6b000;
+}
+/* HEADER END */
+
+/* MAIN */
+
+/* MIDDLE PORTION */
+#middle-portion {
+  background-color: #fff;
+}
+
+#middle {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 100px;
+}
+
+#middle p {
+  text-align: center;
+}
+#middle h1 {
+  font-size: 35px;
+}
+
+#middle h2 {
+  font-size: 30px;
+}
+
+/* MIDDLE PORTION END */
+/* MAIN END */
+#main {
+  background-color: #ffc700;
+}
+
+.product-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.rating {
+  color: #ffc107;
+}
+
+.product-details {
+  line-height: 1.6;
+}
+
+.price {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #ffc107; /* Bootstrap danger color for price */
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .hero-text h1 {
@@ -138,13 +201,6 @@ body {
     font-size: 1rem;
   }
 }
-
-
-
-
-
-
-
 
 .card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -168,8 +224,8 @@ body {
 
 /* Custom CSS for card images */
 .card-img-top {
-  width: 100%; 
-  max-width: 170px; 
+  width: 100%;
+  max-width: 170px;
   /* height: 0px;  */
   margin: 0 auto; /* Center the image horizontally within the card */
   border-radius: 8px; /* Slightly round the corners */
@@ -182,76 +238,3 @@ body {
   transform: scale(1.05); /* Slight zoom effect */
   box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Add a shadow on hover */
 }
-
-
-/* Carousel Styling */
-.carousel {
-  border: 5px solid #ffc700;
-  width: 30%;
-  border-radius: 10px;
-  overflow: hidden;
-}
-.carousel-inner {
-  border-radius: 10px;
-  margin: 10px;
-  padding: 10px;
-}
-.carousel-item img {
-  width: 100%;
-  max-height: 400px; /* Sets a maximum height */
-  height: auto; /* Maintains aspect ratio */
-  object-fit: contain; /* Ensures the entire image is visible within its container */
-  border-radius: 10px; /* Adds rounded corners */
-  
-}
-
-
-#middle-portion{
-  background-color: #fff;
-}
-
-#middle{
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  margin-top: 100px;
-}
-
-#middle h1 {
-  font-size: 35px;
-}
-
-#middle h2 {
-  font-size: 30px;
-}
-
-#middle p{
-  text-align: center;
-}
-
-/* Change color of the left and right arrows */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-  background-color: #ffc700; /* Sets the background color to #ffc700 */
-  border-radius: 50%; /* Makes the arrow background circular */
-  width: 40px; /* Adjusts the size */
-  height: 40px;
-}
-
-/* Change color of the carousel indicators (dots below the slides) */
-.carousel-indicators [data-bs-target] {
-  background-color: #ffc700; /* Sets the dot color to #ffc700 */
-}
-
-.carousel-indicators .active {
-  background-color: #ffc700; /* Keeps active dot the same color */
-  opacity: 1; /* Ensures it stands out */
-}
-
-/* Add hover effect for arrows */
-.carousel-control-prev-icon:hover,
-.carousel-control-next-icon:hover {
-  background-color: #e6b000; /* Slightly darker shade for hover */
-}
-

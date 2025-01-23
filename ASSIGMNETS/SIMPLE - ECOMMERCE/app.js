@@ -1,19 +1,17 @@
 const carousel = document.querySelector("#carouselExampleIndicators")
+
 async function check() {
+  try {
     const data = await fetch('https://fakestoreapi.com/products')
     const show = await data.json()
     console.log(show);
 
     let img = show.map((item) => {
-        return item.image
+      return item.image
     })
-
     console.log(img);
 
-
-
-    carousel.innerHTML += `
-    
+    carousel.innerHTML += `    
     <div class="carousel-indicators">
               <button
                 type="button"
@@ -61,61 +59,18 @@ async function check() {
               type="button"
               data-bs-target="#carouselExampleIndicators"
               data-bs-slide="next"
-              
             >
               <span class="carousel-control-next-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Next</span>
             </button>
-    
     `
+  }
+  catch (error) {
+    if (error) {
+      carousel.innerHTML = `WAIT FOR RESPONSE <br>INTERNET CONNECTION ERROR`
+      console.log(error);
+    }
+  }
 }
 
-
-
-
-
 check()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
