@@ -1,5 +1,6 @@
 const carousel = document.querySelector("#carouselExampleIndicators")
 const render = document.querySelector("#render")
+const btn = document.querySelector("#all")
 async function check() {
   try {
     const data = await fetch('https://fakestoreapi.com/products')
@@ -66,7 +67,7 @@ async function check() {
             </button>
     `
 
-    for (let i = 11; i < show.length; i++) {
+    for (let i = 12; i < show.length; i++) {
       render.innerHTML += `
       <div class="card m-2 shadow-lg" style="width: 18rem; border-radius: 12px; overflow: hidden;">
         <div class="d-flex justify-content-center align-items-center" style="height: 200px;">
@@ -83,6 +84,10 @@ async function check() {
       console.log(error);
     }
   }
-}
 
+}
 check()
+
+btn.addEventListener("click", () => {
+  window.location = "products.html";
+});

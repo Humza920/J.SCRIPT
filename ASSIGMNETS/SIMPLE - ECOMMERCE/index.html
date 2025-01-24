@@ -120,32 +120,57 @@
     <main>
 
       <!-- MIDDLE PORTION -->
-      <section id="middle-portion">
-        <div id="middle">
-          <h2>Your One-Stop Shop for All Your Needs!</h2>
-          <h1>Shop Now and Transform Your Lifestyle!</h1>
-          <p>
-            Welcome to Swift-Mart—your one-stop destination for all your <br />
-            shopping needs. Explore top-quality products across categories, from
-            <br />
-            fashion to home essentials. Enjoy unbeatable discounts, exclusive
-            <br />
-            deals, and fast delivery.
-          </p>
+      <section id="middle-portion" class="bg-light text-center py-5">
+        <div id="middle" class="container">
+            <h2 class="fw-bold">Your One-Stop Shop for All Your Needs!</h2>
+            <h1 class="display-4 text-warning mb-4">Shop Now and Transform Your Lifestyle!</h1>
+            <p class="lead">
+                Welcome to <span class="fw-semibold">Swift-Mart</span>—your one-stop destination for all your <br />
+                shopping needs. Explore top-quality products across categories, from<br />
+                fashion to home essentials. Enjoy unbeatable discounts, exclusive<br />
+                deals, and fast delivery.
+            </p>
         </div>
-      </section>
+    </section>
 
-      <!-- PRODUCTS SECTION -->
-       <section id="products-section">
-        <h1>SEE OUR PRODUCTS</h1>
-        <div id="render" class="d-flex flex-wrap justify-content-evenly container mt-5">
+    <!-- PRODUCTS SECTION -->
+    <section id="products-section" class="text-center py-5">
+        <div class="container">
+            <h1 class=" fw-bold mb-4" style="color: #000;">SEE OUR PRODUCTS</h1>
+            <div id="render" class="row g-4 d-flex mt-3 justify-content-center">
+                <!-- Products will be rendered here dynamically -->
+            </div>
+
+            <button type="button" id="all" class="btn text-warning btn-lg mt-4" style="background-color: #000;">
+                ALL PRODUCTS
+            </button>
         </div>
+    </section>
 
-       </section>
-      <!-- MIDDLE PORTION END -->
+    <footer class="bg-white text-dark py-5 border-top border-warning">
+      <div class="container mt-5">
+          <div class="row">
+              <div class="col-md-6 mb-4" style="width: 500px;">
+                  <h5>About Us</h5>
+                  <p>Swift-Mart is your trusted platform for quality shopping, offering a wide range of products to suit your lifestyle. Our mission is to bring convenience and value to your shopping experience.</p>
+              </div>
 
-    </main>
-    <!-- MAIN END -->
+              <div class="col-md-6 mb-4" style="display: flex; flex-direction: column; align-items: flex-end;" >
+                  <h5>Stay Connected</h5>
+                  <p>Follow us on social media</p>
+                  <div class="d-flex">
+                      <a href="#" class="text-warning mx-2" aria-label="Facebook"><i class="fab fa-facebook-f fa-lg"></i></a>
+                      <a href="#" class="text-warning mx-2" aria-label="Twitter"><i class="fab fa-twitter fa-lg"></i></a>
+                      <a href="#" class="text-warning mx-2" aria-label="Instagram"><i class="fab fa-instagram fa-lg"></i></a>
+                      <a href="#" class="text-warning mx-2" aria-label="LinkedIn"><i class="fab fa-linkedin-in fa-lg"></i></a>
+                  </div>
+              </div>
+          </div>
+          <div class="text-center">
+              <p class="mt-4 mb-0">&copy; 2025 Swift-Mart. All rights reserved. Designed<span class="text-warning">&hearts;</span> by HUMZA.</p>
+          </div>
+      </div>
+  </footer>
 
     <!-- JS -->
     <script src="app.js"></script>
