@@ -91,10 +91,8 @@ singleProduct.forEach((single)=>{
     console.log(index);
     products.map((item)=>{
       if (index==item.id) {
-        let arr = []
-        arr.push(item)
-        console.log(arr);
-        localStorage.setItem("single-product" , JSON.stringify(arr))
+        console.log(item);
+        localStorage.setItem("single-product" , JSON.stringify(item))
         window.location = "singleproduct.html"
       }
     })

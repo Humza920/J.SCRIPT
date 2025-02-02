@@ -3,12 +3,14 @@ let check = localStorage.getItem("cart")
 let arra = JSON.parse(check) || []
 console.log(arra);
 
-
+let ary = []
 let get = localStorage.getItem("single-product");
 let getItem = JSON.parse(get)
 console.log(getItem);
+ary.push(getItem)
+console.log(ary);
 
-getItem.map((product)=>{
+ary.map((product)=>{
     divSingle.innerHTML = `
 <div class="row g-4 mt-5">
     <div class="col-md-6 mt-5">
@@ -24,46 +26,19 @@ getItem.map((product)=>{
     </div>
 </div>
 `;
-})
 let cartIn = document.querySelector("#cartIn")
 cartIn.addEventListener("click" , (e)=>{
     e.preventDefault()
-    if (arra.includes(getItem.name)) {
-        alert("Product already in a cart")
-    } else {
-        arra.push(getItem)
+   let isProduct = arra.some((item)=>item.name === product.name)
+   console.log(isProduct);
+   if (isProduct) {
+    alert("already in a cart")
+   } else {
+    arra.push(getItem)
     localStorage.setItem("cart" , JSON.stringify(arra))
-    alert("Product added to cart successfully")
-    }
+    alert("added")
+   }
+   
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})
 
