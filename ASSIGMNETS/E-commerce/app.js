@@ -53,13 +53,13 @@ let featuredProducts = document.getElementById("products")
 const shuffledProducts = shuffleArray(products);
 
 function renderHome(arra) {
-    console.log(arra);
-    // featuredProducts = ""
-    for (let i = 0; i < 16; i++) {
-        const item = arra[i];
-        console.log(item);
+  featuredProducts.innerHTML = ""
+  console.log(arra);
+  for (let i = 0; i < 16; i++) {
+    const item = arra[i];
+    console.log(item);
 
-        featuredProducts.innerHTML += `
+    featuredProducts.innerHTML += `
   <div class="card m-2 shadow-sm border-0" style="width: 16rem; border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
     <img src="${item.img}" class="card-img-top" alt="${item.name}" style="height: 225px; object-fit: content; transition: transform 0.3s ease;">
     <div class="card-body p-3 d-flex flex-column">
@@ -79,80 +79,125 @@ function renderHome(arra) {
     </div>
   </div>
 `;
-    }
-    let singleProduct = document.querySelectorAll("#moveToSingle")
-    singleProduct.forEach((single)=>{
-      single.addEventListener("click" , (e)=>{
-        e.preventDefault()
-        let index = e.target.dataset.index
-        console.log(index);
-        products.map((item)=>{
-          if (index==item.id) {
-            console.log(item);
-            localStorage.setItem("single-product" , JSON.stringify(item))
-            window.location = "singleproduct.html"
-          }
-        })
-    
-      })
-    })
   }
-  
+  let singleProduct = document.querySelectorAll("#moveToSingle")
+  singleProduct.forEach((single) => {
+    single.addEventListener("click", (e) => {
+      e.preventDefault()
+      let index = e.target.dataset.index
+      console.log(index);
+      products.map((item) => {
+        if (index == item.id) {
+          console.log(item);
+          localStorage.setItem("single-product", JSON.stringify(item))
+          window.location = "singleproduct.html"
+        }
+      })
+
+    })
+  })
+}
+
 renderHome(shuffledProducts)
 
 
 
 
 function shuffleArray(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
-    return array;
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
 
-// let categoriesLogic = document.querySelectorAll(".categoriesLogic")
+let categoriesLogic = document.querySelectorAll(".categoriesLogic")
 
-// categoriesLogic.forEach((btnCategory) => {
-//   btnCategory.addEventListener("click", (e) => {
-//     e.preventDefault()
-//     if (e.target.id == 1) {
-//       product = products.filter((item) => {
-//         return item.category == "Appliances"
-//       })
-//       console.log(product);
-//       renderHome(product)
-//     }
+categoriesLogic.forEach((btnCategory) => {
+  btnCategory.addEventListener("click", (e) => {
+    e.preventDefault()
+    if (e.target.id == 1) {
+      product = products.filter((item) => {
+        return item.category == "Appliances"
+      })
+      console.log(product);
+      render(product)
+    }
 
-//     if (e.target.id == 2) {
-//       product = products.filter((item) => {
-//         return item.category == "Accessories"
-//       })
-//       console.log(product);
-//       renderHome(product)
-//     }
-    
-//     if (e.target.id == 3) {
-//       product = products.filter((item) => {
-//         return item.category == "Electronics"
-//       })
-//       console.log(product);
-//       renderHome(product)
-//     }
-    
-//     if (e.target.id == 4) {
-//       product = products.filter((item) => {
-//         return item.category == "Clothing"
-//       })
-//       console.log(product);
-//       renderHome(product)
-//     }
-//   })
-//   })
+    if (e.target.id == 2) {
+      product = products.filter((item) => {
+        return item.category == "Accessories"
+      })
+      console.log(product);
+      render(product)
+    }
+
+    if (e.target.id == 3) {
+      product = products.filter((item) => {
+        return item.category == "Electronics"
+      })
+      console.log(product);
+      render(product)
+    }
+
+    if (e.target.id == 4) {
+      product = products.filter((item) => {
+        return item.category == "Clothing"
+      })
+      console.log(product);
+      render(product)
+    }
+  })
+})
 
 
-  
-  function shop(){
-    window.location = "product.html"
-  }
-  
+
+function shop() {
+  window.location = "product.html"
+}
+
+
+function render(arr) {
+  featuredProducts.innerHTML = ""
+  console.log(arr);
+  arr.map((item) => {
+    featuredProducts.innerHTML += `
+  <div class="card m-2 shadow-sm border-0" style="width: 16rem; border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
+    <img src="${item.img}" class="card-img-top" alt="${item.name}" style="height: 225px; object-fit: content; transition: transform 0.3s ease;">
+    <div class="card-body p-3 d-flex flex-column">
+      <h5 class="card-title text-truncate mb-1" style="font-size: 1.1rem;">${item.name}</h5>
+      <p class="card-text text-muted small text-truncate mb-3">${item.description}</p>
+      <div class="d-flex justify-content-between align-items-center mb-2">
+        <span class="badge bg-warning text-dark border">${item.category}</span>
+        <span class="text-warning small" style="font-size: 0.9rem;">
+          ${'★'.repeat(Math.floor(item.rating))}${'☆'.repeat(5 - Math.floor(item.rating))}
+          <span class="text-muted ms-1">(${item.rating})</span>
+        </span>
+      </div>
+      <h5 class="text-black fw-bold mb-3 mt-2">$${item.price.toFixed(2)}</h5>
+      <button class="btn btn-warning btn-sm w-100" id="moveToSingle" data-index="${item.id}" id = "btn-hover" style="transition: background-color 0.3s ease;">
+        <i class="fas fa-bolt me-1"></i> Buy Now
+      </button>
+    </div>
+  </div>
+`;
+
+    let singleProduct = document.querySelectorAll("#moveToSingle")
+    singleProduct.forEach((single) => {
+      single.addEventListener("click", (e) => {
+        e.preventDefault()
+        let index = e.target.dataset.index
+        console.log(index);
+        products.map((item) => {
+          if (index == item.id) {
+            console.log(item);
+            localStorage.setItem("single-product", JSON.stringify(item))
+            window.location = "singleproduct.html"
+          }
+        })
+
+      })
+    })
+  })
+
+}  

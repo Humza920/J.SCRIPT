@@ -42,7 +42,9 @@
           </div>
           <div class="d-flex gap-2" id="searchDiv">
             <input type="search" placeholder="Search" />
-            <button class="btn btn-dark text-warning">Search</button>
+            <button class="btn btn-dark text-warning" id="searchBtn">
+              Search
+            </button>
           </div>
           <div class="collapse d-flex" id="navbarSupportedContent">
             <ul
@@ -50,10 +52,7 @@
               style="margin-right: 15px"
             >
               <li class="nav-item">
-                <a
-                  class="nav-link"
-                  aria-current="page"
-                  href="/index.html"
+                <a class="nav-link" aria-current="page" href="/index.html"
                   >HOME</a
                 >
               </li>
@@ -72,133 +71,198 @@
       </nav>
       <!-- NAV - END -->
 
-
       <div class="container-fluid pt-5">
-        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="text-black pr-3">Categories</span></h2>
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+          <span class="text-black pr-3">Categories</span>
+        </h2>
         <div class="row px-xl-5 pb-3">
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="cat-item d-flex align-items-center mb-4  ">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid categoriesLogic" id="1" src="imgs/product-3.jpg" alt="">
-                        </div>
-                        <div class="text-center flex-fill d-flex flex-column">
-                            <h6 class="text-black">Home Appliances</h6>
-                            <small class="text-body">100 Products</small>
-                        </div>
-                    </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="cat-item d-flex align-items-center mb-4">
+              <div class="overflow-hidden" style="width: 100px; height: 100px">
+                <img
+                  class="img-fluid categoriesLogic"
+                  id="1"
+                  src="imgs/product-3.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="text-center flex-fill d-flex flex-column">
+                <h6 class="text-black">Home Appliances</h6>
+                <small class="text-body">100 Products</small>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="cat-item  img-zoom d-flex 
-                     align-items-center mb-4 ">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid categoriesLogic" id="2"src="imgs/product-6.jpg" alt="">
-                        </div>
-                        <div class="text-center flex-fill d-flex flex-column">
-                            <h6 class="text-black">Accessories</h6>
-                            <small class="text-body">100 Products</small>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="cat-item img-zoom d-flex align-items-center mb-4">
+              <div class="overflow-hidden" style="width: 100px; height: 100px">
+                <img
+                  class="img-fluid categoriesLogic"
+                  id="2"
+                  src="imgs/product-6.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="text-center flex-fill d-flex flex-column">
+                <h6 class="text-black">Accessories</h6>
+                <small class="text-body">100 Products</small>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
-                    <div class="cat-item img-zoom d-flex  align-items-center mb-4 ">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid categoriesLogic" id="3"src="imgs/cat-2.jpg" alt="">
-                        </div>
-                        <div class="text-center flex-fill d-flex flex-column">
-                            <h6 class="text-black">Electronics</h6>
-                            <small class="text-body">100 Products</small>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="cat-item img-zoom d-flex align-items-center mb-4">
+              <div class="overflow-hidden" style="width: 100px; height: 100px">
+                <img
+                  class="img-fluid categoriesLogic"
+                  id="3"
+                  src="imgs/cat-2.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="text-center flex-fill d-flex flex-column">
+                <h6 class="text-black">Electronics</h6>
+                <small class="text-body">100 Products</small>
+              </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6  pb-1">
-                    <div class="cat-item  img-zoom d-flex align-items-center mb-4 ">
-                        <div class="overflow-hidden" style="width: 100px; height: 100px;">
-                            <img class="img-fluid categoriesLogic" id="4"src="imgs/cat-1.jpg" alt="">
-                        </div>
-                        <div class="flex-fill d-flex flex-column text-center">
-                            <h6 class="text-black">Clothing</h6>
-                            <small class="text-body">100 Products</small>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-lg-3 col-md-4 col-sm-6 pb-1">
+            <div class="cat-item img-zoom d-flex align-items-center mb-4">
+              <div class="overflow-hidden" style="width: 100px; height: 100px">
+                <img
+                  class="img-fluid categoriesLogic"
+                  id="4"
+                  src="imgs/cat-1.jpg"
+                  alt=""
+                />
+              </div>
+              <div class="flex-fill d-flex flex-column text-center">
+                <h6 class="text-black">Clothing</h6>
+                <small class="text-body">100 Products</small>
+              </div>
             </div>
+          </div>
         </div>
-    </div>
-
-
-    <div id="featured-products" class="container-fluid pt-5">
-      <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4"><span class="text-black pr-3">Our products</span></h2>
-      <div id="products" class="d-flex flex-wrap justify-content-evenly container mt-3">        
       </div>
-    </div>
-    
 
-  
-    <!-- Footer Start -->
-    <div class="container-fluid bg-dark text-white mt-5 pt-5">
-      <div class="row px-xl-5 pt-5">
+      <div id="featured-products" class="container-fluid pt-5">
+        <h2 class="section-title position-relative text-uppercase mx-xl-5 mb-4">
+          <span class="text-black pr-3">Our products</span>
+        </h2>
+        <div
+          id="products"
+          class="d-flex flex-wrap justify-content-evenly container mt-3"
+        ></div>
+      </div>
+
+      <!-- Footer Start -->
+      <div class="container-fluid bg-dark text-white mt-5 pt-5">
+        <div class="row px-xl-5 pt-5">
           <div class="col-lg-4 col-md-12 mb-5 pr-3 pr-xl-5">
-              <h5 class="text-white text-uppercase mb-4">Get In Touch</h5>
-              <p class="mb-4">No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et et dolor sed dolor. Rebum tempor no vero est magna amet no</p>
-              <p class="mb-2"><i class="fa fa-map-marker-alt text-wabtn-warning mr-3"></i> 14 Street GULSION IQBAL , KARACHi . PAKISTAN</p>
-              <p class="mb-2"><i class="fa fa-envelope text-wabtn-warning mr-3"></i> humza.rehman.779@gmail.com</p>
-              <p class="mb-0"><i class="fa fa-phone-alt text-wabtn-warning mr-3"></i> +92 3108823011</p>
+            <h5 class="text-white text-uppercase mb-4">Get In Touch</h5>
+            <p class="mb-4">
+              No dolore ipsum accusam no lorem. Invidunt sed clita kasd clita et
+              et dolor sed dolor. Rebum tempor no vero est magna amet no
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-map-marker-alt text-wabtn-warning mr-3"></i> 14
+              Street GULSION IQBAL , KARACHi . PAKISTAN
+            </p>
+            <p class="mb-2">
+              <i class="fa fa-envelope text-wabtn-warning mr-3"></i>
+              humza.rehman.779@gmail.com
+            </p>
+            <p class="mb-0">
+              <i class="fa fa-phone-alt text-wabtn-warning mr-3"></i> +92
+              3108823011
+            </p>
           </div>
           <div class="col-lg-8 col-md-12">
-              <div class="row">
-                  <div class="col-md-4 mb-5">
-                      <h5 class="text-white text-uppercase mb-4">Quick Shop</h5>
-                      <div class="d-flex flex-column justify-content-start">
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-5">
-                      <h5 class="text-white text-uppercase mb-4">My Account</h5>
-                      <div class="d-flex flex-column justify-content-start">
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Home</a>
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Our Shop</a>
-                          <a class="text-white mb-2" href="#"><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a>
-                      </div>
-                  </div>
-                  <div class="col-md-4 mb-5">
-                      <h5 class="text-white text-uppercase mb-4">Newsletter</h5>
-                      <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
-                      <form>
-                          <div class="input-group" style="gap: 5px;">
-                              <input type="text" class="form-control" placeholder="Your Email Address">
-                              <div class="input-group-append">
-                                  <button class="btn btn-warning">Sign Up</button>
-                              </div>
-                          </div>
-                      </form>
-                      <h6 class="text-white text-uppercase mt-4 mb-3">Follow Us</h6>
-                      <div class="d-flex" style="gap: 5px;">
-                          <a class="btn btn-warning btn-square mr-2" href="#"><i class="fab fa-twitter"></i></a>
-                          <a class="btn btn-warning btn-square mr-2" href="#"><i class="fab fa-facebook-f"></i></a>
-                          <a class="btn btn-warning btn-square mr-2" href="#"><i class="fab fa-linkedin-in"></i></a>
-                          <a class="btn btn-warning btn-square" href="#"><i class="fab fa-instagram"></i></a>
-                      </div>
-                  </div>
+            <div class="row">
+              <div class="col-md-4 mb-5">
+                <h5 class="text-white text-uppercase mb-4">Quick Shop</h5>
+                <div class="d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Our Shop</a
+                  >
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a
+                  >
+                </div>
               </div>
+              <div class="col-md-4 mb-5">
+                <h5 class="text-white text-uppercase mb-4">My Account</h5>
+                <div class="d-flex flex-column justify-content-start">
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Home</a
+                  >
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Our Shop</a
+                  >
+                  <a class="text-white mb-2" href="#"
+                    ><i class="fa fa-angle-right mr-2"></i>Shopping Cart</a
+                  >
+                </div>
+              </div>
+              <div class="col-md-4 mb-5">
+                <h5 class="text-white text-uppercase mb-4">Newsletter</h5>
+                <p>Duo stet tempor ipsum sit amet magna ipsum tempor est</p>
+                <form>
+                  <div class="input-group" style="gap: 5px">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Your Email Address"
+                    />
+                    <div class="input-group-append">
+                      <button class="btn btn-warning">Sign Up</button>
+                    </div>
+                  </div>
+                </form>
+                <h6 class="text-white text-uppercase mt-4 mb-3">Follow Us</h6>
+                <div class="d-flex" style="gap: 5px">
+                  <a class="btn btn-warning btn-square mr-2" href="#"
+                    ><i class="fab fa-twitter"></i
+                  ></a>
+                  <a class="btn btn-warning btn-square mr-2" href="#"
+                    ><i class="fab fa-facebook-f"></i
+                  ></a>
+                  <a class="btn btn-warning btn-square mr-2" href="#"
+                    ><i class="fab fa-linkedin-in"></i
+                  ></a>
+                  <a class="btn btn-warning btn-square" href="#"
+                    ><i class="fab fa-instagram"></i
+                  ></a>
+                </div>
+              </div>
+            </div>
           </div>
-      </div>
-      <div class="row border-top mx-xl-5 py-4" style="border-color: rgba(256, 256, 256, .1) !important;">
+        </div>
+        <div
+          class="row border-top mx-xl-5 py-4"
+          style="border-color: rgba(256, 256, 256, 0.1) !important"
+        >
           <div class="col-md-6 px-xl-0">
-              <p class="mb-md-0 text-center text-md-left text-white">
-                  &copy; <a class="text-warning" href="#">Domain</a>. All Rights Reserved. Designed
-                  by
-                  <a class="text-warning" href="https://htmlcodex.com">HUMZA</a>
-                  <br>Distributed By: <a class="text-warning" href="https://themewagon.com" target="_blank">HUMZA</a>
-              </p>
+            <p class="mb-md-0 text-center text-md-left text-white">
+              &copy; <a class="text-warning" href="#">Domain</a>. All Rights
+              Reserved. Designed by
+              <a class="text-warning" href="https://htmlcodex.com">HUMZA</a>
+              <br />Distributed By:
+              <a
+                class="text-warning"
+                href="https://themewagon.com"
+                target="_blank"
+                >HUMZA</a
+              >
+            </p>
           </div>
           <div class="col-md-6 px-xl-0 text-center text-md-right">
-              <img class="img-fluid" src="img/payments.png" alt="">
+            <img class="img-fluid" src="img/payments.png" alt="" />
           </div>
+        </div>
       </div>
-  </div>
-  <!-- Footer End -->
-
+      <!-- Footer End -->
     </div>
     <script src="product.js"></script>
     <script

@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-
 * {
   margin: 0;
   padding: 0;
@@ -10,150 +9,148 @@
 
 /* HOME PG  */
 
-#searchDiv{
-    display: flex;
-    align-items: center;
+#searchDiv {
+  display: flex;
+  align-items: center;
 }
 
-#searchDiv input{
-    width: 300px;
-    border: 2px solid black;
-    height: 40px;
-    padding: 8px;
-    border-radius: 12px;
+#searchDiv input {
+  width: 300px;
+  border: 2px solid black;
+  height: 40px;
+  padding: 8px;
+  border-radius: 12px;
 }
 
-#nav-linked{
-    background-color: white;
-    color: black;
-    padding: 10px;
-    border-radius: 15px;
+#nav-linked {
+  background-color: white;
+  color: black;
+  padding: 10px;
+  border-radius: 15px;
 }
 
-#carousals{
-    display: flex;
-    justify-content: space-between;
-    margin-top: 30px;
-    margin-left: 40px;
-    margin-right: 23px;
-    margin-bottom: 30px;
+#carousals {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 30px;
+  margin-left: 40px;
+  margin-right: 23px;
+  margin-bottom: 30px;
 }
 
-#carouselExampleIndicators{
-    display: flex;
-    align-items: center;
-    width: 60%
+#carouselExampleIndicators {
+  display: flex;
+  align-items: center;
+  width: 60%;
 }
 
 #sidecarousal .position-relative:hover img {
-    transform: scale(1.1); /* Zoom in effect */
+  transform: scale(1.1); /* Zoom in effect */
 }
 
 .carousel-item,
-    #sidecarousal .position-relative {
-        position: relative;
-    }
+#sidecarousal .position-relative {
+  position: relative;
+}
 
-    .carousel-item::before,
-    #sidecarousal .position-relative::before {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: rgba(0, 0, 0, 0.4); 
-        z-index: 1;
-    }
+.carousel-item::before,
+#sidecarousal .position-relative::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+}
 
-    .carousel-caption,
-    #sidecarousal .position-absolute {
-        z-index: 2;
-    }
+.carousel-caption,
+#sidecarousal .position-absolute {
+  z-index: 2;
+}
 
-    .carousel-caption h2,
-    #sidecarousal h3 {
-        font-size: 2.5rem;
-        font-weight: bold;
-        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-    }
+.carousel-caption h2,
+#sidecarousal h3 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
 
-    .carousel-caption p,
-    #sidecarousal p {
-        font-size: 1.2rem;
-        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
-    }
+.carousel-caption p,
+#sidecarousal p {
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
 
-    .btn-outline-light,
-    .btn-warning {
-        font-weight: bold;
-        padding: 10px 20px;
-        border-radius: 25px;
-        transition: all 0.3s ease;
-    }
+.btn-outline-light,
+.btn-warning {
+  font-weight: bold;
+  padding: 10px 20px;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+}
 
-    .btn-outline-light:hover {
-        background-color: #fff;
-        color: #000;
-    }
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #000;
+}
 
-    .btn-warning:hover {
-        background-color: #ffc107;
-        color: #000;
-    }
+.btn-warning:hover {
+  background-color: #ffc107;
+  color: #000;
+}
 
 .hoverMe {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 1px outset black;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+  border: 1px outset black;
 }
 
 .hoverMe:hover {
-    transform: scale(1.1);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  transform: scale(1.1);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .cat-item {
-    background: #FFFFFF;
-    transition: .5s;
-  }
-  
-  .cat-item:hover {
-    background: #FFD333;
-    border: 2px solid black;
-  }
+  background: #ffffff;
+  transition: 0.5s;
+}
 
-
+.cat-item:hover {
+  background: #ffd333;
+  border: 2px solid black;
+}
 
 .card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-  }
-  
- 
-  .card-img-top:hover {
-    transform: scale(1.1); 
-  }
-  
-  #btn-hover:hover{
-    background-color: #FFD333;
-    color: black;
-    border: #FFD333;
-  }
-  
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .btn-warning:hover i {
-    transform: translateX(5px);
-    transition: transform 0.3s ease;
-  }  
+.card-img-top:hover {
+  transform: scale(1.1);
+}
 
+#btn-hover:hover {
+  background-color: #ffd333;
+  color: black;
+  border: #ffd333;
+}
 
-  /* PRODUCT PG */
+.btn-warning:hover i {
+  transform: translateX(5px);
+  transition: transform 0.3s ease;
+}
 
-  .product-image {
-    width: 100%;
-    max-height: 400px;
-    object-fit: contain;
-    border-radius: 12px;
-  }
+/* PRODUCT PG */
 
+.product-image {
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+.categoriesLogic {
+  cursor: pointer;
+}

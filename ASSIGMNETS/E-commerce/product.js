@@ -57,7 +57,6 @@ const shuffledProducts = shuffleArray(products);
 function renderHome(arra) {
   productPrint.innerHTML = ""
   console.log(arra);
-
   arra.map((item) => {
 
     productPrint.innerHTML += `
@@ -120,7 +119,7 @@ categoriesLogic.forEach((btnCategory) => {
   btnCategory.addEventListener("click", (e) => {
     e.preventDefault()
     if (e.target.id == 1) {
-      product = products.filter((item) => {
+      let product = products.filter((item) => {
         return item.category == "Appliances"
       })
       console.log(product);
@@ -128,7 +127,7 @@ categoriesLogic.forEach((btnCategory) => {
     }
 
     if (e.target.id == 2) {
-      product = products.filter((item) => {
+      let product = products.filter((item) => {
         return item.category == "Accessories"
       })
       console.log(product);
@@ -136,7 +135,7 @@ categoriesLogic.forEach((btnCategory) => {
     }
 
     if (e.target.id == 3) {
-      product = products.filter((item) => {
+      let product = products.filter((item) => {
         return item.category == "Electronics"
       })
       console.log(product);
@@ -144,7 +143,7 @@ categoriesLogic.forEach((btnCategory) => {
     }
 
     if (e.target.id == 4) {
-      product = products.filter((item) => {
+      let product = products.filter((item) => {
         return item.category == "Clothing"
       })
       console.log(product);
@@ -152,3 +151,22 @@ categoriesLogic.forEach((btnCategory) => {
     }
   })
 })
+
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  let product = products.filter((f) => {
+    return f.name.toLowerCase().includes(input.value.toLowerCase());
+  });
+
+  if (product.length > 0) {
+    console.log(product[0]);
+    input.value = "";
+    localStorage.setItem("single-product", JSON.stringify(product[0]));
+    window.location = "singleproduct.html";
+  } else {
+
+    alert("Product not available");
+    input.value = "";
+  }
+});
