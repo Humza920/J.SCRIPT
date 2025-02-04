@@ -54,6 +54,7 @@ const shuffledProducts = shuffleArray(products);
 
 function renderHome(arra) {
     console.log(arra);
+    // featuredProducts = ""
     for (let i = 0; i < 16; i++) {
         const item = arra[i];
         console.log(item);
@@ -79,38 +80,79 @@ function renderHome(arra) {
   </div>
 `;
     }
-}
+    let singleProduct = document.querySelectorAll("#moveToSingle")
+    singleProduct.forEach((single)=>{
+      single.addEventListener("click" , (e)=>{
+        e.preventDefault()
+        let index = e.target.dataset.index
+        console.log(index);
+        products.map((item)=>{
+          if (index==item.id) {
+            console.log(item);
+            localStorage.setItem("single-product" , JSON.stringify(item))
+            window.location = "singleproduct.html"
+          }
+        })
+    
+      })
+    })
+  }
+  
 renderHome(shuffledProducts)
 
 
-let singleProduct = document.querySelectorAll("#moveToSingle")
-singleProduct.forEach((single)=>{
-  single.addEventListener("click" , (e)=>{
-    e.preventDefault()
-    let index = e.target.dataset.index
-    console.log(index);
-    products.map((item)=>{
-      if (index==item.id) {
-        console.log(item);
-        localStorage.setItem("single-product" , JSON.stringify(item))
-        window.location = "singleproduct.html"
-      }
-    })
-
-  })
-})
-
-
-
-function shop(){
-  window.location = "product.html"
-}
 
 
 function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
+      const j = Math.floor(Math.random() * (i + 1));
         [array[i], array[j]] = [array[j], array[i]];
     }
     return array;
 }
+
+// let categoriesLogic = document.querySelectorAll(".categoriesLogic")
+
+// categoriesLogic.forEach((btnCategory) => {
+//   btnCategory.addEventListener("click", (e) => {
+//     e.preventDefault()
+//     if (e.target.id == 1) {
+//       product = products.filter((item) => {
+//         return item.category == "Appliances"
+//       })
+//       console.log(product);
+//       renderHome(product)
+//     }
+
+//     if (e.target.id == 2) {
+//       product = products.filter((item) => {
+//         return item.category == "Accessories"
+//       })
+//       console.log(product);
+//       renderHome(product)
+//     }
+    
+//     if (e.target.id == 3) {
+//       product = products.filter((item) => {
+//         return item.category == "Electronics"
+//       })
+//       console.log(product);
+//       renderHome(product)
+//     }
+    
+//     if (e.target.id == 4) {
+//       product = products.filter((item) => {
+//         return item.category == "Clothing"
+//       })
+//       console.log(product);
+//       renderHome(product)
+//     }
+//   })
+//   })
+
+
+  
+  function shop(){
+    window.location = "product.html"
+  }
+  
