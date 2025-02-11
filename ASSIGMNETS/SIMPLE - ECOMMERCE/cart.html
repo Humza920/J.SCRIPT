@@ -23,7 +23,7 @@
   </head>
   <body>
     <header class="bg-dark">
-      <nav class="navbar navbar-expand-lg bg-dark navbar-dark">
+      <nav class="navbar navbar-expand-lg">
         <div class="container-fluid mt-2">
           <a
             class="navbar-brand"
@@ -47,39 +47,18 @@
               class="navbar-nav ms-auto mb-2 mb-lg-0 gap-4 mr-5"
               style="margin-right: 15px"
             >
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+              
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="/index.html"
+                  >HOME</a
                 >
-                  SIGN-UP <i class="fa-regular fa-user"></i>
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link " aria-current="page" href="/index.html">HOME</a>
+                <a class="nav-link" href="/products.html">ALL PRODUCTS</a>
               </li>
-              <li class="nav-item">
-                <a class="nav-link "  href="/products.html">ALL PRODUCTS</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT</a>
-              </li>
-              <li
-                class="nav-item"
-                style="background-color: #ffc700; cursor: pointer"
-              >
-                <a class="nav-link text-black" href="#"
+              
+              <li class="nav-item mt-2">
+                <a class="text-black" id="nav-linked" href="/cart.html"
                   >CART <i class="fa-solid fa-cart-shopping"></i
                 ></a>
               </li>
@@ -99,40 +78,41 @@
 
     <!-- Total Amount and Checkout Button -->
     
-  <div id="checkout" class="container d-flex flex-column align-items-center ">
+<section>  <div id="checkout" class="container d-flex flex-column align-items-center ">
     
 </div>
+</section>
 
 
   <!-- Modal for Payment Options -->
-  <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="paymentModalLabel">Choose Payment Method</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body" id="paymentOptions">
-                <div class="list-group">
-                    <button class="list-group-item list-group-item-action" id="cashOnDelivery">Cash on Delivery</button>
-                    <button class="list-group-item list-group-item-action" id="paypal">PayPal</button>
-                    <button class="list-group-item list-group-item-action" id="creditCard">Credit Card</button>
-                </div>
-            </div>
-            <div class="modal-body d-none" id="paymentSuccessMessage">
-                <h5 style="color: #ffc700;">Payment Successful!</h5>
-                <p>Your payment has been processed. You can now continue shopping.</p>
-                <a href="index.html" class="btn btn-primary">Continue Shopping</a>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            </div>
-        </div>
-    </div>
-</div>
-</div>
-
-
+  <section>
+    <div class="modal fade" id="paymentModal" tabindex="-1" aria-labelledby="paymentModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+          <div class="modal-content">
+              <div class="modal-header">
+                  <h5 class="modal-title" id="paymentModalLabel">Choose Payment Method</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body" id="paymentOptions">
+                  <div class="list-group">
+                      <button class="list-group-item list-group-item-action" id="cashOnDelivery">Cash on Delivery</button>
+                      <button class="list-group-item list-group-item-action" id="paypal">PayPal</button>
+                      <button class="list-group-item list-group-item-action" id="creditCard">Credit Card</button>
+                  </div>
+              </div>
+              <div class="modal-body d-none" id="paymentSuccessMessage">
+                  <h5 style="color: #ffc700;">Payment Successful!</h5>
+                  <p>Your payment has been processed. You can now continue shopping.</p>
+                  <a href="index.html" class="btn btn-primary">Continue Shopping</a>
+              </div>
+              <div class="modal-footer">
+                  <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              </div>
+          </div>
+      </div>
+  </div>
+  </div>
+  </section>
 
     <!-- External JS -->
     <script src="cart.js"></script>

@@ -15,7 +15,7 @@ inToArray.forEach((button) => {
       console.log(input.innerHTML);
     } else if (button.innerHTML == "AC") {
       let input = document.querySelector(".display");
-      string = ""
+      string = "";
       input.value = "";
       console.log(input.innerHTML);
     } else {

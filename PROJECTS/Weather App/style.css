@@ -77,15 +77,15 @@ body {
   justify-content: space-between;
   align-items: center;
   margin-top: 65px;
-  flex-direction: row; /* Keeps row layout by default */
-  flex-wrap: wrap; /* Ensures items can wrap properly if necessary */
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .colomn {
   display: flex;
   align-items: center;
   text-align: left;
-  flex-direction: row; /* Keeps column items in row by default */
+  flex-direction: row;
 }
 
 .colomn img {
@@ -106,27 +106,11 @@ body {
   margin-bottom: 0;
 }
 
-/* Responsive Design */
 @media (max-width: 768px) {
-  /* #card {
-    padding: 20px;
-  } */
-
   .searchbox {
-    flex-wrap: nowrap; /* Prevents stacking of input and button */
+    flex-wrap: nowrap;
     justify-content: space-between;
   }
-
-  /* .details {
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
-  } */
-
-  /* .colomn {
-    flex-direction: column; 
-    justify-content: flex-start;
-  } */
 }
 
 @media (max-width: 480px) {
@@ -135,7 +119,7 @@ body {
   }
 
   .searchbox input {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px;
     width: 150px;
   }
 
@@ -147,30 +131,28 @@ body {
   }
 
   .details {
-    margin-top: 40px; /* Adjust top margin for details */
-    flex-direction: row; /* Keep row layout for details */
-
+    margin-top: 40px;
+    flex-direction: row;
   }
 
   .colomn img {
-    width: 40px; /* Adjust image size for smaller screens */
-    margin-top:15px ;
+    width: 40px;
+    margin-top: 15px;
   }
 
   .humid,
   .wind {
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
   }
 
   .speed,
-  .humity{
-    font-size: 18px; /* Adjust font size for smaller screens */
+  .humity {
+    font-size: 18px;
     margin-left: 5px;
   }
 }
-
 
 @media (max-width: 375px) {
   #card {
@@ -178,7 +160,7 @@ body {
   }
 
   .searchbox input {
-    font-size: 16px; /* Adjust font size for smaller screens */
+    font-size: 16px;
     width: 150px;
   }
 
@@ -189,36 +171,33 @@ body {
     font-size: 29px;
   }
 
-  #weather .weather-icon{
+  #weather .weather-icon {
     margin-top: 10px;
     width: 190px;
     margin-bottom: 3px;
   }
 
   .details {
-    /* margin-top: 40px; Adjust top margin for details */
     display: flex;
-    flex-direction: column; /* Keep row layout for details */
+    flex-direction: column;
     margin-top: 15px;
   }
 
   .colomn img {
-    width: 40px; /* Adjust image size for smaller screens */
-    margin-top:25px ;
+    width: 40px;
+    margin-top: 25px;
   }
 
   .humid,
   .wind {
     margin-top: 10px;
     margin-left: 10px;
-    font-size: 20px; /* Adjust font size for smaller screens */
+    font-size: 20px;
   }
 
   .speed,
-  .humity{
-    font-size: 18px; /* Adjust font size for smaller screens */
+  .humity {
+    font-size: 18px;
     margin-left: 5px;
   }
-  
-
 }

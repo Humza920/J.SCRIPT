@@ -67,7 +67,7 @@ async function check() {
             </button>
     `
 
-    for (let i = 12; i < show.length; i++) {
+    for (let i = 8; i < show.length; i++) {
       render.innerHTML += `
       <div class="card m-2 shadow-lg" style="width: 18rem; border-radius: 12px; overflow: hidden;">
         <div class="d-flex justify-content-center align-items-center" style="height: 200px;">

@@ -70,3 +70,78 @@
 // }
 
 // console.log(findMax(numbers));
+
+// Reverse an Array:
+// Sawal: Ek function likho jo ek array ko reverse kare. Function ka naam reverseArray rakho aur usme ek parameter arr hon.
+// let numbers = [1, 2, 3, 4, 5,]
+
+// function reverseArray(arr) {
+//  let rev = arr.reverse()
+//  console.log(rev);
+ 
+// }
+// reverseArray(numbers)
+
+// ANOTHER APPROACH WITHOUT REVERSE METHOD
+
+// let numbers = [1, 2, 3, 4, 5,]
+// let rev = []
+// function reverseArray(arr) {
+//     for (let i = arr.length - 1; i >= 0; i--) {
+//         rev.push(arr[i])
+//     }
+//     console.log(rev);
+// }
+
+// reverseArray(numbers)
+
+// Sawal: Ek function likho jo check kare ke ek string palindrome hai ya nahi. Function ka naam isPalindrome rakho aur usme ek parameter str hon.
+// let str = "pop"
+// let rts = ""
+// function isPalindrome(str) {
+//     for (let i = str.length - 1; i >= 0; i--) {
+//         rts += str[i]
+//     }
+//     console.log(rts);
+//     if (rts === str) {
+//         console.log("PALINDROME");
+//     }
+//     else{
+//         console.log("NOT A PALINDROME");
+//     }
+    
+// }
+
+// isPalindrome(str)
+
+// Count Vowels in a String:
+// Sawal: Ek function likho jo ek string mein vowels (a, e, i, o, u) ki counting kare. Function ka naam countVowels rakho aur usme ek parameter str hon.
+
+// let vowelArray = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U']
+// let str = "World"
+// let count = 0
+// function countVowels(str) {
+//     for (let i = 0; i < str.length; i++) {
+//         if (vowelArray.includes(str[i])) {
+//             console.log(str[i]);
+//             count++
+//         }
+//     }
+//     console.log(count);
+//     return count
+// }
+// countVowels(str)
+
+// Ek array diya gaya hai jisme duplicate values hain. Aapko ek aisa function likhna hai jo duplicate values ko remove kare aur unique values ka array return kare.
+// let arr = ["humza" , "ashar" , "fahad" , "humza" , "fahad"]
+// arr.filter((item)=>{
+//     for (let i = 0; i < arr.length; i++) {
+//         if (item === arr[i]) {
+//             let count = 0
+//              count++
+//              console.log(count);
+             
+//         }
+//     }
+
+// })
