@@ -152,8 +152,17 @@ categoriesLogic.forEach((btnCategory) => {
   })
 })
 
+
+let searchBtn = document.querySelector("#searchBtn")
+let input = document.querySelector("input")
+
 searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
+
+  if (input.value == "") {
+    alert("You did'nt search a product")
+    return
+}
 
   let product = products.filter((f) => {
     return f.name.toLowerCase().includes(input.value.toLowerCase());

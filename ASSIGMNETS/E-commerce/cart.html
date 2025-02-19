@@ -74,7 +74,30 @@
         <div id="cart-items" class="mt-4"></div>
     </div>
 
+    <div class="d-flex justify-content-center mt-2">
+      <button type="button" id="cheackoutBtnDiv"  class="btn btn-danger p-3 w-20 mt-3" data-bs-toggle="modal" data-bs-target="#checkoutModal">
+        Proceed to Checkout <i class="fa-solid fa-cart-shopping"></i></button>
+    </div>
 
+
+    <!-- Checkout Modal -->
+<div class="modal fade" id="checkoutModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Checkout Summary</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="checkoutDetails">
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary" onclick="confirmOrder()">Confirm Order</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
       <!-- Footer Start -->

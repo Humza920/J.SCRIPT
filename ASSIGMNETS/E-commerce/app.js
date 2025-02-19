@@ -199,5 +199,31 @@ function render(arr) {
       })
     })
   })
-
 }  
+
+let searchBtn = document.querySelector("#searchBtn")
+let input = document.querySelector("input")
+
+searchBtn.addEventListener("click", (e) => {
+  e.preventDefault();
+
+  if (input.value == "") {
+    alert("You did'nt search a product")
+    return
+}
+
+  let product = products.filter((f) => {
+    return f.name.toLowerCase().includes(input.value.toLowerCase());
+  });
+
+  if (product.length > 0) {
+    console.log(product[0]);
+    input.value = "";
+    localStorage.setItem("single-product", JSON.stringify(product[0]));
+    window.location = "singleproduct.html";
+  } else {
+
+    alert("Product not available");
+    input.value = "";
+  }
+});

@@ -103,6 +103,11 @@ searchBtn.addEventListener("click", (e) => {
         return f.name.toLowerCase().includes(input.value.toLowerCase());
     });
 
+    if (input.value == "") {
+        alert("You did'nt search a product")
+        return
+    }
+
     if (product.length > 0) {
         console.log(product[0]);
         input.value = "";
