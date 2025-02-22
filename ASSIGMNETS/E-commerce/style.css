@@ -119,7 +119,7 @@
 
 .cat-item:hover {
   background: #ffd333;
-  border: 2px solid black;
+  border: 1px solid black;
 }
 
 .card:hover {
@@ -138,8 +138,7 @@
 }
 
 .btn-warning:hover i {
-  transform: translateX(5px);
-  transition: transform 0.3s ease;
+  transform: scale(1.1);
 }
 
 /* PRODUCT PG */

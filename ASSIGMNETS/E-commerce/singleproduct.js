@@ -1,3 +1,5 @@
+AOS.init()
+
 let products = [
     { id: 1, name: "Laptop", price: 999.99, category: "Electronics", description: "A high-performance laptop for all your computing needs.", rating: 4.7, img: "imgs/LAPTOP.jpeg" },
     { id: 2, name: "Smartphone", price: 699.99, category: "Electronics", description: "A sleek and powerful smartphone with the latest features.", rating: 4.6, img: "imgs/images.jpeg" },
@@ -64,10 +66,10 @@ console.log(ary);
 ary.map((product) => {
     divSingle.innerHTML = `
 <div class="row g-4 mt-5">
-    <div class="col-md-6 mt-5">
+    <div class="col-md-6 mt-5"  data-aos="fade-right" data-aos-duration="1000">
         <img src="${product.img}" alt="${product.name}" class="product-image shadow-sm">
     </div>
-    <div class="col" style="margin-top: 100px;">
+    <div class="col" style="margin-top: 100px;"  data-aos="fade-left" data-aos-duration="1000">
         <h1 class="fw-bold">${product.name}</h1>
         <p class="text-muted small">Category: <span class="text-warning">${product.category}</span></p>
         <span class="text-warning">${'★'.repeat(Math.floor(product.rating))}${'☆'.repeat(5 - Math.floor(product.rating))}</span>

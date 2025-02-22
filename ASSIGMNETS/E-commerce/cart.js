@@ -111,9 +111,18 @@ let totalPrice  =  total.reduce((accum , current)=>{
                 </li>
             `).join("")}
         </ul>
-    `
-    
-    
-    
+    `  
 })
-    
+
+let confir = document.querySelector("#confirm")
+
+function confirmOrder() {
+    console.log("run");
+    cartItem = []
+    localStorage.setItem("cart" , JSON.stringify(cartItem))
+    confir.style.display = "none"
+    checkoutDetails.innerHTML = `<h1>THANK YOU FOR SHOPPING</h1>`
+    setTimeout(()=>{
+        location.reload()
+    } , 2000)
+}

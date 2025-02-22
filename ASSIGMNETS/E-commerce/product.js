@@ -1,3 +1,5 @@
+AOS.init()
+
 let products = [
   { id: 1, name: "Laptop", price: 999.99, category: "Electronics", description: "A high-performance laptop for all your computing needs.", rating: 4.7, img: "imgs/LAPTOP.jpeg" },
   { id: 2, name: "Smartphone", price: 699.99, category: "Electronics", description: "A sleek and powerful smartphone with the latest features.", rating: 4.6, img: "imgs/images.jpeg" },
@@ -52,7 +54,7 @@ let products = [
 
 let productPrint = document.getElementById("products")
 const shuffledProducts = shuffleArray(products);
-// console.log(shuffledProducts);
+
 
 function renderHome(arra) {
   productPrint.innerHTML = ""
@@ -60,7 +62,7 @@ function renderHome(arra) {
   arra.map((item) => {
 
     productPrint.innerHTML += `
-    <div class="card m-2 shadow-sm border-0" style="width: 16rem; border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
+    <div class="card m-2 shadow-sm border-0" data-aos="fade-up" data-aos-duration="1500" style="width: 16rem; border-radius: 12px; overflow: hidden; transition: transform 0.2s;">
     <img src="${item.img}" class="card-img-top" alt="${item.name}" style="height: 225px; object-fit: content; transition: transform 0.3s ease;">
     <div class="card-body p-3 d-flex flex-column">
       <h5 class="card-title text-truncate mb-1" style="font-size: 1.1rem;">${item.name}</h5>
