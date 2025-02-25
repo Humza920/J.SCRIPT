@@ -1,3 +1,4 @@
+AOS.init()
 const cart = localStorage.getItem("cart")
 let cartItem = JSON.parse(cart)
 console.log(cartItem);
@@ -7,7 +8,7 @@ let items = document.querySelector("#cart-items")
 function initialize() {
     cartItem.forEach(item => {
         if (!item.hasOwnProperty('quantity')) {
-            item.quantity = 1; 
+            item.quantity = 1;
             console.log(item);
         }
     });
@@ -20,11 +21,11 @@ function render(cartItem) {
     items.innerHTML = ""
     if (cartItem.length == 0) {
         cheackoutBtnDiv.style.display = "none"
-        items.innerHTML = `<h1>NO ITEM IN A CART</h1>`
+        items.innerHTML = `<div id = "cart-ite"><h1 data-aos="fade-up" data-aos-duration="1000">NO ITEM IN A CART</h1><div/>`
     } else {
-        cartItem.map((print , index)=>{
+        cartItem.map((print, index) => {
             items.innerHTML += `
-               <div class="col-lg-8 mx-auto"> 
+               <div class="col-lg-8 mx-auto mt-4" data-aos="fade-up" data-aos-duration="1500> 
             <div class="card mb-3 w-100">
                 <div class="card-body">
                     <div class="row d-flex align-items-center text-center">
@@ -61,14 +62,14 @@ render(cartItem)
 function increase(i) {
     console.log("run");
     cartItem[i].quantity += 1
-    render(cartItem)    
+    render(cartItem)
 }
 
 function decrease(i) {
     if (cartItem[i].quantity == 1) {
         alert("there is a single item thats why its not delete Click on remove if you want to remove it")
     }
-    else{
+    else {
         cartItem[i].quantity -= 1
         render(cartItem)
     }
@@ -77,30 +78,30 @@ function decrease(i) {
 function remove(i) {
     let index = i
     console.log(index);
-    
-cartItem = cartItem.filter((x)=>{
-   return x.id != i
-})
-localStorage.setItem("cart" , JSON.stringify(cartItem))
-render(cartItem)
-console.log(cartItem);    
+
+    cartItem = cartItem.filter((x) => {
+        return x.id != i
+    })
+    localStorage.setItem("cart", JSON.stringify(cartItem))
+    render(cartItem)
+    console.log(cartItem);
 }
 
 
 let checkoutDetails = document.querySelector("#checkoutDetails")
 
-cheackoutBtnDiv.addEventListener("click", (e)=>{
+cheackoutBtnDiv.addEventListener("click", (e) => {
     e.preventDefault()
     // let total = 0
-    let total = cartItem.map((z)=>{
-      return z.price * z.quantity
+    let total = cartItem.map((z) => {
+        return z.price * z.quantity
     })
 
-let totalPrice  =  total.reduce((accum , current)=>{
+    let totalPrice = total.reduce((accum, current) => {
         return accum + current
-    } , 0).toFixed(2)
+    }, 0).toFixed(2)
     console.log(totalPrice);
-    
+
     checkoutDetails.innerHTML = `<p>Total Items: ${cartItem.length}</p>
         <p>Total Price: <strong>${totalPrice} $</strong></p>
         <ul class="list-group">
@@ -111,7 +112,7 @@ let totalPrice  =  total.reduce((accum , current)=>{
                 </li>
             `).join("")}
         </ul>
-    `  
+    `
 })
 
 let confir = document.querySelector("#confirm")
@@ -119,10 +120,10 @@ let confir = document.querySelector("#confirm")
 function confirmOrder() {
     console.log("run");
     cartItem = []
-    localStorage.setItem("cart" , JSON.stringify(cartItem))
+    localStorage.setItem("cart", JSON.stringify(cartItem))
     confir.style.display = "none"
     checkoutDetails.innerHTML = `<h1>THANK YOU FOR SHOPPING</h1>`
-    setTimeout(()=>{
+    setTimeout(() => {
         location.reload()
-    } , 2000)
+    }, 2000)
 }

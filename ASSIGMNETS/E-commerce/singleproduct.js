@@ -51,6 +51,14 @@ let products = [
     { id: 48, name: "Electric Kettle", price: 39.99, category: "Appliances", description: "An electric kettle for quickly boiling water.", rating: 4.3, img: "imgs/kettle.jpeg" },
 ];
 
+const notyf = new Notyf({
+    duration: 3000,
+    position: {
+        x: 'center',
+        y: 'top',
+    }
+});
+
 let divSingle = document.querySelector("#singlemain")
 let check = localStorage.getItem("cart")
 let arra = JSON.parse(check) || []
@@ -85,11 +93,12 @@ ary.map((product) => {
         let isProduct = arra.some((item) => item.name === product.name)
         console.log(isProduct);
         if (isProduct) {
-            alert("already in a cart")
+            notyf.error("Already in a cart");
         } else {
             arra.push(getItem)
             localStorage.setItem("cart", JSON.stringify(arra))
-            alert("added")
+            notyf.success('🛒 Product added to cart successfully!');
+
         }
 
     })
@@ -106,7 +115,7 @@ searchBtn.addEventListener("click", (e) => {
     });
 
     if (input.value == "") {
-        alert("You did'nt search a product")
+        notyf.error("You did'nt search a product")
         return
     }
 
@@ -117,7 +126,7 @@ searchBtn.addEventListener("click", (e) => {
         window.location = "singleproduct.html";
     } else {
 
-        alert("Product not available");
+        notyf.error("Product not available");
         input.value = "";
     }
 });

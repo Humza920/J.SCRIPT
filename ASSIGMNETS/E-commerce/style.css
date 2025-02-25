@@ -154,33 +154,15 @@
   cursor: pointer;
 }
 
+#cart-ite {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50vh;
+}
 
-
-
-
-
-
-
-
-           /* .cart-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 10px;
-            border-bottom: 1px solid #ddd;
-        }
-        .cart-item:last-child {
-            border-bottom: none;
-        }
-        .remove-btn {
-            background: red;
-            color: white;
-            border: none;
-            padding: 5px 10px;
-            cursor: pointer;
-        }
-        .total {
-            margin-top: 20px;
-            font-size: 18px;
-            text-align: right;
-        } */
- 
+#cart-ite h1 {
+  background-color: #ffd333;
+  padding: 20px;
+  border-radius: 10px;
+}

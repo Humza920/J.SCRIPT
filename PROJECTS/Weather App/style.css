@@ -15,7 +15,7 @@ body {
   width: 90%;
   max-width: 470px;
   background: linear-gradient(130deg, #00feba, #5b548a);
-  margin: 100px auto 0;
+  margin: 70px auto 0;
   padding: 40px 35px;
   color: #fff;
   border-radius: 20px;
@@ -28,7 +28,7 @@ body {
   justify-content: space-between;
   align-items: center;
 }
-
+ 
 .searchbox input {
   outline: 0;
   border: 0;

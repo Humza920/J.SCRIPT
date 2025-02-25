@@ -52,6 +52,14 @@ let products = [
 ];
 
 
+const notyf = new Notyf({
+  duration: 3000,
+  position: {
+    x: 'center',
+    y: 'top',
+  }
+});
+
 let productPrint = document.getElementById("products")
 const shuffledProducts = shuffleArray(products);
 
@@ -162,9 +170,9 @@ searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (input.value == "") {
-    alert("You did'nt search a product")
+    notyf.error("You did'nt search a product")
     return
-}
+  }
 
   let product = products.filter((f) => {
     return f.name.toLowerCase().includes(input.value.toLowerCase());
@@ -177,7 +185,7 @@ searchBtn.addEventListener("click", (e) => {
     window.location = "singleproduct.html";
   } else {
 
-    alert("Product not available");
+    notyf.error("Product not available");
     input.value = "";
   }
 });

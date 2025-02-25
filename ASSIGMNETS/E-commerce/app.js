@@ -50,6 +50,14 @@ const products = [
   { id: 48, name: "Electric Kettle", price: 39.99, category: "Appliances", description: "An electric kettle for quickly boiling water.", rating: 4.3, img: "imgs/kettle.jpeg" },
 ];
 
+const notyf = new Notyf({
+  duration: 3000,
+  position: {
+    x: 'center',
+    y: 'top',
+  }
+});
+
 let featuredProducts = document.getElementById("products")
 const shuffledProducts = shuffleArray(products);
 
@@ -100,8 +108,6 @@ function renderHome(arra) {
 }
 
 renderHome(shuffledProducts)
-
-
 
 
 function shuffleArray(array) {
@@ -200,7 +206,7 @@ function render(arr) {
       })
     })
   })
-}  
+}
 
 let searchBtn = document.querySelector("#searchBtn")
 let input = document.querySelector("input")
@@ -209,9 +215,9 @@ searchBtn.addEventListener("click", (e) => {
   e.preventDefault();
 
   if (input.value == "") {
-    alert("You did'nt search a product")
+    notyf.error("You did'nt search a product")
     return
-}
+  }
 
   let product = products.filter((f) => {
     return f.name.toLowerCase().includes(input.value.toLowerCase());
@@ -223,8 +229,7 @@ searchBtn.addEventListener("click", (e) => {
     localStorage.setItem("single-product", JSON.stringify(product[0]));
     window.location = "singleproduct.html";
   } else {
-
-    alert("Product not available");
+    notyf.error("Product not Available")
     input.value = "";
   }
 });
