@@ -1,45 +1,72 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
 }
 
-
-/* INDEX.HTML */
-.login-heading{
-    text-align: center;
-    font-weight: 700;
-    margin-top: 70px;
-    margin-bottom: 30px;
+body {
+    background-color: #f8f9fa;
 }
 
-.form-div{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+/* LOGIN / SINGIN HTML */
+
+.navbar {
+    padding: 1rem 0;
 }
 
-.form-div form{
-    background-color:#FAF3F0;
-    padding:55px 65px 5px;
-    border: 4px solid #E4D7D0;
-    border-radius: 30px;
-    color: #333333;
+.card {
+    border: none;
+    border-radius: 15px;
 }
 
-.form-div form input{
-    border: 2px solid #D8C3C3;
-    background-color: #FFFDFD;
-    width: 400px;
-    padding: 13px;
-    margin-top: 10px;
-    color: #333333;
+.card-body {
+    padding: 2rem;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
     border-radius: 8px;
 }
- 
 
-.form-div form input:focus{
-    outline: 1px solid black;
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+.text-decoration-none {
+    color: #007bff;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
+
+.div-span{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    cursor: pointer;
 }
