@@ -49,7 +49,7 @@ if (e.target.id === "1" || e.target.id === "login-btn" || e.target.id === "") {
 
 
 let logoutBtn = document.querySelector("#logoutBtn");
-console.log(logoutBtn);
+
 
 if (logoutBtn === null) {
   console.log("logout button not found");
