@@ -33,17 +33,17 @@ if (userShown != null) {
   `;
 }
 else{
-  
-loginBtn.addEventListener("click", function(e){
-  e.preventDefault()
-console.log(e.target.id);
-if (e.target.id === "1" || e.target.id === "login-btn" || e.target.id === "") {
-  console.log("run");
-  window.location = "login.html"
-}
-
-})
-
+    Swal.fire({
+        title: "You don’t have an account",
+        text: "Please login first to post any ad.",
+        icon: "warning",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#007bff"
+    }).then((result) => {
+        if (result.isConfirmed) {
+            window.location.href = "login.html";
+        }
+    });
 }
 
 
@@ -72,6 +72,4 @@ if (logoutBtn === null) {
         }
     });
 });
-
-
 }

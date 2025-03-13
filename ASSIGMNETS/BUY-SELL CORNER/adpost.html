@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Buy/Sells Corner</title>
+
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+     <!-- NAVBAR START -->
+     <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-3">
+        <div class="container-fluid">
+          <a class="navbar-brand fw-bold ps-4 fs-2" href="#">Buy/Sells Corner</a>
+          <div class="d-flex align-items-center pe-4 gap-2">
+            <a href="cart.html" class="text-white text-decoration-none fs-4 me-4">
+              <i class="fa-solid fa-bag-shopping"></i>
+            </a>
+  <div id="login-btn">
+      <a
+      href="#"
+      class="text-white text-decoration-none d-flex text-center login-btn"
+      id="login-btn"
+    >
+      <span class="fw-bold fs-4" id="1">
+        <i class="fa-solid fa-user"> Login</i> 
+      </span>
+  </a>
+  </div>
+          </div>
+        </div>
+      </nav>
+      <!-- NAVBAR END -->
+
+      <!-- MAIN START -->
+       <h1 class="text-center fw-bold mb-2 mt-5">POST ADD</h1>
+       <div id="form" class="container d-flex justify-content-center flex-column gap-3">
+        <form>
+            <div class="d-flex flex-column justify-content-center bg-primary text-white mx-5 my-4 p-4 rounded">
+                <label for="addpost" class="p-3 text-center">
+                    <span style="font-size: 100px;"><i class="fa-solid fa-plus"></i></span>
+                    <h2>Upload Product Photo</h2>
+                </label>
+                <input type="file" name="addpost" id="addpost" style="display: none;">
+            </div>
+            <input type="text" class="form-control mb-3 p-3" placeholder="Product Title" id="productTitle">
+            <input type="text" class="form-control mb-3 p-3" placeholder="Product Description" id="productDescription">
+            <input type="number" class="form-control mb-3 p-3" placeholder="Product Price" id="productPrice">
+            <input type="text" class="form-control mb-3 p-3" placeholder="Enter Your Name" id="YourName">
+            <input type="tel" class="form-control mb-3 p-3" placeholder="Enter Your Number" id="YourNumber">
+
+        </form>
+    </div>
+    
+  
+      <!-- MAIN END -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" src="adpost.js"></script>
+  </body>
+</html>
