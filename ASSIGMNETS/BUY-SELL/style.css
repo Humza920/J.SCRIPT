@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    background-color: #f8f9fa;
+}
+
+/* LOGIN / SINGIN HTML */
+
+.navbar {
+    padding: 1rem 0;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.form-control {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-size: 1rem;
+}
+
+.form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px #007bff80;
+}
+
+
+
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 0.75rem;
+    font-size: 1rem;
+    border-radius: 8px;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+
+.text-muted {
+    font-size: 0.9rem;
+}
+
+.text-decoration-none {
+    color: #007bff;
+}
+
+.text-decoration-none:hover {
+    text-decoration: underline;
+}
+
+.div-span{
+    display: flex;
+    justify-content: center;
+    flex: 1;
+    cursor: pointer;
+}
+
+
+/* INDEX,HTML */
+.login-btn {
+    border: 2px solid white;
+    padding: 10px;
+    border-radius: 8px;
+    transition: all 0.3s ease-in-out;
+}
+
+.login-btn:hover {
+    background-color: white;
+    color: #007bff !important;
+    border-color: #007bff;
+}
+
+
+    /* Search Bar */
+    .search-bar {
+        max-width: 550px;
+        margin: 20px auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      .input-group-text {
+        background: linear-gradient(135deg, #007bff, #00c6ff);
+        color: white;
+        border: none;
+      }
+
+ 
+
+      /* Product Card */
+      .card {
+        border: none;
+        box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0px 8px 18px rgba(0, 0, 0, 0.25);
+      }
+
+      .card-img-top {
+        border-bottom: 2px solid #007bff;
+      }
+
+
+      
