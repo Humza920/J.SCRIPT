@@ -1,4 +1,4 @@
-import { collection, addDoc , doc, setDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { collection, addDoc , doc, setDoc , getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { db } from "./firebase-config.js";
 
 let postAddBtn = document.getElementById("postAdd")
@@ -37,7 +37,7 @@ if (userShown != null) {
       </button>
       <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
         <li><a class="dropdown-item" href="adpost.html">Add Post</a></li>
-        <li><a class="dropdown-item" href="#">Settings</a></li>
+        <li><a class="dropdown-item" href="index.html">Home</a></li>
         <li><hr class="dropdown-divider" /></li>
         <li><a class="dropdown-item text-danger" href="#" id="logoutBtn">Logout</a></li>
       </ul>
