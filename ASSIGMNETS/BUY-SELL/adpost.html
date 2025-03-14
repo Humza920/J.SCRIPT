@@ -43,20 +43,25 @@
        <div id="form" class="container d-flex justify-content-center flex-column gap-3">
         <form>
             <div class="d-flex flex-column justify-content-center bg-primary text-white mx-5 my-4 p-4 rounded">
-                <label for="addpost" class="p-3 text-center">
+                <label for="addPost" class="p-3 text-center">
                     <span style="font-size: 100px;"><i class="fa-solid fa-plus"></i></span>
-                    <h2>Upload Product Photo</h2>
+                    <h2 id="headTwoFromImg">Upload Product Photo</h2>
                 </label>
-                <input type="file" name="addpost" id="addpost" style="display: none;">
+                <input type="file" name="addpost" id="addPost" style="display: none;">
             </div>
             <input type="text" class="form-control mb-3 p-3" placeholder="Product Title" id="productTitle">
             <input type="text" class="form-control mb-3 p-3" placeholder="Product Description" id="productDescription">
             <input type="number" class="form-control mb-3 p-3" placeholder="Product Price" id="productPrice">
-            <input type="text" class="form-control mb-3 p-3" placeholder="Enter Your Name" id="YourName">
-            <input type="tel" class="form-control mb-3 p-3" placeholder="Enter Your Number" id="YourNumber">
+            <input type="text" class="form-control mb-3 p-3" placeholder="Enter Your Name" id="yourName">
+            <input type="tel" class="form-control mb-3 p-3" placeholder="Enter Your Number" id="yourNumber">
 
         </form>
-    </div>
+      </div>
+      <div class="container d-flex justify-content-center my-3">
+        <button type="button" class="btn btn-primary fs-4" id="postAdd">POST-ADD</button>
+      </div>
+
+  
     
   
       <!-- MAIN END -->

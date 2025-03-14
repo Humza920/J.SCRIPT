@@ -17,7 +17,7 @@ logIn.addEventListener("click", (e) => {
         signInWithEmailAndPassword(auth, email.value, password.value)
             .then((userCredential) => {
                 const user = userCredential.user;
-                console.log(user);
+                console.log(user.uid);
 
                 let getThatUsersFromLS = JSON.parse(localStorage.getItem("PROFILE-PIC"))
                 console.log(getThatUsersFromLS);
@@ -25,6 +25,7 @@ logIn.addEventListener("click", (e) => {
                     return filt.email === user.email
                 })
                 filteringThatUser = filteringThatUser[0]
+                filteringThatUser.userId = user.uid
                 console.log(filteringThatUser);
                 localStorage.setItem("User", JSON.stringify(filteringThatUser))
                 
