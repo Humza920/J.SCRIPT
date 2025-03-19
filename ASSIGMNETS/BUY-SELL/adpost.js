@@ -1,6 +1,12 @@
 import { collection, addDoc , doc, setDoc , getDocs } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { db } from "./firebase-config.js";
 
+// Initialize AOS
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
 let postAddBtn = document.getElementById("postAdd")
 let productTitle = document.getElementById("productTitle")
 let productPrice = document.getElementById("productPrice")
@@ -127,7 +133,7 @@ console.log(logoutBtn);
 
 }else{
     Swal.fire({
-        title: "You don’t have an account",
+        title: "You don't have an account",
         text: "Please login first to post any ad.",
         icon: "warning",
         confirmButtonText: "OK",

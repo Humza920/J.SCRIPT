@@ -52,27 +52,77 @@ if (userShown != null) {
   console.log(ary);
   
   ary.map((product) => {
-      divSingle.innerHTML = `<div class="card shadow-sm border-0">
-  <img src="${getItem.convertImg}" class="card-img-top" alt="${getItem.productTitle}" 
-    style="max-height: 300px; object-fit: contain; background-color: #f8f9fa; padding: 10px; border-radius: 8px;">
-  
-  <div class="card-body">
-    <h3 class="card-title text-dark">${getItem.productTitle}</h3>
-    <p class="text-muted">${getItem.productDescription}</p>
-    
-    <h4 class="text-primary fw-bold">Price: Rs. ${getItem.productPrice}</h4>
-    
-    <p class="mb-1"><strong>Seller:</strong> ${getItem.yourName}</p>
-    <p class="mb-3"><strong>Contact:</strong> ${getItem.yourNumber}</p>
-    
-    <button id="cartIn" class="btn btn-primary w-100 py-2 fw-bold">🛒 Add to Cart</button>
-  </div>
-</div>
-`;
+      divSingle.innerHTML = `<div class="col-lg-8">
+      <div class="card border-0 shadow-lg rounded-4 overflow-hidden" data-aos="fade-up">
+        <div class="position-relative">
+          <img src="${getItem.convertImg}" class="card-img-top" alt="${getItem.productTitle}" 
+            style="max-height: 400px; object-fit: contain; background-color: #f8f9fa; padding: 20px;">
+          <div class="position-absolute top-0 end-0 m-3">
+            <span class="badge bg-primary rounded-pill px-3 py-2" data-aos="fade-left" data-aos-delay="200">
+              <i class="fas fa-star me-1"></i>Featured
+            </span>
+          </div>
+        </div>
+        <div class="card-body p-4">
+          <div class="d-flex justify-content-between align-items-start mb-3">
+            <div data-aos="fade-right" data-aos-delay="200">
+              <h2 class="card-title fw-bold mb-2">${getItem.productTitle}</h2>
+              <div class="d-flex align-items-center text-warning mb-2">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span class="text-muted ms-2">(4.5)</span>
+              </div>
+            </div>
+            <h3 class="text-primary fw-bold mb-0" data-aos="fade-left" data-aos-delay="200">
+              Rs. ${getItem.productPrice.toLocaleString()}
+            </h3>
+          </div>
+
+          <div class="mb-4" data-aos="fade-up" data-aos-delay="300">
+            <h5 class="fw-bold mb-3">Description</h5>
+            <p class="text-muted">${getItem.productDescription}</p>
+          </div>
+
+          <div class="row g-4 mb-4">
+            <div class="col-md-6" data-aos="fade-right" data-aos-delay="400">
+              <div class="d-flex align-items-center p-3 rounded-3 bg-light">
+                <i class="fas fa-user-circle text-primary fa-2x me-3"></i>
+                <div>
+                  <p class="text-muted mb-0">Seller</p>
+                  <h6 class="mb-0">${getItem.yourName}</h6>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6" data-aos="fade-left" data-aos-delay="400">
+              <div class="d-flex align-items-center p-3 rounded-3 bg-light">
+                <i class="fas fa-phone text-primary fa-2x me-3"></i>
+                <div>
+                  <p class="text-muted mb-0">Contact</p>
+                  <h6 class="mb-0">${getItem.yourNumber}</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2" data-aos="fade-up" data-aos-delay="500">
+            <button id="cartIn" class="btn btn-primary btn-lg rounded-pill">
+              <i class="fas fa-shopping-cart me-2"></i>Add to Cart
+            </button>
+            <a href="index.html" class="btn btn-outline-primary rounded-pill">
+              <i class="fas fa-arrow-left me-2"></i>Continue Shopping
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  `;
       let cartIn = document.querySelector("#cartIn")
       cartIn.addEventListener("click", (e) => {
           e.preventDefault()
-          let isProduct = arra.some((item) => item.name === product.name)
+          let isProduct = arra.some((item) => item.productTitle === getItem.productTitle)
           console.log(isProduct);
           if (isProduct) {
               notyf.error("Already in a cart");
