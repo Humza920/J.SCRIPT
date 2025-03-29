@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Firebase - FireBlog</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Navigation (same as index.html) -->
+    <!-- ... -->
+
+    <!-- Main Content -->
+    <main class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <article class="bg-white p-6 rounded-lg shadow-md">
+            <!-- Blog Header -->
+            <header class="mb-8">
+                <div class="flex items-center text-sm text-gray-500 mb-4">
+                    <span>By John Doe</span>
+                    <span class="mx-2">•</span>
+                    <time datetime="2023-05-15">May 15, 2023</time>
+                    <span class="mx-2">•</span>
+                    <span>5 min read</span>
+                </div>
+                
+                <h1 class="text-3xl font-bold text-gray-900 mb-4">Getting Started with Firebase</h1>
+                
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-eye mr-2"></i>
+                        <span>1,245 views</span>
+                    </div>
+                    <div class="flex items-center text-gray-500">
+                        <i class="fas fa-heart mr-2"></i>
+                        <span>89 likes</span>
+                    </div>
+                </div>
+            </header>
+            
+            <!-- Featured Image -->
+            <div class="mb-8">
+                <img src="https://source.unsplash.com/random/800x400/?firebase" alt="Featured Image" class="w-full h-auto rounded-lg">
+            </div>
+            
+            <!-- Blog Content -->
+            <div class="prose max-w-none">
+                <p class="text-gray-700 mb-4">Firebase is a comprehensive app development platform that provides a variety of tools and services to help you develop high-quality apps, grow your user base, and earn more money. In this guide, we'll walk you through the basics of getting started with Firebase.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Setting Up Firebase</h2>
+                <p class="text-gray-700 mb-4">To get started with Firebase, you'll need to create a Firebase project in the Firebase console. Here's how:</p>
+                
+                <ol class="list-decimal pl-6 mb-4 space-y-2 text-gray-700">
+                    <li>Go to the Firebase Console</li>
+                    <li>Click on "Add project"</li>
+                    <li>Enter your project name and click "Continue"</li>
+                    <li>Configure Google Analytics if needed</li>
+                    <li>Click "Create project"</li>
+                </ol>
+                
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Adding Firebase to Your App</h2>
+                <p class="text-gray-700 mb-4">After creating your Firebase project, you'll need to add Firebase to your web app:</p>
+                
+                <pre class="bg-gray-100 p-4 rounded-md overflow-x-auto mb-4"><code class="language-javascript">// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "YOUR_API_KEY",
+  authDomain: "YOUR_AUTH_DOMAIN",
+  projectId: "YOUR_PROJECT_ID",
+  storageBucket: "YOUR_STORAGE_BUCKET",
+  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
+  appId: "YOUR_APP_ID",
+  measurementId: "YOUR_MEASUREMENT_ID"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const analytics = getAnalytics(app);</code></pre>
+                
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Using Firebase Services</h2>
+                <p class="text-gray-700 mb-4">Firebase offers several services that you can integrate into your app:</p>
+                
+                <ul class="list-disc pl-6 mb-4 space-y-2 text-gray-700">
+                    <li><strong>Authentication:</strong> Add user authentication with email/password, Google, Facebook, etc.</li>
+                    <li><strong>Firestore:</strong> NoSQL database for storing and syncing data</li>
+                    <li><strong>Storage:</strong> Store and serve user-generated content</li>
+                    <li><strong>Hosting:</strong> Fast and secure hosting for your web app</li>
+                </ul>
+                
+                <p class="text-gray-700 mb-4">Each of these services can be easily integrated into your app with just a few lines of code.</p>
+                
+                <h2 class="text-2xl font-bold text-gray-800 mt-8 mb-4">Conclusion</h2>
+                <p class="text-gray-700 mb-4">Firebase provides a powerful set of tools that can significantly speed up your development process. With its easy-to-use SDKs and comprehensive documentation, you can quickly add powerful features to your app without worrying about backend infrastructure.</p>
+            </div>
+            
+            <!-- Blog Footer -->
+            <footer class="mt-12 pt-6 border-t border-gray-200">
+                <div class="flex justify-between items-center">
+                    <div class="flex space-x-4">
+                        <button class="text-gray-500 hover:text-red-500">
+                            <i class="fas fa-heart mr-1"></i> Like
+                        </button>
+                        <button class="text-gray-500 hover:text-blue-500">
+                            <i class="fas fa-share-alt mr-1"></i> Share
+                        </button>
+                    </div>
+                    
+                    <div class="flex space-x-2">
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
+                            Firebase
+                        </span>
+                        <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                            Web Development
+                        </span>
+                    </div>
+                </div>
+                
+                <!-- Author Bio -->
+                <div class="mt-6 flex items-center">
+                    <div class="flex-shrink-0">
+                        <div class="h-12 w-12 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600 text-xl"></i>
+                        </div>
+                    </div>
+                    <div class="ml-4">
+                        <p class="text-sm font-medium text-gray-900">John Doe</p>
+                        <p class="text-sm text-gray-500">Web Developer & Firebase Expert</p>
+                    </div>
+                </div>
+            </footer>
+        </article>
+        
+        <!-- Comments Section -->
+        <div class="mt-8 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-xl font-semibold text-gray-800 mb-4">Comments (3)</h2>
+            
+            <form class="mb-8">
+                <div class="mb-4">
+                    <label for="comment" class="sr-only">Add a comment</label>
+                    <textarea id="comment" name="comment" rows="3" class="block w-full border border-gray-300 rounded-md shadow-sm py-2 px-3 focus:outline-none focus:ring-blue-500 focus:border-blue-500" placeholder="Add a comment..."></textarea>
+                </div>
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white py-2 px-4 rounded-md">
+                    Post Comment
+                </button>
+            </form>
+            
+            <!-- Comment List -->
+            <div class="space-y-6">
+                <!-- Comment 1 -->
+                <div class="flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-sm font-medium text-gray-900">Jane Smith</p>
+                                <time datetime="2023-05-16" class="text-xs text-gray-500">May 16, 2023</time>
+                            </div>
+                            <p class="text-sm text-gray-700">Great article! Firebase has really simplified backend development for me.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Comment 2 -->
+                <div class="flex">
+                    <div class="flex-shrink-0 mr-4">
+                        <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600"></i>
+                        </div>
+                    </div>
+                    <div class="flex-1">
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex items-center justify-between mb-2">
+                                <p class="text-sm font-medium text-gray-900">Alex Johnson</p>
+                                <time datetime="2023-05-17" class="text-xs text-gray-500">May 17, 2023</time>
+                            </div>
+                            <p class="text-sm text-gray-700">Thanks for the clear explanation. The code examples were particularly helpful.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
