@@ -5,13 +5,10 @@ import { db, auth } from "./config.js";
 let getuidOfUser = localStorage.getItem("user-uid");
 let showuserintead = document.getElementById("profile")
 let loginsignprofile = document.getElementById("login-sign-profile")
-let changedToPostBlog = document.getElementById("changedToPostBlog")
 let user = null;
 console.log(getuidOfUser);
 if (getuidOfUser) {
     showuserintead.innerHTML = ""
-    changedToPostBlog.setAttribute("href", "/create-blog.html")
-    changedToPostBlog.innerHTML = "Create Blog"
 }
 
 async function getUserData() {
@@ -55,7 +52,7 @@ async function getUserData() {
         console.log(loginsignprofile);
         loginsignprofile.setAttribute("href", "/profile.html")
         loginsignprofile.innerHTML = "Your Profile"
-        
+
         let signout = document.getElementById("SignOut")
         signout.addEventListener("click",  ()=>{
             console.log("Sign out clicked");
@@ -70,5 +67,4 @@ async function getUserData() {
 }
 
 getUserData()
-
 
