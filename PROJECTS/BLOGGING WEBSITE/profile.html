@@ -8,101 +8,115 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <!-- Navigation (same as dashboard.html) -->
-    <!-- ... -->
+
+        <!-- Navigation -->
+        <nav class="bg-white shadow-sm">
+            <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="flex justify-between h-16">
+                    <div class="flex">
+                        <div class="flex-shrink-0 flex items-center">
+                            <a href="index.html" class="text-xl font-bold text-blue-600">FireBlog</a>
+                        </div>
+                        <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                            <a href="index.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Home
+                            </a>
+                            <a href="allblogs.html" class="border-transparent text-gray-500 hover:border-gray-300 hover:text-gray-700 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-medium">
+                                Explore
+                            </a>
+                        </div>
+                    </div>
+                    <div id="profile" class="hidden sm:ml-6 sm:flex sm:items-center">
+                        <a href="auth.html" class="text-gray-500 hover:text-gray-700 px-3 py-2 text-sm font-medium">
+                            Login/Signup
+                        </a>
+                    </div>
+                    <!-- Mobile menu button -->
+                    <div class="-mr-2 flex items-center sm:hidden">
+                        <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-gray-500 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-blue-500">
+                            <span class="sr-only">Open main menu</span>
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- Mobile menu -->
+            <div id="mobile-menu" class="hidden sm:hidden">
+                <div class="pt-2 pb-3 space-y-1">
+                    <a href="index.html" class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Home</a>
+                    <a href="allblogs.html" class="border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Explore</a>
+                    <a href="auth.html" id="login-sign-profile" class= "border-transparent text-gray-500 hover:bg-gray-50 hover:border-gray-300 hover:text-gray-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium">Login/Signup</a>
+                </div>
+            </div>
+        </nav>
+    
 
     <!-- Main Content -->
     <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div class="flex justify-between items-center mb-8">
+
+        <h1 class="text-3xl font-bold text-gray-800 mb-8">Dashboard</h1>
+        
+        <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <!-- Stats Card 1 -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-blue-100 text-blue-600 mr-4">
+                        <i class="fas fa-file-alt text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500" >Total Blogs</p>
+                        <p class="text-2xl font-semibold text-gray-800" id="tblogs">12</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Card 2 -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-green-100 text-green-600 mr-4">
+                        <i class="fas fa-eye text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Total Views</p>
+                        <p class="text-2xl font-semibold text-gray-800" id="tviews">1,245</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Stats Card 3 -->
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                <div class="flex items-center">
+                    <div class="p-3 rounded-full bg-purple-100 text-purple-600 mr-4">
+                        <i class="fas fa-heart text-xl"></i>
+                    </div>
+                    <div>
+                        <p class="text-sm font-medium text-gray-500">Total Likes</p>
+                        <p class="text-2xl font-semibold text-gray-800" id="tlikes">89</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+
+
+
+
+        <div class="flex justify-between items-center mt-8 mb-8">
             <h1 class="text-3xl font-bold text-gray-800">My Blogs</h1>
             <a href="create-blog.html" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md inline-flex items-center">
                 <i class="fas fa-plus mr-2"></i> New Blog
             </a>
         </div>
+
+        <div class="mb-6 flex justify-center space-x-8">
+            <button type="button" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md inline-flex items-center" id="published">Published Blogs</button>
+            <button type="button" class="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded-md inline-flex items-center" id="drafted">Drafted Blogs</button>
+        </div>
         
         <!-- Blog List -->
         <div class="bg-white shadow overflow-hidden sm:rounded-lg">
-            <ul class="divide-y divide-gray-200">
-                <!-- Blog Item 1 -->
-                <li class="px-6 py-4 hover:bg-gray-50">
-                    <div class="flex items-center justify-between">
-                        <div class="flex-1 min-w-0">
-                            <p class="text-sm font-medium text-blue-600 truncate">
-                                <a href="blog-detail.html">Getting Started with Firebase</a>
-                            </p>
-                            <p class="text-sm text-gray-500 truncate">
-                                Published on May 15, 2023
-                            </p>
-                        </div>
-                        <div class="ml-4 flex-shrink-0 flex space-x-2">
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                Published
-                            </span>
-                            <div class="flex space-x-2">
-                                <a href="create-blog.html?edit=1" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button class="text-red-500 hover:text-red-700">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Blog Item 2 -->
-                <li class="px-6 py-4 hover:bg-gray-50">
-                    <div class="flex items-center justify-between">
-                        <div class="flex-1 min-w-0">
-                            <p class="text-sm font-medium text-blue-600 truncate">
-                                <a href="blog-detail.html">Tailwind CSS Best Practices</a>
-                            </p>
-                            <p class="text-sm text-gray-500 truncate">
-                                Published on June 2, 2023
-                            </p>
-                        </div>
-                        <div class="ml-4 flex-shrink-0 flex space-x-2">
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                                Published
-                            </span>
-                            <div class="flex space-x-2">
-                                <a href="create-blog.html?edit=2" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button class="text-red-500 hover:text-red-700">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
-                
-                <!-- Blog Item 3 (Draft) -->
-                <li class="px-6 py-4 hover:bg-gray-50">
-                    <div class="flex items-center justify-between">
-                        <div class="flex-1 min-w-0">
-                            <p class="text-sm font-medium text-blue-600 truncate">
-                                Modern JavaScript Techniques
-                            </p>
-                            <p class="text-sm text-gray-500 truncate">
-                                Last edited on June 10, 2023
-                            </p>
-                        </div>
-                        <div class="ml-4 flex-shrink-0 flex space-x-2">
-                            <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-yellow-100 text-yellow-800">
-                                Draft
-                            </span>
-                            <div class="flex space-x-2">
-                                <a href="create-blog.html?edit=3" class="text-blue-500 hover:text-blue-700">
-                                    <i class="fas fa-edit"></i>
-                                </a>
-                                <button class="text-red-500 hover:text-red-700">
-                                    <i class="fas fa-trash"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </li>
+            <ul class="divide-y divide-gray-200" id="renderUserBlogs">
+ 
             </ul>
         </div>
         
@@ -125,6 +139,56 @@
         </div>
     </main>
 
-    <script src="js/main.js"></script>
+<!-- Edit Blog Modal -->
+<div id="editModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50 hidden">
+    <div class="bg-white rounded-lg shadow-xl w-full max-w-xl p-6 relative">
+      
+      <!-- Close Button -->
+      <button id="closeModalBtn" class="absolute top-3 right-3 text-gray-500 hover:text-red-500 text-xl font-bold">&times;</button>
+      
+      <h2 class="text-xl font-semibold mb-4 text-gray-800">Edit Blog</h2>
+      
+      <div class="space-y-4">
+        <!-- Title -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Title</label>
+          <input type="text" id="editTitle" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Enter blog title">
+        </div>
+  
+        <!-- Content -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Content</label>
+          <textarea id="editContent" rows="5" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-400" placeholder="Write blog content..."></textarea>
+        </div>
+  
+        <!-- Image File -->
+        <div>
+          <label class="block text-sm font-medium text-gray-700 mb-1">Select Image</label>
+          <input type="file" id="editImageFile" accept="image/*" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none" />
+        </div>
+  
+        <!-- Image Preview -->
+        <div id="imagePreview" class="mt-2 hidden">
+          <label class="block text-sm text-gray-600 mb-1">Image Preview:</label>
+          <img id="previewImg" src="" alt="Image Preview" class="max-h-48 rounded-md border" />
+        </div>
+  
+        <!-- Hidden Blog ID -->
+        <input type="hidden" id="hiddenBlogId">
+  
+        <!-- Save Button -->
+        <button id="saveChangesBtn" class="w-full py-2 px-4 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+          Save Changes
+        </button>
+      </div>
+    </div>
+  </div>
+  
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script type="module" defer src="js/main.js"></script>
+    <script type="module" defer src="js/profile.js"></script>
 </body>
 </html>

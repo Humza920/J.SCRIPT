@@ -185,7 +185,15 @@ document.addEventListener('DOMContentLoaded', function () {
         } else {
             // User is signed out
             console.log("User is signed out");
-
+            if (window.location.pathname !== "/auth.html"
+                && window.location.pathname !== "/"
+                && window.location.pathname !== "/index.html"
+            ) {
+                // Redirect to auth page if not already there
+                window.location.href = "auth.html";
+                return;
+            }
+            
         }
     });
 });

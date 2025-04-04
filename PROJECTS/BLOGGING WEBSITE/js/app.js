@@ -6,6 +6,7 @@ let getuidOfUser = localStorage.getItem("user-uid");
 let showuserintead = document.getElementById("profile")
 let loginsignprofile = document.getElementById("login-sign-profile")
 let changedToPostBlog = document.getElementById("changedToPostBlog")
+let titleToAuth = document.getElementById("titleToAuth")
 let user = null;
 console.log(getuidOfUser);
 if (getuidOfUser) {
@@ -17,6 +18,7 @@ if (getuidOfUser) {
 async function getUserData() {
     if (!getuidOfUser) {
         console.log("No user found!");
+        titleToAuth.setAttribute("href", "/auth.html")
         return;
     }
     console.log("User found!");
