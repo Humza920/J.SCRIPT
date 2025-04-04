@@ -1,4 +1,4 @@
-import { collection, updateDoc, doc, getDocs, getDoc, query, orderBy, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { collection, updateDoc, doc, getDocs, getDoc, query, orderBy, Timestamp, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { db, auth } from "./config.js";
 let getuidOfUser = localStorage.getItem("user-uid");
@@ -13,6 +13,7 @@ if (getuidOfUser) {
 
 async function getUserData() {
     if (!getuidOfUser) {
+        Swal.fire("Not Logged In", "Please log in to access your profile.", "warning");
         console.log("No user found!");
         return;
     }
@@ -23,6 +24,7 @@ async function getUserData() {
     const userData = await getDoc(querySnapshot);
     console.log(userData);
     if (!userData.exists()) {
+        Swal.fire("User Not Found", "No such user exists in the database.", "error");
         console.log("No such user found!");
         return;
     }
@@ -72,25 +74,23 @@ let userBlogs = [];
 let renderUserBlogs = document.getElementById("renderUserBlogs")
 let published = document.getElementById("published")
 let drafted = document.getElementById("drafted")
-let blogslenth = 0
 let tblogs = document.getElementById("tblogs")
 let tlikes = document.getElementById("tlikes")
 let tviews = document.getElementById("tviews")
 
 drafted.addEventListener("click", () => {
-    userBlogs = [];
-    renderUserBlogs.innerHTML = ""
+
     getuserBlogs("drafts")
 })
 
 published.addEventListener("click", () => {
-    userBlogs = [];
-    renderUserBlogs.innerHTML = ""
+
     getuserBlogs("blogs")
 })
 
 async function getuserBlogs(blogs_drafts) {
-    // Show loading indicator with Swal
+    renderUserBlogs.innerHTML = ""
+    userBlogs = []
     Swal.fire({
         title: 'Loading...',
         html: 'Fetching your blogs...',
@@ -101,24 +101,35 @@ async function getuserBlogs(blogs_drafts) {
     });
 
     try {
-        const user = await getDocs(collection(db, "users", getuidOfUser, blogs_drafts));
+        const user = await getDocs(query(collection(db, "users", getuidOfUser, blogs_drafts), orderBy("createdAt", "asc")));
         console.log(user.docs);
+        if (user.docs.length === 0) {
+            Swal.fire("No Blogs", "You haven't written any blogs yet.", "info");
+            renderUserBlogs.innerHTML = `<div class="flex justify-center"><h1 class="text-lg">No blogs found!</h1></div>`;
+            console.log("No blogs found!");
+        }
+
         user.docs.forEach((doc) => {
+            const postData = doc.data();
+            const date = new Date(postData.createdAt.seconds * 1000);
+            postData.createdAt = date.toLocaleString("en-US", {
+                day: "2-digit",
+                month: "2-digit",
+                year: "numeric",
+                hour: "2-digit",
+                minute: "2-digit",
+                hour12: true
+            });
             userBlogs.push({
                 id: doc.id,
-                ...doc.data(),
+                ...postData,
                 userId: getuidOfUser,
             });
         });
 
-        if (user.docs.length === 0) {
-            console.log("No blogs found!");
-        }
-
         console.log(userBlogs);
 
         userBlogs.map((blog) => {
-            // Check if it's a draft or published and change status text accordingly
             const statusText = blogs_drafts === "drafts" ? "Drafted" : "Published";
             const statusClass = blogs_drafts === "drafts" ? "bg-yellow-100 text-yellow-800" : "bg-green-100 text-green-800";
 
@@ -151,14 +162,12 @@ async function getuserBlogs(blogs_drafts) {
             `;
         });
 
-        
+
         Swal.close();
-
-
 
     } catch (error) {
         console.error("Error fetching user blogs: ", error);
-        Swal.close(); 
+        Swal.close();
     }
 
     tblogs.innerHTML = userBlogs.length
@@ -167,72 +176,104 @@ async function getuserBlogs(blogs_drafts) {
     console.log(tviews.innerHTML);
     tlikes.innerHTML = tblogs.innerHTML * 79
     console.log(tlikes.innerHTML);
-    
+
     let updateBlog = document.querySelectorAll("#editBlog")
     let deleteBlog = document.querySelectorAll("#deleteBlog")
 
     updateBlog.forEach((btn) => {
-        btn.addEventListener("click", async(e)=> {
+        btn.addEventListener("click", async (e) => {
             e.preventDefault()
-            
+
             const editModal = document.getElementById("editModal");
-const closeModalBtn = document.getElementById("closeModalBtn");
-const saveChangesBtn = document.getElementById("saveChangesBtn");
+            const closeModalBtn = document.getElementById("closeModalBtn");
+            const saveChangesBtn = document.getElementById("saveChangesBtn");
 
-function openModal() {
-    editModal.classList.remove("hidden");
-}
+            function openModal() {
+                editModal.classList.remove("hidden");
+            }
 
-function closeModal() {
-    editModal.classList.add("hidden");
-}
+            function closeModal() {
+                editModal.classList.add("hidden");
+            }
 
-closeModalBtn.addEventListener("click", closeModal);
-openModal()
-            
-saveChangesBtn.addEventListener("click", async (e) => {
-    e.preventDefault()
-            // Validate form inputs here
-            const title = document.getElementById("editTitle");
-            const content = document.getElementById("editContent");
-            
-        
-        if (title.value === "" || content.value === "") {
-            Swal.fire("Error", "Please fill in all fields.", "error");
-            return;
-        }   
-        
-    
-    try {
-                
-        let blogId = btn.dataset.id
-        console.log(blogId);
-        const blogRef = doc(db, "users", getuidOfUser, blogs_drafts, blogId);
-        await updateDoc(blogRef , {
-            title: title.value,
-            content: content.value,
-            updatedAt: Timestamp.now()
-        });
-        console.log("Blog updated successfully!");
-        Swal.fire("Success", "Blog updated successfully!", "success");
-        // Redirect to blog editor page with blog ID
-        setTimeout(() => {
-            closeModal()
-              
-        }, 2000)
-        
-    } catch (error) {
-        console.error("Error updating blog: ", error);                
-    }
-})
+            closeModalBtn.addEventListener("click", closeModal);
+            openModal()
 
+            saveChangesBtn.addEventListener("click", async (e) => {
+                e.preventDefault()
+                const title = document.getElementById("editTitle");
+                const content = document.getElementById("editContent");
 
+                if (title.value === "" || content.value === "") {
+                    Swal.fire("Error", "Please fill in all fields.", "error");
+                    return;
+                }
+
+                try {
+                    let blogId = btn.dataset.id
+                    console.log(blogId);
+                    const blogRef = doc(db, "users", getuidOfUser, blogs_drafts, blogId);
+                    await updateDoc(blogRef, {
+                        title: title.value,
+                        content: content.value,
+                        updatedAt: Timestamp.now()
+                    });
+                    console.log("Blog updated successfully!");
+                    Swal.fire("Success", "Blog updated successfully!", "success");
+                    setTimeout(() => {
+                        closeModal()
+                        if (blogs_drafts === "drafts") {
+                            getuserBlogs("drafts")
+                        }
+                        else {
+                            getuserBlogs("blogs")
+                        }
+                    }, 2000)
+
+                } catch (error) {
+                    console.error("Error updating blog: ", error);
+                    Swal.fire("Error", "Failed to update blog. Please try again.", "error");
+                }
+            })
         })
     })
 
-    
+    deleteBlog.forEach((btn) => {
+        btn.addEventListener("click", async (e) => {
+            e.preventDefault()
 
+            const blogId = btn.dataset.id
+            console.log(blogId);
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+            }).then(async (result) => {
+                if (result.isConfirmed) {
+                    try {
+                        await deleteDoc(doc(db, "users", getuidOfUser, blogs_drafts, blogId));
+                        console.log("Blog deleted successfully!");
+                        Swal.fire('Deleted!', 'Your blog has been deleted.', 'success');
+                        setTimeout(() => {
+                            if (blogs_drafts === "drafts") {
+                                getuserBlogs("drafts")
+                            }
+                            else {
+                                getuserBlogs("blogs")
+                            }
+                        }, 2000)
+                    } catch (error) {
+                        console.error("Error deleting blog: ", error);
+                        Swal.fire("Error", "Failed to delete blog. Please try again.", "error");
+                    }
+                }
+            })
+        })
+    })
 }
 
-// Initially fetch published blogs
 getuserBlogs("blogs");
