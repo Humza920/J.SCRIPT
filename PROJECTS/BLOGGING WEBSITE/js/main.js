@@ -1,6 +1,6 @@
 // Common JavaScript for all pages
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
-import { setDoc , doc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { setDoc, doc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 
 import { auth, db } from "./config.js";
 
@@ -78,53 +78,53 @@ document.addEventListener('DOMContentLoaded', function () {
                 alert("Passwords do not match.");
                 return;
             }
-            
-                createUserWithEmailAndPassword(auth, signupEmail.value, signupPassword.value)
-                    .then(async (userCredential) => {
-                        // Signed up 
-                        const user = userCredential.user;
-                        console.log(user);
 
-                        // Add user data to Firestore
+            createUserWithEmailAndPassword(auth, signupEmail.value, signupPassword.value)
+                .then(async (userCredential) => {
+                    // Signed up 
+                    const user = userCredential.user;
+                    console.log(user);
 
-                        try {
-                            const docRef = await setDoc(doc(db, "users" , user.uid), {
-                                name: signupName.value,
-                                email: signupEmail.value,
-                                uid: user.uid,
-                                createdAt: new Date()
-                            });
-                            console.log("Document written with ID: ", user.uid);
-                            console.log("Document ID:", user.uid);
+                    // Add user data to Firestore
 
-                            // Redirect to dashboard or home page
-                            Swal.fire({
-                                title: "Account Created Successful!",
-                                text: `Welcome ! ${signupName.value}`,
-                                icon: "success",
-                                confirmButtonText: "OK",
-                                customClass: {
-                                    confirmButton: "btn btn-primary",
-                                },
-                            }).then((result) => {
-                                if (result.isConfirmed) {
-                                    window.location.href = "index.html"; // Redirect to Dashboard
-                                }
-                            });
-                        } catch (e) {
-                            console.error("Error adding document: ", e);
-                        }
-                    })
-                    .catch((error) => {
-                        const errorCode = error.code;
-                        const errorMessage = error.message;
-                        alert(errorMessage);
-                    });
-            
+                    try {
+                        const docRef = await setDoc(doc(db, "users", user.uid), {
+                            name: signupName.value,
+                            email: signupEmail.value,
+                            uid: user.uid,
+                            createdAt: new Date()
+                        });
+                        console.log("Document written with ID: ", user.uid);
+                        console.log("Document ID:", user.uid);
+
+                        // Redirect to dashboard or home page
+                        Swal.fire({
+                            title: "Account Created Successful!",
+                            text: `Welcome ! ${signupName.value}`,
+                            icon: "success",
+                            confirmButtonText: "OK",
+                            customClass: {
+                                confirmButton: "btn btn-primary",
+                            },
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                window.location.href = "index.html"; // Redirect to Dashboard
+                            }
+                        });
+                    } catch (e) {
+                        console.error("Error adding document: ", e);
+                    }
+                })
+                .catch((error) => {
+                    const errorCode = error.code;
+                    const errorMessage = error.message;
+                    alert(errorMessage);
+                });
+
         })
     }
 
-    
+
     // Login form submission
     const loginButton = document.getElementById('login-button');
     const loginEmail = document.getElementById('email');
@@ -193,7 +193,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 window.location.href = "auth.html";
                 return;
             }
-            
+
         }
     });
 });

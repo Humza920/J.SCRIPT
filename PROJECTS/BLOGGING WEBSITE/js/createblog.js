@@ -1,4 +1,4 @@
-import { collection, addDoc, updateDoc , doc , getDoc , Timestamp} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { collection, addDoc, updateDoc, doc, getDoc, Timestamp } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { db, auth } from "./config.js";
 let getuidOfUser = localStorage.getItem("user-uid");
@@ -17,8 +17,8 @@ async function getUserData() {
         return;
     }
     console.log("User found!");
-    
-    const querySnapshot =  doc(db, "users" , getuidOfUser);
+
+    const querySnapshot = doc(db, "users", getuidOfUser);
     console.log(querySnapshot);
     const userData = await getDoc(querySnapshot);
     console.log(userData);
@@ -29,8 +29,8 @@ async function getUserData() {
 
     user = userData.data();
     console.log(user);
-    
-        showuserintead.innerHTML = `<details class="relative">
+
+    showuserintead.innerHTML = `<details class="relative">
     <summary class="flex items-center space-x-3 p-2 bg-gray-100 rounded-lg shadow-sm cursor-pointer list-none">
         <img src="https://tse1.mm.bing.net/th?id=OIP.0iGHOHqzuwsxu_WMdOR4oQAAAA&pid=Api&P=0&h=220" 
              alt="User Profile Picture" 
@@ -48,21 +48,21 @@ async function getUserData() {
 </details>
 `;
 
-        console.log(loginsignprofile);
-        loginsignprofile.setAttribute("href", "/profile.html")
-        loginsignprofile.innerHTML = "Your Profile"
-        
-        let signout = document.getElementById("SignOut")
-        signout.addEventListener("click",  ()=>{
-            console.log("Sign out clicked");
-            signOut(auth).then(() => {
-                localStorage.removeItem("user-uid");
-                Swal.fire("Logged Out!", "You have been signed out.", "success");
-                setTimeout(() => window.location.href = "/auth.html", 1500);
-            }).catch((error) => {
-                console.error("Error signing out: ", error);
-            });
-        })
+    console.log(loginsignprofile);
+    loginsignprofile.setAttribute("href", "/profile.html")
+    loginsignprofile.innerHTML = "Your Profile"
+
+    let signout = document.getElementById("SignOut")
+    signout.addEventListener("click", () => {
+        console.log("Sign out clicked");
+        signOut(auth).then(() => {
+            localStorage.removeItem("user-uid");
+            Swal.fire("Logged Out!", "You have been signed out.", "success");
+            setTimeout(() => window.location.href = "/auth.html", 1500);
+        }).catch((error) => {
+            console.error("Error signing out: ", error);
+        });
+    })
 }
 
 getUserData()
@@ -84,7 +84,7 @@ publishBlog.addEventListener("click", async (e) => {
     e.preventDefault();
     let statusCheck = document.querySelector("input[name='status']:checked");
     console.log(user);
-    
+
 
     if (!blogTitle.value || !blogContent.value) {
         Swal.fire({
@@ -94,7 +94,7 @@ publishBlog.addEventListener("click", async (e) => {
             confirmButtonText: 'OK',
             confirmButtonColor: '#007bff'
         });
-        return;     
+        return;
     }
 
     if (!statusCheck) {
@@ -125,14 +125,14 @@ publishBlog.addEventListener("click", async (e) => {
                 content: blogContent.value,
                 name: user.name,
                 createdAt: Timestamp.now(),
-                image: blogImg ? blogImg : ""  
+                image: blogImg ? blogImg : ""
             });
 
             console.log("Draft created with ID:", draftDoc.id);
 
             const blogDocRef = doc(db, "users", localStorage.getItem("user-uid"), "drafts", draftDoc.id);
             await updateDoc(blogDocRef, {
-                blogId: draftDoc.id  
+                blogId: draftDoc.id
             });
 
             Swal.fire({
@@ -159,7 +159,7 @@ publishBlog.addEventListener("click", async (e) => {
                 icon: 'error'
             });
         }
-        return; 
+        return;
     }
 
     try {
@@ -168,7 +168,7 @@ publishBlog.addEventListener("click", async (e) => {
             title: blogTitle.value,
             content: blogContent.value,
             createdAt: Timestamp.now(),
-            image: blogImg ? blogImg : "" , 
+            image: blogImg ? blogImg : "",
             name: user.name
         });
 

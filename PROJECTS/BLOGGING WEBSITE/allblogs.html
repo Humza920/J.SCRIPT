@@ -85,9 +85,10 @@
       <div class="mb-8">
         <h2 class="text-2xl font-bold text-gray-800 mb-4">All Blogs</h2>
 
-        <div class="grid gap-6 md:grid-cols-2 lg:grid-cols-3" id="blogList">
-          
-        </div>
+        <div
+          class="grid gap-6 md:grid-cols-2 lg:grid-cols-3"
+          id="blogList"
+        ></div>
       </div>
     </main>
 
@@ -120,7 +121,10 @@
                   >
                 </li>
                 <li>
-                  <a href="auth.html" class="text-gray-600 hover:text-blue-600"
+                  <a
+                    href="auth.html"
+                    id="yourPf"
+                    class="text-gray-600 hover:text-blue-600"
                     >Login/Signup</a
                   >
                 </li>
@@ -165,39 +169,52 @@
       </div>
     </footer>
 
-
     <!-- Blog Detail Modal -->
-<div id="blog-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
-  <div class="flex items-center justify-center min-h-screen px-4 text-center">
-    <!-- Background overlay -->
-    <div class="fixed inset-0 bg-black/50"></div>
-    
-    <!-- Modal container -->
-    <div class="relative inline-block w-full max-w-2xl my-8 bg-white rounded-lg shadow-xl overflow-hidden">
-      <!-- Close button -->
-      <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-gray-700">
-        <i class="fas fa-times text-xl"></i>
-      </button>
-      
-      <!-- Blog content -->
-      <div class="p-6">
-        <!-- Blog title with decorative border -->
-        <h2 class="text-2xl font-bold text-gray-800 mb-4 pb-3 border-b border-gray-200" id="modal-blog-title">
-          Blog ka Title Yahan
-        </h2>
-        
-        <!-- Blog content with beautiful spacing -->
-        <div class="prose max-w-none text-gray-700" id="modal-blog-content">
-          <p>Yahan blog ka poora content display hoga. Yeh paragraph apne blog ke content se replace ho jayega.</p>
-          
-          <p class="mt-4">Har naya paragraph automatically spacing ke sath show hoga. Content jitna lamba ho, utna hi scrollable hoga modal mein.</p>
+    <div id="blog-modal" class="fixed inset-0 z-50 hidden overflow-y-auto">
+      <div
+        class="flex items-center justify-center min-h-screen px-4 text-center"
+      >
+        <!-- Background overlay -->
+        <div class="fixed inset-0 bg-black/50"></div>
+
+        <!-- Modal container -->
+        <div
+          class="relative inline-block w-full max-w-2xl my-8 bg-white rounded-lg shadow-xl overflow-hidden"
+        >
+          <!-- Close button -->
+          <button
+            id="closeModal"
+            class="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+          >
+            <i class="fas fa-times text-xl"></i>
+          </button>
+
+          <!-- Blog content -->
+          <div class="p-6">
+            <!-- Blog title with decorative border -->
+            <h2
+              class="text-2xl font-bold text-gray-800 mb-4 pb-3 border-b border-gray-200"
+              id="modal-blog-title"
+            >
+              Blog ka Title Yahan
+            </h2>
+
+            <!-- Blog content with beautiful spacing -->
+            <div class="prose max-w-none text-gray-700" id="modal-blog-content">
+              <p>
+                Yahan blog ka poora content display hoga. Yeh paragraph apne
+                blog ke content se replace ho jayega.
+              </p>
+
+              <p class="mt-4">
+                Har naya paragraph automatically spacing ke sath show hoga.
+                Content jitna lamba ho, utna hi scrollable hoga modal mein.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
-
-
 
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script type="module" defer src="js/main.js"></script>

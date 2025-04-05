@@ -1,4 +1,4 @@
-import { doc , getDoc , getDocs , query , orderBy , collection} from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { doc, getDoc, getDocs, query, orderBy, collection } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { db, auth } from "./config.js";
 
@@ -7,12 +7,15 @@ let showuserintead = document.getElementById("profile");
 let loginsignprofile = document.getElementById("login-sign-profile");
 let changedToPostBlog = document.getElementById("changedToPostBlog");
 let user = null;
+let yourPf = document.getElementById("yourPf");
 
 console.log(getuidOfUser);
 if (getuidOfUser) {
     showuserintead.innerHTML = "";
     changedToPostBlog.setAttribute("href", "/create-blog.html");
     changedToPostBlog.innerHTML = "Create Blog";
+    yourPf.setAttribute("href", "/profile.html");
+    yourPf.innerHTML = "Your Profile";
 }
 
 // Show Swal Loading Spinner

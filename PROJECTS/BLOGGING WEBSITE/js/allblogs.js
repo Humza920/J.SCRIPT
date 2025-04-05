@@ -6,10 +6,13 @@ let getuidOfUser = localStorage.getItem("user-uid");
 let showuserintead = document.getElementById("profile");
 let loginsignprofile = document.getElementById("login-sign-profile");
 let user = null;
+let yourPf = document.getElementById("yourPf");
 
 console.log(getuidOfUser);
 if (getuidOfUser) {
     showuserintead.innerHTML = "";
+    yourPf.setAttribute("href", "/profile.html");
+    yourPf.innerHTML = "Your Profile";
 }
 
 async function getUserData() {
