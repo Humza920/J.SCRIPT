@@ -43,7 +43,7 @@ async function getUserData() {
     <!-- Dropdown Menu -->
     <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
         <ul class="py-2">
-            <li><a href="/dashboard" class="block px-4 py-2 hover:bg-gray-100">Dashboard</a></li>
+            <li><a href="/create-blog.html" class="block px-4 py-2 hover:bg-gray-100">Create Blog</a></li>
             <li><a href="/profile.html" class="block px-4 py-2 hover:bg-gray-100">Your Profile</a></li>
             <li><button id="SignOut" class="w-full text-left px-4 py-2 hover:bg-gray-100">Sign Out</button></li>
         </ul>
@@ -53,6 +53,7 @@ async function getUserData() {
 
     console.log(loginsignprofile);
     loginsignprofile.setAttribute("href", "/profile.html")
+    loginsignprofile.className = "bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-medium";
     loginsignprofile.innerHTML = "Your Profile"
 
     let signout = document.getElementById("SignOut")
@@ -197,12 +198,21 @@ async function getuserBlogs(blogs_drafts) {
             }
 
             closeModalBtn.addEventListener("click", closeModal);
+
+            const title = document.getElementById("editTitle");
+            const content = document.getElementById("editContent");
+            let blogId = btn.dataset.id
+            const blogRef = doc(db, "users", getuidOfUser, blogs_drafts, blogId);
+            const blogDoc = await getDoc(blogRef);
+            const blogTitle = blogDoc.data().title;
+            const blogContent = blogDoc.data().content;
+            title.value = blogTitle;
+            content.innerHTML = blogContent;
+
             openModal()
 
             saveChangesBtn.addEventListener("click", async (e) => {
                 e.preventDefault()
-                const title = document.getElementById("editTitle");
-                const content = document.getElementById("editContent");
 
                 if (title.value === "" || content.value === "") {
                     Swal.fire("Error", "Please fill in all fields.", "error");
