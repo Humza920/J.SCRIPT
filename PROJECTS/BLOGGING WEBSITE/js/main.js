@@ -161,8 +161,14 @@ document.addEventListener('DOMContentLoaded', function () {
                             confirmButton: "btn btn-primary",
                         },
                     }).then((result) => {
+                        if (result.isConfirmed && user.uid === "IVMY0rRbSLauFXzx08UMaPwAKhC3") {
+                            window.location.href = "admin/index.html"; // Redirect to Admin Dashboard
+                            return
+                        }
+
                         if (result.isConfirmed) {
                             window.location.href = "index.html"; // Redirect to Dashboard
+                            return
                         }
                     });
                 })
