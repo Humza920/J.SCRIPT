@@ -111,6 +111,7 @@ async function getuserBlogs(blogs_drafts) {
         }
 
         user.docs.forEach((doc) => {
+            
             const postData = doc.data();
             const date = new Date(postData.createdAt.seconds * 1000);
             postData.createdAt = date.toLocaleString("en-US", {

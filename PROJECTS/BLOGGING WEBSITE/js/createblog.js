@@ -78,7 +78,7 @@ getUserData()
 let blogTitle = document.getElementById("blog-title");
 let blogContent = document.getElementById("blog-content");
 let publishBlog = document.getElementById("publish-blog");
-let blogImg = document.getElementById("blog-img");
+
 
 publishBlog.addEventListener("click", async (e) => {
     e.preventDefault();
@@ -125,7 +125,6 @@ publishBlog.addEventListener("click", async (e) => {
                 content: blogContent.value,
                 name: user.name,
                 createdAt: Timestamp.now(),
-                image: blogImg ? blogImg : ""
             });
 
             console.log("Draft created with ID:", draftDoc.id);
@@ -168,7 +167,6 @@ publishBlog.addEventListener("click", async (e) => {
             title: blogTitle.value,
             content: blogContent.value,
             createdAt: Timestamp.now(),
-            image: blogImg ? blogImg : "",
             name: user.name
         });
 

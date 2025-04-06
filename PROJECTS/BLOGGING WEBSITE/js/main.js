@@ -130,6 +130,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const loginEmail = document.getElementById('email');
     const loginPassword = document.getElementById('password');
 
+    
     if (loginButton === null) {
         console.log("WE ARE NOT ON AUTH PAGE");
 
@@ -160,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                         customClass: {
                             confirmButton: "btn btn-primary",
                         },
+                        allowOutsideClick: false
                     }).then((result) => {
 
                         if (result.isConfirmed && user.uid === "IVMY0rRbSLauFXzx08UMaPwAKhC3") {
@@ -203,4 +205,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
         }
     });
+    let backToHome  = document.getElementById('backToHome');
+    if (backToHome) {
+        if (localStorage.getItem("user-uid") === "IVMY0rRbSLauFXzx08UMaPwAKhC3"){
+            backToHome.href ="/admin/index.html" ; // Redirect to Admin Dashboard
+            console.log("run");
+            
+        } else {
+            backToHome.href = "/index.html"  // Redirect to Dashboard
+            console.log("no");
+            
+        }
+    }
 });
