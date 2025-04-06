@@ -161,6 +161,7 @@ document.addEventListener('DOMContentLoaded', function () {
                             confirmButton: "btn btn-primary",
                         },
                     }).then((result) => {
+
                         if (result.isConfirmed && user.uid === "IVMY0rRbSLauFXzx08UMaPwAKhC3") {
                             window.location.href = "admin/index.html"; // Redirect to Admin Dashboard
                             return
@@ -196,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function () {
                 && window.location.pathname !== "/index.html"
             ) {
                 // Redirect to auth page if not already there
-                window.location.href = "auth.html";
+                window.location.href = "/auth.html";
                 return;
             }
 
