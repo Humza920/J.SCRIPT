@@ -102,7 +102,6 @@ async function getPosts() {
 
         const querySnapshot = await getDocs(collection(db, "users"));
         for (const document of querySnapshot.docs) {
-            
             const docId = document.id;
             const docRef = query(collection(db, "users", docId, "blogs"), orderBy("createdAt", "desc"));
             const docSnapshot = await getDocs(docRef);

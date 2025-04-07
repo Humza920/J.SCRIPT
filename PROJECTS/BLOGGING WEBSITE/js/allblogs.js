@@ -101,7 +101,6 @@ async function getPosts() {
         });
 
         const querySnapshot = await getDocs(collection(db, "users"));
-        console.log(querySnapshot.docs);
 
         for (const document of querySnapshot.docs) {
             const docId = document.id;
