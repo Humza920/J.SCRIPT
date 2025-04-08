@@ -3,7 +3,6 @@ import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-aut
 import { db, auth } from "/js/config.js";
 
 
-
 let signout = document.querySelectorAll(".signOut")
 console.log(signout);
 signout.forEach((signout) => {

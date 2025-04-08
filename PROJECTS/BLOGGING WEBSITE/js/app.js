@@ -9,6 +9,11 @@ let changedToPostBlog = document.getElementById("changedToPostBlog");
 let user = null;
 let yourPf = document.getElementById("yourPf");
 
+if (getuidOfUser === "IVMY0rRbSLauFXzx08UMaPwAKhC3") {
+    console.log("ADMIN USER");
+    window.location.href = "/admin/index.html"
+}
+
 console.log(getuidOfUser);
 if (getuidOfUser) {
     showuserintead.innerHTML = "";
@@ -41,6 +46,11 @@ async function getUserData() {
     const userData = await getDoc(querySnapshot);
     if (!userData.exists()) {
         console.log("No such user found!");
+         auth.currentUser.delete()
+         console.log("Account deleted!");
+         localStorage.removeItem("user-uid");
+         Swal.fire("Account Deleted!", "Your account has been deleted.", "success");
+         window.location.href = "/auth.html";
         return;
     };
 

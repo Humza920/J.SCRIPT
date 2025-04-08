@@ -132,76 +132,8 @@
         User Management Panel
       </h1>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        <!-- User Card -->
-        <div
-          class="bg-white/80 backdrop-blur-sm border border-gray-200 rounded-3xl shadow-sm hover:shadow-lg transition-all duration-300 p-6"
-        >
-          <!-- Header -->
-          <div class="flex items-center gap-4">
-            <img
-              src="https://i.pravatar.cc/100?img=20"
-              alt="User Avatar"
-              class="w-16 h-16 rounded-full border-2 border-indigo-500 shadow-sm"
-            />
-            <div>
-              <h2 class="text-xl font-semibold text-gray-800">Ahmed Raza</h2>
-              <p class="text-sm text-gray-500">ahmed.raza@example.com</p>
-            </div>
-          </div>
-
-          <!-- Stats -->
-          <div class="mt-6 grid grid-cols-3 text-center">
-            <div>
-              <p class="text-xl font-bold text-indigo-600">24</p>
-              <p class="text-xs text-gray-500">Blogs</p>
-            </div>
-            <div>
-              <p class="text-xl font-bold text-pink-500">589</p>
-              <p class="text-xs text-gray-500">Likes</p>
-            </div>
-            <div>
-              <p class="text-xl font-bold text-yellow-500">4.1k</p>
-              <p class="text-xs text-gray-500">Views</p>
-            </div>
-          </div>
-
-          <!-- Divider -->
-          <hr class="my-4 border-gray-200" />
-
-          <!-- Role & Joined -->
-          <div class="flex justify-between text-sm text-gray-600">
-            <p>
-              <span class="font-medium text-gray-800">Role:</span
-              ><span class="text-indigo-600"> User</span>
-            </p>
-            <p>
-              <span class="font-medium text-gray-800">Joined:</span> Mar 18,
-              2025
-            </p>
-          </div>
-
-          <!-- Delete Button -->
-          <button
-            class="mt-6 w-full flex items-center justify-center gap-2 bg-red-50 text-red-600 hover:bg-red-100 border border-red-200 py-2 px-4 rounded-xl text-sm font-medium transition-all duration-200"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              class="h-5 w-5"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6M9 7h6m2 0H7"
-              />
-            </svg>
-            Delete User
-          </button>
-        </div>
+      <div id="renderUsers" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
       </div>
     </main>
 

@@ -192,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
             const uid = user.uid;
             console.log("User is signed in:", uid);
             localStorage.setItem("user-uid", uid);
+            
         } else {
             // User is signed out
             console.log("User is signed out");
