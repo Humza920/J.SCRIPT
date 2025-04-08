@@ -1,4 +1,4 @@
-import { doc, setDoc, getDocs, getDoc, collection, query, orderBy, updateDoc, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
+import { doc, getDocs, collection, query, orderBy, deleteDoc } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-firestore.js";
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { db, auth } from "/js/config.js";
 
@@ -94,7 +94,7 @@ async function getDetails() {
         console.log(totalBlogs)
         console.log(allBlogs)
 
-        usersAll.innerHTML = allUsers
+        usersAll.innerHTML = allUsers - 1
         BlogsTotal.innerHTML = totalBlogs
         DraftsAll.innerHTML = allDraftsLength
         BlogsAll.innerHTML = allBlogsLength
@@ -109,9 +109,6 @@ async function getDetails() {
                         <p class="text-sm text-gray-500 mt-1">${allBlogs[i].name} • Published on ${allBlogs[i].createdAtFormated}</p>
                     </div>
                     <div class="flex space-x-2">
-                        <button data-id="${allBlogs[i].postId}" class="editBtn text-blue-500 hover:text-blue-700">
-                            <i class="fas fa-edit"></i>
-                        </button>
                         <button data-id="${allBlogs[i].postId}" class="deleteBtn text-red-500 hover:text-red-700">
                             <i class="fas fa-trash"></i>
                         </button>
@@ -122,7 +119,7 @@ async function getDetails() {
         Swal.close(); // Close loading after everything is done
 
         let deleteBtn = document.querySelectorAll(".deleteBtn")
-        let editBtn = document.querySelectorAll(".editBtn")
+
 
         deleteBtn.forEach((btn) => {
             btn.addEventListener("click", async () => {
@@ -157,13 +154,6 @@ async function getDetails() {
             })
         })
 
-        editBtn.forEach((btn) => {
-            btn.addEventListener("click", async () => {
-                let postId = btn.getAttribute("data-id")
-                let findUser = allBlogs.find(blog => blog.postId === postId)
-                let userId = findUser.userId
-            })
-        })
 
 
     } catch (error) {

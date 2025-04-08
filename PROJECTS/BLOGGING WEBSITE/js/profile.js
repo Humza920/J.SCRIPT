@@ -172,12 +172,14 @@ async function getuserBlogs(blogs_drafts) {
         Swal.close();
     }
 
-    tblogs.innerHTML = userBlogs.length
-    console.log(tblogs.innerHTML);
-    tviews.innerHTML = tblogs.innerHTML * 371
-    console.log(tviews.innerHTML);
-    tlikes.innerHTML = tblogs.innerHTML * 79
-    console.log(tlikes.innerHTML);
+    if (blogs_drafts === "blogs") {
+        tblogs.innerHTML = userBlogs.length
+        console.log(tblogs.innerHTML);
+        tviews.innerHTML = tblogs.innerHTML * 371
+        console.log(tviews.innerHTML);
+        tlikes.innerHTML = tblogs.innerHTML * 79
+        console.log(tlikes.innerHTML);
+    }
 
     let updateBlog = document.querySelectorAll("#editBlog")
     let deleteBlog = document.querySelectorAll("#deleteBlog")

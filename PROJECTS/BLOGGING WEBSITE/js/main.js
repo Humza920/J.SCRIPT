@@ -153,6 +153,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
                     console.log(user);
                     // Redirect to dashboard or home page
+
                     Swal.fire({
                         title: "Login Successful!",
                         text: `Welcome back! ${user.email}`,
