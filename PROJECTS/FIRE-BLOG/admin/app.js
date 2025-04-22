@@ -2,7 +2,6 @@ import { doc, getDocs, collection, query, orderBy, deleteDoc } from "https://www
 import { signOut } from "https://www.gstatic.com/firebasejs/10.12.4/firebase-auth.js";
 import { db, auth } from "/js/config.js";
 
-
 let signout = document.querySelectorAll(".signOut")
 console.log(signout);
 signout.forEach((signout) => {
@@ -28,8 +27,6 @@ let BlogsTotal = document.getElementById("totalBlogs")
 let DraftsAll = document.getElementById("draftedBlogs")
 let BlogsAll = document.getElementById("publishedBlogs")
 let showBlogs = document.getElementById("showBlogs")
-
-
 
 async function getDetails() {
     allBlogs = []
@@ -78,7 +75,6 @@ async function getDetails() {
         }
         for (const doc of totalUsers.docs) {
             const docId = doc.id
-
             const docRef = query(collection(db, "users", docId, "drafts"), orderBy("createdAt", "desc"))
             const gettingDrafts = await getDocs(docRef)
             allDraftsLength += gettingDrafts.docs.length
@@ -102,15 +98,17 @@ async function getDetails() {
 
         for (let i = 0; i < Math.min(3, allBlogs.length); i++) {
             showBlogs.innerHTML += `
-             <div class="flex items-start justify-between p-4 border border-gray-200 rounded-lg hover:bg-gray-50">
-                    <div>
-                        <h3 class="text-lg font-medium text-gray-900">${allBlogs[i].title}</h3>
-                        <p class="text-sm text-gray-500 mt-1">${allBlogs[i].name} • Published on ${allBlogs[i].createdAtFormated}</p>
-                    </div>
-                    <div class="flex space-x-2">
-                        <button data-id="${allBlogs[i].postId}" class="deleteBtn text-red-500 hover:text-red-700">
-                            <i class="fas fa-trash"></i>
-                        </button>
+                <div class="bg-white p-5 border border-gray-200 rounded-xl shadow-md hover:shadow-lg transition-all duration-300" data-aos="fade-up" data-aos-delay="${100 + i * 100}">
+                    <div class="flex items-start justify-between">
+                        <div>
+                            <h3 class="text-xl font-semibold text-gray-900">${allBlogs[i].title}</h3>
+                            <p class="text-sm text-gray-600 font-medium mt-2">${allBlogs[i].name} • Published on ${allBlogs[i].createdAtFormated}</p>
+                        </div>
+                        <div class="flex space-x-2">
+                            <button data-id="${allBlogs[i].postId}" class="deleteBtn text-red-500 hover:text-red-700 p-2 rounded-full hover:bg-red-100 transition-all duration-300">
+                                <i class="fas fa-trash text-lg"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             `
@@ -118,7 +116,6 @@ async function getDetails() {
         Swal.close(); // Close loading after everything is done
 
         let deleteBtn = document.querySelectorAll(".deleteBtn")
-
 
         deleteBtn.forEach((btn) => {
             btn.addEventListener("click", async () => {
@@ -147,13 +144,9 @@ async function getDetails() {
                     })
                 } catch (error) {
                     console.error("Error deleting blog: ", error);
-        
                 }
-        
             })
         })
-
-
 
     } catch (error) {
         console.error("Error fetching details: ", error);
@@ -161,5 +154,3 @@ async function getDetails() {
     }
 }
 getDetails()
-
-

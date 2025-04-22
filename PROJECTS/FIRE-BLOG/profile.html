@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireBlog - My Blogs</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" data-aos="fade-down">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="flex-shrink-0 flex items-center">
+              <a
+                href="index.html"
+                class="text-2xl font-extrabold text-blue-600 tracking-tight hover:text-blue-700 transition-colors duration-300"
+                >FireBlog</a
+              >
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <a
+                href="index.html"
+                class="border-transparent text-gray-600 hover:border-blue-500 hover:text-blue-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300"
+              >
+                Home
+              </a>
+              <a
+                href="allblogs.html"
+                class="border-transparent text-gray-600 hover:border-blue-500 hover:text-blue-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300"
+              >
+                Explore
+              </a>
+            </div>
+          </div>
+          <div id="profile" class="hidden sm:ml-6 sm:flex sm:items-center">
+            <a
+              href="auth.html"
+              class="text-gray-600 hover:text-blue-600 px-4 py-2 text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-300"
+            >
+              Login/Signup
+            </a>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="-mr-2 flex items-center sm:hidden">
+            <button
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-full text-gray-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i class="fas fa-bars text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden sm:hidden" data-aos="fade-in">
+        <div class="pt-2 pb-3 space-y-1">
+          <a
+            href="index.html"
+            class="border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300"
+            >Home</a
+          >
+          <a
+            href="allblogs.html"
+            class="border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300"
+            >Explore</a
+          >
+          <a
+            href="auth.html"
+            id="login-sign-profile"
+            class="border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300"
+            >Login/Signup</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <h1 class="text-4xl font-extrabold text-gray-900 tracking-tight mb-10" data-aos="fade-in" data-aos-delay="200">
+        Dashboard
+      </h1>
+
+      <div class="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+        <!-- Stats Card 1 -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="300"
+        >
+          <div class="flex items-center">
+            <div class="p-4 rounded-full bg-blue-100 text-blue-600 mr-4">
+              <i class="fas fa-file-alt text-2xl"></i>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Total Blogs</p>
+              <p class="text-3xl font-semibold text-gray-900" id="tblogs">12</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Card 2 -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <div class="flex items-center">
+            <div class="p-4 rounded-full bg-green-100 text-green-600 mr-4">
+              <i class="fas fa-eye text-2xl"></i>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Total Views</p>
+              <p class="text-3xl font-semibold text-gray-900" id="tviews">
+                1,245
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Stats Card 3 -->
+        <div
+          class="bg-white p-6 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300"
+          data-aos="fade-up"
+          data-aos-delay="500"
+        >
+          <div class="flex items-center">
+            <div class="p-4 rounded-full bg-purple-100 text-purple-600 mr-4">
+              <i class="fas fa-heart text-2xl"></i>
+            </div>
+            <div>
+              <p class="text-sm font-medium text-gray-500">Total Likes</p>
+              <p class="text-3xl font-semibold text-gray-900" id="tlikes">89</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div
+        class="flex justify-between items-center mt-12 mb-10"
+        data-aos="fade-in"
+        data-aos-delay="600"
+      >
+        <h1 class="text-3xl font-extrabold text-gray-900 tracking-tight">
+          My Blogs
+        </h1>
+        <a
+          href="create-blog.html"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-semibold inline-flex items-center shadow-md transition-all duration-300"
+        >
+          <i class="fas fa-plus mr-2"></i> New Blog
+        </a>
+      </div>
+
+      <div
+        class="mb-8 flex justify-center space-x-6"
+        data-aos="fade-up"
+        data-aos-delay="700"
+      >
+        <button
+          type="button"
+          class="bg-blue-600 hover:bg-blue-700 text-white px-5 py-2.5 rounded-lg font-semibold inline-flex items-center shadow-md transition-all duration-300"
+          id="published"
+        >
+          Published Blogs
+        </button>
+        <button
+          type="button"
+          class="bg-red-600 hover:bg-red-700 text-white px-5 py-2.5 rounded-lg font-semibold inline-flex items-center shadow-md transition-all duration-300"
+          id="drafted"
+        >
+          Drafted Blogs
+        </button>
+      </div>
+
+      <!-- Blog List -->
+      <div
+        class="bg-white shadow-xl rounded-xl overflow-hidden"
+        data-aos="fade-up"
+        data-aos-delay="800"
+      >
+        <ul class="divide-y divide-gray-200" id="renderUserBlogs"></ul>
+      </div>
+    </main>
+
+    <!-- Edit Blog Modal -->
+    <div
+      id="editModal"
+      class="fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 hidden"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+    >
+      <div
+        class="bg-white rounded-xl shadow-2xl w-full max-w-2xl p-8 relative transform transition-all duration-300"
+      >
+        <!-- Close Button -->
+        <button
+          id="closeModalBtn"
+          class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl font-bold transition-colors duration-300"
+        >
+          ×
+        </button>
+
+        <h2
+          class="text-2xl font-extrabold text-gray-900 tracking-tight mb-6"
+          data-aos="fade-in"
+          data-aos-delay="200"
+        >
+          Edit Blog
+        </h2>
+
+        <div class="space-y-6" data-aos="fade-up" data-aos-delay="300">
+          <!-- Title -->
+          <div>
+            <label
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Title</label
+            >
+            <input
+              type="text"
+              id="editTitle"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+              placeholder="Enter blog title"
+            />
+          </div>
+
+          <!-- Content -->
+          <div>
+            <label
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Content</label
+            >
+            <textarea
+              id="editContent"
+              rows="6"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+              placeholder="Write blog content..."
+            ></textarea>
+          </div>
+
+          <!-- Hidden Blog ID -->
+          <input type="hidden" id="hiddenBlogId" />
+
+          <!-- Save Button -->
+          <button
+            id="saveChangesBtn"
+            class="w-full py-3 px-6 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 shadow-md transition-all duration-300"
+            data-aos="fade-up"
+            data-aos-delay="400"
+          >
+            Save Changes
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        once: true,
+      });
+    </script>
+    <script type="module" defer src="js/main.js"></script>
+    <script type="module" defer src="js/profile.js"></script>
+  </body>
+</html>

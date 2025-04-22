@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireBlog - Home</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" data-aos="fade-down">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="flex-shrink-0 flex items-center">
+              <a
+                href="index.html"
+                class="text-2xl font-extrabold text-blue-600 tracking-tight hover:text-blue-700 transition-colors duration-300"
+                >FireBlog</a
+              >
+            </div>
+            <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+              <a
+                href="index.html"
+                class="border-transparent text-gray-600 hover:border-blue-500 hover:text-blue-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300"
+              >
+                Home
+              </a>
+              <a
+                href="allblogs.html"
+                class="border-blue-500 text-blue-600 inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300"
+              >
+                Explore
+              </a>
+            </div>
+          </div>
+          <div id="profile" class="hidden sm:ml-6 sm:flex sm:items-center">
+            <a
+              href="auth.html"
+              class="text-gray-600 hover:text-blue-600 px-4 py-2 text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-300"
+            >
+              Login/Signup
+            </a>
+          </div>
+          <!-- Mobile menu button -->
+          <div class="-mr-2 flex items-center sm:hidden">
+            <button
+              id="mobile-menu-button"
+              class="inline-flex items-center justify-center p-2 rounded-full text-gray-500 hover:text-blue-600 hover:bg-blue-50 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300"
+            >
+              <span class="sr-only">Open main menu</span>
+              <i class="fas fa-bars text-lg"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Mobile menu -->
+      <div id="mobile-menu" class="hidden sm:hidden" data-aos="fade-in">
+        <div class="pt-2 pb-3 space-y-1">
+          <a
+            href="index.html"
+            class="border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300"
+            >Home</a
+          >
+          <a
+            href="allblogs.html"
+            class="bg-blue-50 border-blue-500 text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold hover:bg-blue-100 transition-colors duration-300"
+            >Explore</a
+          >
+          <a
+            href="auth.html"
+            id="login-sign-profile"
+            class="border-transparent text-gray-600 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 block pl-3 pr-4 py-2 border-l-4 text-base font-semibold transition-colors duration-300"
+            >Login/Signup</a
+          >
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main
+      class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <!-- Blog List -->
+      <div class="mb-10" data-aos="fade-in" data-aos-delay="200">
+        <h2 class="text-3xl font-extrabold text-gray-900 tracking-tight mb-6">
+          All Blogs
+        </h2>
+
+        <div
+          class="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          id="blogList"
+        ></div>
+      </div>
+    </main>
+
+    <!-- Footer -->
+    <footer
+      class="bg-white border-t border-gray-200"
+      data-aos="fade-up"
+      data-aos-delay="300"
+    >
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+        <div class="md:flex md:justify-between">
+          <div class="mb-10 md:mb-0">
+            <span
+              class="text-2xl font-extrabold text-blue-600 tracking-tight"
+              >FireBlog</span
+            >
+            <p class="text-gray-600 mt-3 max-w-xs">
+              A platform for sharing knowledge and ideas.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 gap-12 sm:grid-cols-3">
+            <div>
+              <h3
+                class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+              >
+                Navigation
+              </h3>
+              <ul class="mt-4 space-y-3">
+                <li>
+                  <a
+                    href="index.html"
+                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+                    >Home</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="allblogs.html"
+                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+                    >Explore</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="auth.html"
+                    id="yourPf"
+                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+                    >Login/Signup</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h3
+                class="text-sm font-semibold text-gray-500 uppercase tracking-wider"
+              >
+                Legal
+              </h3>
+              <ul class="mt-4 space-y-3">
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="#"
+                    class="text-gray-600 hover:text-blue-600 font-medium transition-colors duration-300"
+                    >Terms of Service</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div
+          class="mt-12 border-t border-gray-200 pt-8 md:flex md:items-center md:justify-between"
+        >
+          <div class="flex space-x-6 md:order-2">
+            <a
+              href="#"
+              class="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+            >
+              <i class="fab fa-twitter text-lg"></i>
+            </a>
+            <a
+              href="#"
+              class="text-gray-400 hover:text-blue-600 transition-colors duration-300"
+            >
+              <i class="fab fa-github text-lg"></i>
+            </a>
+          </div>
+          <p
+            class="mt-8 text-base text-gray-600 font-medium md:mt-0 md:order-1"
+          >
+            © 2025 FireBlog. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Blog Detail Modal -->
+    <div
+      id="blog-modal"
+      class="fixed inset-0 z-50 hidden overflow-y-auto"
+      data-aos="zoom-in"
+      data-aos-delay="100"
+    >
+      <div
+        class="flex items-center justify-center min-h-screen px-4 text-center"
+      >
+        <!-- Background overlay -->
+        <div class="fixed inset-0 bg-black/60 transition-opacity duration-300"></div>
+
+        <!-- Modal container -->
+        <div
+          class="relative inline-block w-full max-w-3xl my-8 bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300"
+        >
+          <!-- Close button -->
+          <button
+            id="closeModal"
+            class="absolute top-4 right-4 text-gray-500 hover:text-blue-600 transition-colors duration-300"
+          >
+            <i class="fas fa-times text-2xl"></i>
+          </button>
+
+          <!-- Blog content -->
+          <div class="p-8">
+            <!-- Blog title with decorative border -->
+            <h2
+              class="text-3xl font-extrabold text-gray-900 tracking-tight mb-6 pb-4 border-b border-gray-200"
+              id="modal-blog-title"
+            >
+              Blog ka Title Yahan
+            </h2>
+
+            <!-- Blog content with beautiful spacing -->
+            <div
+              class="prose prose-lg max-w-none text-gray-700 leading-relaxed"
+              id="modal-blog-content"
+            >
+              <p>
+                Yahan blog ka poora content display hoga. Yeh paragraph apne
+                blog ke content se replace ho jayega.
+              </p>
+
+              <p class="mt-6">
+                Har naya paragraph automatically spacing ke sath show hoga.
+                Content jitna lamba ho, utna hi scrollable hoga modal mein.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        once: true,
+      });
+    </script>
+    <script type="module" defer src="js/main.js"></script>
+    <script type="module" defer src="js/allblogs.js"></script>
+  </body>
+</html>

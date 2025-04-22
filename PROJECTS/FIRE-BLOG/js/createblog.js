@@ -30,19 +30,19 @@ async function getUserData() {
     user = userData.data();
     console.log(user);
 
-    showuserintead.innerHTML = `<details class="relative">
-    <summary class="flex items-center space-x-3 p-2 bg-gray-100 rounded-lg shadow-sm cursor-pointer list-none">
+    showuserintead.innerHTML = `<details class="relative" data-aos="fade-down" data-aos-delay="100">
+    <summary class="flex items-center space-x-3 p-3 bg-white rounded-xl shadow-md cursor-pointer list-none hover:bg-blue-50 transition-all duration-300">
         <img src="https://tse1.mm.bing.net/th?id=OIP.0iGHOHqzuwsxu_WMdOR4oQAAAA&pid=Api&P=0&h=220" 
              alt="User Profile Picture" 
-             class="w-10 h-10 rounded-full border-2 border-gray-300 shadow-sm">
-        <span class="text-gray-800 font-semibold">${user.name}</span>
+             class="w-12 h-12 rounded-full border-2 border-blue-200 shadow-sm object-cover">
+        <span class="text-gray-900 font-semibold text-base tracking-tight">${user.name}</span>
     </summary>
 
     <!-- Dropdown Menu -->
-    <div class="absolute right-0 mt-2 w-48 bg-white border border-gray-300 rounded-lg shadow-lg">
+    <div class="absolute right-0 mt-2 w-56 bg-white border border-gray-200 rounded-xl shadow-xl z-50" data-aos="zoom-in" data-aos-delay="200">
         <ul class="py-2">
-            <li><a href="/profile.html" class="block px-4 py-2 hover:bg-gray-100">Your Profile</a></li>
-            <li><button id="SignOut" class="w-full text-left px-4 py-2 hover:bg-gray-100">Sign Out</button></li>
+            <li><a href="/profile.html" class="block px-5 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors duration-300">Your Profile</a></li>
+            <li><button id="SignOut" class="w-full text-left px-5 py-3 text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors duration-300">Sign Out</button></li>
         </ul>
     </div>
 </details>
@@ -50,7 +50,7 @@ async function getUserData() {
 
     console.log(loginsignprofile);
     loginsignprofile.setAttribute("href", "/profile.html")
-    loginsignprofile.innerHTML = "Your Profile"
+    loginsignprofile.innerHTML = `<span class="text-gray-700 font-semibold hover:text-blue-600 transition-colors duration-300">Your Profile</span>`
 
     let signout = document.getElementById("SignOut")
     signout.addEventListener("click", () => {
@@ -67,24 +67,14 @@ async function getUserData() {
 
 getUserData()
 
-
-
-
-
-
-
-
-
 let blogTitle = document.getElementById("blog-title");
 let blogContent = document.getElementById("blog-content");
 let publishBlog = document.getElementById("publish-blog");
-
 
 publishBlog.addEventListener("click", async (e) => {
     e.preventDefault();
     let statusCheck = document.querySelector("input[name='status']:checked");
     console.log(user);
-
 
     if (!blogTitle.value || !blogContent.value) {
         Swal.fire({
@@ -188,8 +178,8 @@ publishBlog.addEventListener("click", async (e) => {
                 blogTitle.value = "";
                 blogContent.value = "";
                 document.querySelectorAll("input[name='status']").forEach(radio => {
-                    radio.checked = false;
-                });
+                        radio.checked = false;
+                    });
             }
         });
 

@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FireBlog - Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-gray-800 shadow-lg sticky top-0 z-50" data-aos="fade-down">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex">
+                    <div class="flex-shrink-0 flex items-center">
+                        <a href="../index.html" class="text-2xl font-extrabold text-white tracking-tight hover:text-gray-200 transition-colors duration-300">FireBlog Admin</a>
+                    </div>
+                    <div class="hidden sm:ml-6 sm:flex sm:space-x-8">
+                        <a href="index.html" class="border-transparent text-gray-300 hover:border-blue-500 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300">Dashboard</a>
+                        <a href="users.html" class="border-transparent text-gray-300 hover:border-blue-500 hover:text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold transition-all duration-300">Users</a>
+                        <a href="blogs.html" class="border-blue-500 text-white inline-flex items-center px-1 pt-1 border-b-2 text-sm font-semibold">Blogs</a>
+                    </div>
+                </div>
+                <div class="hidden sm:ml-6 sm:flex sm:items-center">
+                    <div class="ml-3 relative">
+                        <div class="flex items-center space-x-2">
+                            <span class="text-white font-semibold text-lg">Admin</span>
+                            <button id="user-menu-button" class="bg-gray-800 rounded-full flex text-sm focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+                                <span class="sr-only">Open user menu</span>
+                                <div class="h-9 w-9 rounded-full bg-blue-100 flex items-center justify-center">
+                                    <i class="fas fa-user text-blue-700 text-lg"></i>
+                                </div>
+                            </button>
+                        </div>
+                        <div id="user-dropdown" class="hidden origin-top-right absolute right-0 mt-2 w-56 rounded-xl shadow-xl py-2 bg-white ring-1 ring-black ring-opacity-5 focus:outline-none z-50" data-aos="zoom-in" data-aos-delay="100">
+                            <button class="signOut block px-5 py-3 text-sm text-gray-700 font-medium hover:bg-blue-50 hover:text-blue-600 transition-colors duration-300 w-full text-left">Sign out</button>
+                        </div>
+                    </div>
+                </div>
+                <div class="-mr-2 flex items-center sm:hidden">
+                    <button id="mobile-menu-button" class="inline-flex items-center justify-center p-2 rounded-full text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all duration-300">
+                        <span class="sr-only">Open main menu</span>
+                        <i class="fas fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="hidden sm:hidden" data-aos="fade-in">
+            <div class="pt-2 pb-3 space-y-1">
+                <a href="index.html" class="bg-gray-900 text-white block px-3 py-2 rounded-lg text-base font-semibold hover:bg-gray-700 transition-colors duration-300">Dashboard</a>
+                <a href="users.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-lg text-base font-semibold transition-colors duration-300">Users</a>
+                <a href="blogs.html" class="text-gray-300 hover:bg-gray-700 hover:text-white block px-3 py-2 rounded-lg text-base font-semibold transition-colors duration-300">Blogs</a>
+            </div>
+            <div class="pt-4 pb-3 border-t border-gray-700">
+                <div class="flex items-center px-5">
+                    <div class="flex-shrink-0">
+                        <div class="h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center">
+                            <i class="fas fa-user text-blue-600 text-lg"></i>
+                        </div>
+                    </div>
+                    <div class="ml-3">
+                        <div class="text-base font-semibold text-white">Admin</div>
+                        <div class="text-sm font-medium text-gray-400">Humza.779@gmail.com</div>
+                    </div>
+                </div>
+                <div class="mt-3 space-y-1 px-2">
+                    <button class="signOut block px-3 py-2 rounded-lg text-base font-semibold text-gray-300 hover:text-white hover:bg-gray-700 transition-colors duration-300 w-full text-left">Sign out</button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12" data-aos="fade-up" data-aos-delay="100">
+        <h1 class="text-4xl font-extrabold text-gray-900 mb-10 text-center tracking-tight" data-aos="fade-in" data-aos-delay="200">Blogs Management Panel 📝</h1>
+      
+        <!-- Blog Cards Grid -->
+        <div id="render" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8" data-aos="fade-up" data-aos-delay="300"></div>
+      </main>
+
+      <!-- Blog Detail Modal -->
+    <div id="blog-modal" class="fixed inset-0 z-50 hidden overflow-y-auto" data-aos="zoom-in" data-aos-delay="100">
+        <div class="flex items-center justify-center min-h-screen px-4 text-center">
+          <!-- Background overlay -->
+          <div class="fixed inset-0 bg-black bg-opacity-60"></div>
+  
+          <!-- Modal container -->
+          <div class="relative inline-block w-full max-w-2xl my-8 bg-white rounded-xl shadow-2xl overflow-hidden transform transition-all duration-300">
+            <!-- Close button -->
+            <button id="closeModal" class="absolute top-4 right-4 text-gray-500 hover:text-red-600 text-2xl transition-colors duration-300">
+              <i class="fas fa-times"></i>
+            </button>
+  
+            <!-- Blog content -->
+            <div class="p-8" data-aos="fade-up" data-aos-delay="200">
+              <!-- Blog title with decorative border -->
+              <h2 class="text-3xl font-extrabold text-gray-900 mb-6 pb-4 border-b border-gray-200 tracking-tight" id="modal-blog-title">Blog ka Title Yahan</h2>
+  
+              <!-- Blog content with beautiful spacing -->
+              <div class="prose prose-lg max-w-none text-gray-700 leading-relaxed" id="modal-blog-content">
+                <p>Yahan blog ka poora content display hoga. Yeh paragraph apne blog ke content se replace ho jayega.</p>
+                <p class="mt-4">Har naya paragraph automatically spacing ke sath show hoga. Content jitna lamba ho, utna hi scrollable hoga modal mein.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            easing: "ease-out",
+            once: true,
+        });
+    </script>
+    <script type="module" defer src="../../js/main.js"></script>
+    <script type="module" defer src="/admin/blogs.js"></script>
+</body>
+</html>

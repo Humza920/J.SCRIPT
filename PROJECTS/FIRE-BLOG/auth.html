@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FireBlog - Login/Signup</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+      rel="stylesheet"
+    />
+    <!-- AOS CSS -->
+    <link
+      href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+      rel="stylesheet"
+    />
+  </head>
+  <body class="bg-gradient-to-br from-gray-100 to-gray-200 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-white shadow-lg sticky top-0 z-50" data-aos="fade-down">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex justify-between h-16">
+          <div class="flex">
+            <div class="flex-shrink-0 flex items-center">
+              <a
+                href="index.html"
+                class="text-2xl font-extrabold text-blue-600 tracking-tight hover:text-blue-700 transition-colors duration-300"
+                >FireBlog</a
+              >
+            </div>
+          </div>
+          <div class="hidden sm:ml-6 sm:flex sm:items-center">
+            <a
+              id="backToHome"
+              href="index.html"
+              class="text-gray-600 hover:text-blue-600 px-4 py-2 text-sm font-semibold rounded-full hover:bg-blue-50 transition-all duration-300"
+            >
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main
+      class="max-w-md mx-auto px-4 sm:px-6 lg:px-8 py-16"
+      data-aos="fade-up"
+      data-aos-delay="100"
+    >
+      <div
+        class="bg-white p-10 rounded-xl shadow-xl"
+        data-aos="zoom-in"
+        data-aos-delay="200"
+      >
+        <h2
+          class="text-3xl font-extrabold text-center text-gray-900 tracking-tight mb-8"
+          data-aos="fade-in"
+          data-aos-delay="300"
+        >
+          Welcome to FireBlog
+        </h2>
+
+        <div
+          class="flex justify-center space-x-6 mb-8"
+          data-aos="fade-up"
+          data-aos-delay="400"
+        >
+          <button
+            class="bg-red-500 hover:bg-red-600 text-white px-5 py-2.5 rounded-lg font-semibold flex items-center shadow-md transition-all duration-300"
+          >
+            <i class="fab fa-google mr-2 text-lg"></i> Google
+          </button>
+          <button
+            class="bg-blue-500 hover:bg-blue-600 text-white px-5 py-2.5 rounded-lg font-semibold flex items-center shadow-md transition-all duration-300"
+          >
+            <i class="fas fa-envelope mr-2 text-lg"></i> Email
+          </button>
+        </div>
+
+        <div class="relative my-8" data-aos="fade-in" data-aos-delay="500">
+          <div class="absolute inset-0 flex items-center">
+            <div class="w-full border-t border-gray-200"></div>
+          </div>
+          <div class="relative flex justify-center text-sm">
+            <span class="px-3 bg-white text-gray-600 font-medium">
+              Or continue with
+            </span>
+          </div>
+        </div>
+
+        <!-- Login Form -->
+        <form
+          id="login-form"
+          class="space-y-6"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div>
+            <label
+              for="email"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Email address</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <label
+              for="password"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="password"
+              name="password"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div class="flex items-center justify-end">
+            <div class="text-sm">
+              <a
+                href="#"
+                class="font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-300"
+                >Forgot your password?</a
+              >
+            </div>
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              id="login-button"
+              class="w-full flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-md text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+
+        <div
+          id="gotosignup"
+          class="mt-6 text-center text-sm"
+        >
+          <span class="text-gray-600 font-medium"
+            >Don't have an account?</span
+          >
+          <a
+            href="#"
+            id="show-signup"
+            class="ml-1 font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-300"
+            >Sign up</a
+          >
+        </div>
+
+        <!-- Signup Form (hidden by default) -->
+        <form
+          id="signup-form"
+          class="space-y-6 hidden"
+          data-aos="fade-up"
+          data-aos-delay="600"
+        >
+          <div>
+            <label
+              for="signup-name"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Full Name</label
+            >
+            <input
+              type="text"
+              id="signup-name"
+              name="name"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <label
+              for="signup-email"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Email address</label
+            >
+            <input
+              type="email"
+              id="signup-email"
+              name="email"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <label
+              for="signup-password"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Password</label
+            >
+            <input
+              type="password"
+              id="signup-password"
+              name="password"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <label
+              for="signup-confirm-password"
+              class="block text-sm font-semibold text-gray-800 mb-2"
+              >Confirm Password</label
+            >
+            <input
+              type="password"
+              id="signup-confirm-password"
+              name="confirm-password"
+              required
+              class="mt-1 block w-full border border-gray-200 rounded-lg shadow-sm py-3 px-4 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all duration-300"
+            />
+          </div>
+
+          <div>
+            <button
+              type="submit"
+              id="signup-button"
+              class="w-full flex justify-center py-3 px-6 border border-transparent rounded-lg shadow-md text-sm font-semibold text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all duration-300"
+            >
+              Create Account
+            </button>
+          </div>
+        </form>
+
+        <div
+          id="back-to-login"
+          class="mt-6 text-center text-sm hidden"
+        >
+          <span class="text-gray-600 font-medium"
+            >Already have an account?</span
+          >
+          <a
+            href="#"
+            id="show-login"
+            class="ml-1 font-semibold text-blue-600 hover:text-blue-700 transition-colors duration-300"
+            >Sign in</a
+          >
+        </div>
+      </div>
+    </main>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <!-- AOS JS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 800,
+        easing: "ease-out",
+        once: true,
+      });
+    </script>
+    <script type="module" src="js/main.js"></script>
+  </body>
+</html>
